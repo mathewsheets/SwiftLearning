@@ -1,0 +1,7 @@
+# Xcode Playground
+#
+.DS_Store
+xcuserdata
+xcshareddata
+*.xcuserstate
+*.xctimeline

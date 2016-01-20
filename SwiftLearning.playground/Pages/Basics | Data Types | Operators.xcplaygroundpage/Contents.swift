@@ -264,7 +264,7 @@ if let constantName = someOptional {
 } else {
     print("constantName is valueless")
 }
-//: Above we find out whether an `someOptional` contains a value, and if so, make that value available as a temporary constant. Optional binding can be used for `if` statements as well as `while` statements (`while` statements are explained in [Control Flow 1](Control%20Flow%201)).
+//: Above we find out whether an `someOptional` contains a value, and if so, make that value available as a temporary constant. Optional binding can be used for `if` statements as well as `while` statements (`if` and `while` statements are explained in [Control Flow](Control%20Flow)).
 //: > **Experiment**: 1) Create 1 optional string constant, and 1 optional string variable, initially both having a value. Use the `if` conditional statement and *optional binding* to print both values, else print that something is missing. 2) Set the optional string variable to `nil` and see what happends.
 
 /*:
@@ -374,7 +374,7 @@ let greaterThanOrEqualTo = a >= b
 let lessThanOrEqualTo = a <= b
 /*:
 ### Logical Operators
-Swift supports two binary logical operators, the **logical AND operator** (`a && b`) and the **logical OR operator** (`a || b`). Logical operators change or combine the boolean logic values of true or false. Logical operators are typically used in the `if` statement to branch the execution of code towards 1 more move paths. The `if` statement will be introduced in [Control Flow 1](Control%20Flow%201).
+Swift supports two binary logical operators, the **logical AND operator** (`a && b`) and the **logical OR operator** (`a || b`). Logical operators change or combine the boolean logic values of true or false. Logical operators are typically used in the `if` statement to branch the execution of code towards 1 more move paths. The `if` statement will be introduced in [Control Flow](Control%20Flow).
 */
 /*:
 The **logical AND operator** (`a && b`) is an expression that evaluates to true of *both* `a` and `b` evaluate to true, otherwise the overall result is false. If `a` is false to being with, `b` is never evaluated since it's not necessary to evaluate `b`.
@@ -417,14 +417,14 @@ if studiesHard || gifted {
 }
 /*:
 ## Ternary Conditional Operator
-The ternary operator is a unique operator that consists of three parts. *Part 1* needs to evaluate to a boolean, *part 2* is evaluated if *part 1* is true and *part 3* is evaluated if *part 1* is false. The ternary operator is a shortcut for the `if else` control flow logic that will be introduced in [Control Flow 1](Control%20Flow%201). The ternary conditional operator is useful for condensing a multi line `if else` into a single line statement.
+The ternary operator is a unique operator that consists of three parts. *Part 1* needs to evaluate to a boolean, *part 2* is evaluated if *part 1* is true and *part 3* is evaluated if *part 1* is false. The ternary operator is a shortcut for the `if else` control flow logic that will be introduced in [Control Flow](Control%20Flow). The ternary conditional operator is useful for condensing a multi line `if else` into a single line statement.
 */
 var booleanValue = true
 var ternaryValue = booleanValue ? "yes" : "no"
 ternaryValue = !booleanValue ? "yes" : "no"
 /*:
 ## Range Operators
-Range operators are a useful way to represent a range of values. Swift supports two range operators, 1) close range operator (`a...b`) and 2) half-open operator (`a..<b`). Range operators are typically used in the `for-in` loop, explained in more detail in the [Control Flow 1](Control%20Flow%201) section.
+Range operators are a useful way to represent a range of values. Swift supports two range operators, 1) close range operator (`a...b`) and 2) half-open operator (`a..<b`). Range operators are typically used in the `for-in` loop, explained in more detail in the [Control Flow](Control%20Flow) section.
 */
 /*:
 ### Closed Range Operator
@@ -446,7 +446,9 @@ for halfOpenRangeIndex in 1..<10 {
 print(showHalfOpenRange)
 /*:
 **Exercise:**
+Your a big tipper! When ever you go out to eat you tip 20% of the bill and ever tip less than $3. Create a playground that prints the tip amount and the total about. Within the playground, you should be able to change the bill to see how the tip about varies.
 */
+
 /*:
 **Checkpoint:**
 At this point, ...
@@ -456,9 +458,9 @@ At this point, ...
 - `import` = tells the compiler to make available to my program a specified framework.
 - `let` = declare a constant, a value that will never change throughout the program.
 - `var` = declare a variable, a value that will vary throughout the program.
-- `true` =
-- `false` =
-- `typealias` =
+- `true` = indicate that something is true
+- `false` = indicate that something is false
+- `typealias` = to give a more meaningful name to an already existing data type
 - `nil` = assign a constant or variable as valueless
 */
 /*:
@@ -468,6 +470,9 @@ At this point, ...
 - [The Basics](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html)
 - [Basic Operators](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html)
 - [The Basics: Optionals](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330)
+- [Video: Swift Playgrounds](https://developer.apple.com/videos/play/wwdc2014-408/)
+- [Video: Authoring Rich Playgrounds](https://developer.apple.com/videos/play/wwdc2015-405/)
+- [Video: Introduction to Swift](https://developer.apple.com/videos/play/wwdc2014-402/)
 */
 /*:
 [Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)

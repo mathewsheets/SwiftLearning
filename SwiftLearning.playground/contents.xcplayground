@@ -17,5 +17,6 @@
         <page name='Generics'/>
         <page name='JSON and Objects'/>
         <page name='HTTP and ReST'/>
+        <page name='License'/>
     </pages>
 </playground>

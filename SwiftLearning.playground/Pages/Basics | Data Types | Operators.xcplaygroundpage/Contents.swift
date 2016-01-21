@@ -138,7 +138,7 @@ var trueValue2: Bool
 trueValue2 = true
 
 var falseValue2: Bool
-falseValue2 = true
+falseValue2 = false
 /*:
 ## Strings
 The String data type stores text, such as "Hello Student!". There no limit to the amount of text that you can store in a String constant or variable. The only limit that could be reach is the memory your program is allowed to use. The `String` data type is a very rich data type with other properties and behaviors that will be discuss int the [Strings & Characters](Strings%20and%20Characters) session.

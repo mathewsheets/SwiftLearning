@@ -453,7 +453,6 @@ Your a big tipper! When ever you go out to eat you tip 20% of the bill and never
 * `The tip is $x.xx`
 * `The total is $x.xx`
 */
-
 /*:
 **Checkpoint:**
 At this point, ...

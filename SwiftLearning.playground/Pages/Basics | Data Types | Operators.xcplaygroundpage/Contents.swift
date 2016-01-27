@@ -455,7 +455,7 @@ Your a big tipper! When ever you go out to eat you tip 20% of the bill and never
 */
 /*:
 **Checkpoint:**
-At this point, ...
+At this point, you should be able to describe in detail the purpose of each data type and why it would be used within your programs. You also should be able to leverage tuples to group values together and work with operators on constants and variables. These building blocks will be used in the following chapters to create richer programs.
 */
 /*:
 **Keywords to remember:**

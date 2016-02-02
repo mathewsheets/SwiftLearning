@@ -4,7 +4,6 @@
 /*:
 # Control Flow
 */
-import Foundation
 /*:
 **Session Overview:**
 Processing logic is what gives your programs personality. These decision making statements are known as control flow. Control flow statements can fork your execution path or even repeat a series of statements. Please visit the Swift Programming Language Guide section on [Control Flow](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120) for more details on control flow.
@@ -335,26 +334,6 @@ default:
 }
 //: The above `switch` statement needs a `break` in the `default` case because the all other values greater than 100 aren't applicable.
 /*:
-## Error Handling
-
-*/
-/*:
-### Catch it there
-
-*/
-do {
-    let myGrade = try createGrade(101, letter: "A")
-    
-    print("my grade is \(myGrade!.0) or a \(myGrade!.1)")
-    
-} catch GradeError.BadLetter(let passed, let shouldBe) {
-    print("You passed a letter of \(passed), but it should be \(shouldBe)")
-} catch GradeError.MissingLetter {
-    print("You didn't passed in a letter")
-} catch GradeError.BadNumber {
-    print("You passed in a bad number")
-}
-/*:
 ## API Availability
 
 */
@@ -365,6 +344,7 @@ if #available(iOS 9, OSX 10.11, *) {
 }
 /*:
 **Exercise:**
+
 */
 /*:
 **Checkpoint:**
@@ -372,21 +352,19 @@ At this point, ...
 */
 /*:
 **Keywords to remember:**
-- `if` =
-- `else` =
-- `for` =
-- `in` =
-- `while` =
-- `repeat` =
-- `switch` =
-- `case` =
-- `default` =
-- `fallthroug` =
-- `continue` =
-- `break` =
-- `where` =
-- `do` =
-- `try` =
+- `if` = evaluate an express for `true` and execute the following statements
+- `else` = execute the following statements when the `if` evaluates an express to false
+- `for` = to iterate
+- `in` = when used with `for`, iterate over items in *something*
+- `while` = execute statements indefinitely until a false expression is met
+- `repeat` = used with `while`, execute statments first then loop
+- `switch` = the start of matching a value on possible outcomes
+- `case` = used with `switch`, a single outcome
+- `default` = used with 'switch', the any outcome
+- `fallthrough` = used with `switch`, execute the next case's statements
+- `continue` = move on to the next iteration and don't execute the following statements
+- `break` = when used with looping, stop looping and don't execute the following statements
+- `where` = when used with switch, to expand matching conditions
 */
 /*:
 **Supporting Chapters:**

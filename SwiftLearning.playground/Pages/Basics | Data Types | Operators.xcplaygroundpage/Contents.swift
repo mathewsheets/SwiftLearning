@@ -459,9 +459,9 @@ At this point, you should be able to describe in detail the purpose of each data
 */
 /*:
 **Keywords to remember:**
-- `import` = tells the compiler to make available to my program a specified framework.
-- `let` = declare a constant, a value that will never change throughout the program.
-- `var` = declare a variable, a value that will vary throughout the program.
+- `import` = tells the compiler to make available to my program a specified framework
+- `let` = declare a constant, a value that will never change throughout the program
+- `var` = declare a variable, a value that will vary throughout the program
 - `true` = indicate that something is true
 - `false` = indicate that something is false
 - `typealias` = to give a more meaningful name to an already existing data type

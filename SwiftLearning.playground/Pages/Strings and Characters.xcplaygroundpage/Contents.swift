@@ -31,7 +31,7 @@ let stringCannotBeChanged = "I can't be changed."
 var stringCanBeChanged = String("I can be changed.")
 stringCanBeChanged += " I want to add more"
 //: > When we use the word *instance*, think of it as owning a copy (`String` in this context) of a data type, but your copy could be different because of the way you initialized it or mutated it. When working with `String`s, we create instances of the `String` data type and available to us are properties (attributes) and methods (behavior).
-let abeQuote = "Give me six hours to chop down a tree and I will spend the first four sharpening the axe."
+let abeQuote  = "Give me six hours to chop down a tree and I will spend the first four sharpening the axe."
 var abeQuote2 = "Better to remain silent and be thought a fool than to speak out and remove all doubt."
 let abeQuote3 = "Nearly all men can stand adversity, but if you want to test a man's character, give him power."
 /*:
@@ -165,7 +165,7 @@ print(test)
 **Exercise:** Get Acquainted. Get a few properties of each person in your class... name and email are good. Use the `String` and `Character` as well as the data types and operators in [Basics | Data Types | Operators](Basics%20|%20Data%20Types%20|%20Operators) to complete this exercise.
 >> **Example Output:**
 * `My name is Mathew Sheets, my email is swift.dude@gmail.com.`
-* `Other students in my class are Annie, Sam, Jack, Hudson, Oliver.`
+* `Other students in my class are Annie, Sam, Jack, Hudson and Oliver.`
 * `Oliver dropped this class.` (**use the second bullet point string to pull out the last person's name.**)
 * `Other students in my class are Annie, Sam, Jack, Hudson, CARSON was added.`  (**use the second bullet point string and append another person.**)
 * `Jack and Hudson are in the class.` (**use the second bullet point string to pull out third and fourth person.**)

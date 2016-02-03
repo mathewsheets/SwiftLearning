@@ -169,6 +169,9 @@ print(test)
 * `Oliver dropped this class.` (**use the second bullet point string to pull out the last students's name.**)
 * `Other students in my class are Annie, Sam, Jack, Hudson and CARSON was added.`  (**use the second bullet point string and append another student.**)
 * `Jack and Hudson are in the class.` (**use the second bullet point string to pull out third and fourth student.**)
+>> **Constraints:**
+* Use a nested tuple to hold your students
+* Use the string created from the second bullet point for all other string creation
 */
 /*:
 **Checkpoint:**

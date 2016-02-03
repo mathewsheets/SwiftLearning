@@ -343,12 +343,17 @@ if #available(iOS 9, OSX 10.11, *) {
     print("statements to execute when running on lower platforms.")
 }
 /*:
-**Exercise:**
-
+**Exercise:** You have a secret message to send. Write a playground that can encrypt strings with an alphabetical [caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher). This cipher can ignore numbers, symbols, and whitespace.
+>> **Example Output:**
+* Decrypted: Nearly all men can stand adversity, but if you want to test a man's character, give him power
+* Encrypted: arneyl nyy zra pna fgnaq nqirefvgl, ohg vs lbh jnag gb grfg n zna'f punenpgre, tvir uvz cbjre
+>> **Constraints:**
+* Use a `switch` statment
+* Use a loop statement
 */
 /*:
 **Checkpoint:**
-At this point, ...
+At this point, you have learned the majority of the control flow statements that enable you to make decisions and execute a set of statements zero or more times until some condition is met.
 */
 /*:
 **Keywords to remember:**

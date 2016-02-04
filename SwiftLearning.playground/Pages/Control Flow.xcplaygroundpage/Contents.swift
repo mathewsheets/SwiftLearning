@@ -71,18 +71,12 @@ Swift's `switch` statement matches on a single case and ends execution of the `s
 var gradeNumber = 95
 var gradeLetter: String = ""
 switch gradeNumber {
-case 93:
-    fallthrough
-case 94:
-    fallthrough
-case 95:
-    fallthrough
-case 96:
-    fallthrough
-case 97:
-    fallthrough
-case 98:
-    fallthrough
+case 93: fallthrough
+case 94: fallthrough
+case 95: fallthrough
+case 96: fallthrough
+case 97: fallthrough
+case 98: fallthrough
 case 99:
     gradeLetter = "A"
 case 90:
@@ -106,11 +100,11 @@ print(gradeLetter)
 ### Interval Matching
 The value in the `switch` case statement can be checked to determine if the value is included in a specified range.
 */
-gradeNumber = 93
+gradeNumber = 100
 switch gradeNumber {
 case 100:
     gradeLetter = "A+"
-case 93..<99:
+case 93...99:
     gradeLetter = "A"
 case 90..<93:
     gradeLetter = "A-"
@@ -139,7 +133,7 @@ let gradeTuple = (gradeNumber, gradeLetter)
 switch gradeTuple {
 case (100, _):
     print("You get an A+")
-case (93..<99, _):
+case (93...99, _):
     print("You get an A")
 case (90..<93, _):
     print("You get an A-")
@@ -202,7 +196,7 @@ You can use a `where` clause to check for even more conditions.
 switch gradeTuple {
 case (100, _):
     print("You aced it!")
-case let (number, letter) where ["A", "B", "C", "D"].contains(letter):
+case let (number, letter) where "ABCD".containsString(letter):
     print("You passed!")
 default:
     print("You failed!")

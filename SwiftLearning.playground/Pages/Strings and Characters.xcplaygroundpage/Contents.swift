@@ -178,5 +178,9 @@ print(test)
 At this point, you should be able to create, mutate, and execute statements on `String`s and `Character`s data types. You also should understand how to work with the `Index` data type of a `String`.
 */
 /*:
+**Supporting Chapters:**
+- [Strings and Characters](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
+*/
+/*:
 [Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
 */

@@ -53,7 +53,7 @@ abeQuote.characters.count == abeQuote.startIndex.distanceTo(abeQuote.endIndex)
 //: Use `startIndex` to get the index of the starting position of a String.
 print("The start index is \(abeQuote.startIndex)")
 //: Use `endIndex` to get the index of the ending position of a String.
-print("The start index is \(abeQuote.endIndex)")
+print("The endIndex index is \(abeQuote.endIndex)")
 //: Use `isEmpty` to determine if a String has a value.
 print("The string is empty? = \(abeQuote.isEmpty)")
 

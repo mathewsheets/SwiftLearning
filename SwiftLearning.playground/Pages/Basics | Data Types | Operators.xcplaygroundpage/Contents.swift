@@ -454,7 +454,6 @@ Your a big tipper! When ever you go out to eat you tip 20% of the bill and never
 * `The total is $x.xx`
 >> **Constraints:**
 * Don't use the `String(format:, _, _)` initilizer
-* Use `if` when using the $3 minimum
 * Use the remainder operator while creating the string
 * Use the ternary conditional operator
 */

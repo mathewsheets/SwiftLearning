@@ -320,15 +320,28 @@ Above statements use the `for-in` loop to iterate over the `titles` giving you a
 //: > **Experiment**: Create a array of dictionaries and iterate over the array printing the key and value of each dictionary
 
 /*:
-**Exercise:**
+**Exercise:** You have to record all the students and their grades for your school. Leveraging arrays, dictionaries, and sets create table like containers for each class. Your classes are Math, Science, English and History with a total of 17 unique students. Print out each class roster and use and experiment with set operations and set membership and equality.
 >> **Example Output:**
-*
+* `Math = Mathew Sheets, John Winters, Sam Smith`
+* `Science = Sam Smith, Carson Daily, Adam Aarons`
+* `Union of Math and Science = Mathew Sheets, John Winters, Sam Smith, Carson Daily, Adam Aarons`
 >> **Constraints:**
-*
+* Use Set Operations
+    * intersect
+    * exclusiveOr
+    * union
+    * subtract
+* Use Set Membership and Equality
+    * is equal
+    * isSubsetOf
+    * isSupersetOf
+    * isStrictSubsetOf
+    * isStrictSupersetOf
+    * isDisjointWith
 */
 /*:
 **Checkpoint:**
-At this point, ...
+At this point, you should have a basic understanding of the collection types provided by the Swift programming language. Using arrays, you can store a collection of ordered values. Using sets, you can store a collection of unordered unique values. Using dictionaries, you can store a collection of key-value associations. With these three collection types, processing and manipulating data will be easier.
 */
 /*:
 **Supporting Chapters:**

@@ -116,8 +116,8 @@ for number in numbers {
 for (index, number) in numbers.enumerate() {
     print("Item \(index + 1): \(number)")
 }
-//: The first `for-in` loop just pulls out the value for each element in the array, but the second `for-in` loop pull out the index and value.
-//: > **Experiment**:
+//: The first `for-in` loop just pulls out the value for each element in the array, but the second `for-in` loops pulls out the index and value.
+//: > **Experiment**: Use an `_` underscore instead of `name` in the above for loop. What happens?
 
 /*:
 ## Sets
@@ -233,8 +233,6 @@ boys.isStrictSubsetOf(family)
 //: **isDisjointWith(_:)** test if two sets have any values in common.
 parents.isDisjointWith(children)
 family.isDisjointWith(children)
-//: > **Experiment**:
-
 /*:
 ## Dictionaries
 A `Dictionary` stores associations or mappings between keys of the same data type and values of the same data type in a container with no defined ordering. The value of each element is tied to a unique *key*. It's this unique *key* that enables you to lookup values based on an identifer, just like a real dictionary having the word be the key and the definition the value.
@@ -319,10 +317,14 @@ let names = [String](titles.values)
 /*:
 Above statements use the `for-in` loop to iterate over the `titles` giving you access to the *key* and *value*. You can also access only the *keys* or *values*.
 */
+//: > **Experiment**: Create a array of dictionaries and iterate over the array printing the key and value of each dictionary
+
 /*:
 **Exercise:**
 >> **Example Output:**
+*
 >> **Constraints:**
+*
 */
 /*:
 **Checkpoint:**

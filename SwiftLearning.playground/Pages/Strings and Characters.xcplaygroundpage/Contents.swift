@@ -41,6 +41,7 @@ All Strings have attributes called properties that provide you the ability to re
 //: **About String Indices** Strings in swift have a property of the `Index` data type that enable you to execute statements on `Character`s of the `String`. The `Index` data type provides methods (more on methods in [Functions](Functions) and - [Classes & Structures](Classes%20and%20Structures)) such as `successor()` and `predecessor()`.
 /*:
 **Experiment**: Take a moment to learn about the methods on the `Index` data type.
+
 */
 let startPlus1 = abeQuote.startIndex.successor()                    // get the next `Index` starting with the startIndex
 let endMinus1 = abeQuote.endIndex.predecessor()                     // get the previous `Index` starting with the endIndex

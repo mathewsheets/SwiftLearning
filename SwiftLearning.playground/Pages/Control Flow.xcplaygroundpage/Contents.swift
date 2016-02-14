@@ -175,13 +175,13 @@ The `switch` case statement can store values into constants or variables that ar
 switch gradeTuple {
 case (90...100, let letter):
     print("You got between 90% - 100%, or an \(letter)")
-case (80..<89, let letter):
+case (80...89, let letter):
     print("You got between 80% - 89%, or a \(letter)")
-case (70..<79, let letter):
+case (70...79, let letter):
     print("You got between 70% - 79%, or a \(letter)")
-case (60..<69, let letter):
+case (60...69, let letter):
     print("You got between 60% - 69%, or a \(letter)")
-case (50..<59, let letter):
+case (50...59, let letter):
     print("You got between 50% - 59%, or a \(letter)")
 case let (number, letter):
     print("You got a \(number)% or a \(letter)")

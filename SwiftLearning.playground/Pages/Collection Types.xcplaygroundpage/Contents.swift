@@ -57,7 +57,7 @@ print("threesAndTwos has \(threesAndTwos.count) items.")
 **A new Array using Array literal**
 >You can create an array by using the literal syntax such as creating an array of `Ints` like `[1, 2, 3, 4, 5]`.
 */
-let numbers = [1, 2, 3, 4, 5];
+let numbers = [1, 2, 3, 4, 5]
 //: The above statement creates an array of numbers containing `Int` data types.
 /*:
 ### Accessing data in an `Array`
@@ -193,6 +193,11 @@ for letter in alphabet {
 for letter in alphabet.sort() {
     print(letter)
 }
+
+for (index, value) in alphabet.enumerate() {
+    
+    print("index: \(index) - value: \(value)")
+}
 //: The first `for-in` loop just pulls out the value for each element in the set, but the second `for-in` first sorts the set before the looping starts.
 /*:
 ### Set Operations
@@ -241,8 +246,8 @@ A `Dictionary` stores associations or mappings between keys of the same data typ
 ### Creating Dictionaries
 Much like the `Array` and `Set` collection types, you need to specify the data type that the `Dictionary` is allowed to store. Unlike `Array`s and `Set`s, you need to specify the data type for the *Key* and the *Value*.
 */
-var longhand: Dictionary<String, String>? = nil;
-var shorthand: [String: String]? = nil;
+var longhand: Dictionary<String, String>? = nil
+var shorthand: [String: String]? = nil
 /*:
 Above shows a long and short way to create a dictionary.
 */
@@ -299,8 +304,12 @@ The above statements use both the *subscript syntax* and methods for add, updati
 ### Iterating over elements in a Dictionary
 Just like the `Array` and `Set` collection types, you iterate over a dictionary using a `for-in` loop.
 */
-for (title, name) in titles {
-    print("\(title): \(name)")
+for element in titles {
+    print("\(element.0): \(element.1)")
+}
+
+for (key, value) in titles {
+    print("\(key): \(value)")
 }
 
 for title in titles.keys {

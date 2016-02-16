@@ -190,10 +190,6 @@ for letter in alphabet {
     print(letter)
 }
 
-for letter in alphabet.sort() {
-    print(letter)
-}
-
 for (index, value) in alphabet.enumerate() {
     
     print("index: \(index) - value: \(value)")

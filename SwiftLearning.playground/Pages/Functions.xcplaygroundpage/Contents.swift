@@ -263,8 +263,6 @@ print(saySomethingNesting(false)("Jason"))
 /*:
 Above we rewrote the `saySomething` *global* function as `saySomethingNesting`, *nesting* functions `hello` and `goodBye` and return the correct nested function.
 */
-
-
 /*:
 ## Guarding
 
@@ -287,7 +285,6 @@ func printGrade(grade: (Int, String)) {
 printGrade((101, "A"))
 printGrade((55, "E"))
 printGrade((94, "A"))
-
 /*:
 ## Error Handling
 
@@ -301,8 +298,6 @@ enum GradeError: ErrorType {
     case BadLetter(youPassed: String, shouldBe: String)
     case BadNumber
 }
-
-
 /*:
 ### Throw it here
 
@@ -335,7 +330,6 @@ func createGrade(number: Int, letter: String) throws -> (Int, String)? {
     
     return gradeTuple;
 }
-
 /*:
 ### Catch it there
 
@@ -352,7 +346,6 @@ do {
 } catch GradeError.BadNumber {
     print("You passed in a bad number")
 }
-
 /*:
 ### Clean up after yourself
 
@@ -391,6 +384,13 @@ func createMyGrade(number: Int, letter: String) throws -> (Int, String)? {
 }
 
 let myGrade = try createMyGrade(93, letter: "A")
+/*:
+**Exercise:**
+>> **Example Output:**
+* HERE
+>> **Constraints:**
+* HERE
+*/
 /*:
 **Checkpoint:**
 At this point, ...

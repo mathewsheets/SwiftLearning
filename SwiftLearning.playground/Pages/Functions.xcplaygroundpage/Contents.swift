@@ -228,14 +228,14 @@ func sayGoodBye(name: String) -> String {
     return "GoodBye " + name + "!"
 }
 
-func saySomething(justMet: Bool) -> (String) -> String {
+func saySomething(justMet justMet: Bool) -> (String) -> String {
     
     return justMet ? sayHello : sayGoodBye;
 }
 
-print(saySomething(true)("Chris"))
+print(saySomething(justMet: true)("Chris"))
 
-print(saySomething(false)("Jason"))
+print(saySomething(justMet: false)("Jason"))
 /*:
 Here we have defined two functions, one that returns a `String` saying 'hello' to someone and another function that returns a `String` saying 'good bye' to someone. The third function defined `saySomething` accepts as an argument a `Boolean` if whether you just met someone and returns the appropriate function type to be called at a later time. The `firstTime` and `longTimeFriends` constants refer to different function on which you can call passing a `String` of a persons name as an argument.
 */
@@ -243,7 +243,7 @@ Here we have defined two functions, one that returns a `String` saying 'hello' t
 ## Nesting Functions
 The function examples above are called *global functions*. A *global* function means that the function is visible from anywhere and anytime. Nested functions, functions within functions, are visible only to the function containing the nested function.
 */
-func saySomethingNesting(justMet: Bool) -> (String) -> String {
+func saySomethingNested(justMet justMet: Bool) -> (String) -> String {
     
     func hello(name: String) -> String {
         
@@ -257,15 +257,15 @@ func saySomethingNesting(justMet: Bool) -> (String) -> String {
     return justMet ? hello : goodBye;
 }
 
-print(saySomethingNesting(true)("Chris"))
+print(saySomethingNested(justMet: true)("Chris"))
 
-print(saySomethingNesting(false)("Jason"))
+print(saySomethingNested(justMet: false)("Jason"))
 /*:
 Above we rewrote the `saySomething` *global* function as `saySomethingNesting`, *nesting* functions `hello` and `goodBye` and return the correct nested function.
 */
 /*:
 ## Guarding
-A good practice when creating functions is to test that the inputs are valid. The `guard` statement is like an `if` statement except that a `guard` requires that you have an `else` for the false condition. If the `guard` statement evaluates to `false` the statements in the `else` are executed and *must* exit the function.
+A good practice when creating functions is to test that the parameter values are valid. The `guard` statement is like an `if` statement except that a `guard` requires that you have an `else` for the false condition. If the `guard` statement evaluates to `false` the statements in the `else` are executed and *must* exit the function.
 */
 func printGrade(grade: (Int, String)) {
     
@@ -290,11 +290,11 @@ Above we validate the grade number and grade letter using a `guard` statement an
 */
 /*:
 ## Error Handling
-
+Something can always go wrong when making programs. These wrong things are called exceptions, like *exception to the rule*. Swift provides a way to handle exceptions when they occur and also cause exceptions to occur to indicate to the caller that an error condition was met.
 */
 /*:
 ### Code with Errors in mind.
-
+When throwing exceptions, the value that is thrown is an `ErrorType`. The most common way to create an `ErrorType` is by creating an *enumeration* conforming to a *protocol* of `ErrorType` ([Enumerations](Enumerations) and [Protocols](Protocols) will be explained in more detail in later sessions).
 */
 enum GradeError: ErrorType {
     case MissingLetter
@@ -302,10 +302,13 @@ enum GradeError: ErrorType {
     case BadNumber
 }
 /*:
-### Throw it here
-
+Above we create `GradeError`, conforming to the *protocol* `ErrorType` with cases of `MissingLetter`, `BadLetter`, `BadNumber`
 */
-func createGrade(number: Int, letter: String) throws -> (Int, String)? {
+/*:
+### Throw it here
+To indicate to the caller that an exception condition could be met is by using the `throws` keyword. Then within the function, when the exception condition is met you cause the exception to execute by using the `throw` keyword.
+*/
+func createGrade(number: Int, letter: String) throws -> (Int, String) {
     
     guard number >= 0 && number <= 100 else {
         throw GradeError.BadNumber
@@ -334,17 +337,19 @@ func createGrade(number: Int, letter: String) throws -> (Int, String)? {
     return gradeTuple;
 }
 /*:
-Above ...
+Above we test the valid values of the parameters, throwing exceptions if the values are not in the correct range.
 */
 /*:
 ### Catch it there
-
+When you are calling a function that `throws` exceptions you can `catch` the possible exceptions by wrapping the function call in `do{...} catch{...}` statement, with each catch representing each possible exception. Then use the keyword `try` before the call to the function.
 */
 do {
-    let myGrade = try createGrade(101, letter: "A")
-    
-    print("my grade is \(myGrade!.0) or a \(myGrade!.1)")
-    
+    let myGrade = try createGrade(93, letter: "B")
+//    let myGrade = try createGrade(100, letter: "")
+//    let myGrade = try createGrade(101, letter: "A")
+
+    print("my grade is \(myGrade.0) or a \(myGrade.1)")
+
 } catch GradeError.BadLetter(let passed, let shouldBe) {
     print("You passed a letter of \(passed), but it should be \(shouldBe)")
 } catch GradeError.MissingLetter {
@@ -353,33 +358,29 @@ do {
     print("You passed in a bad number")
 }
 /*:
-Above ...
+Above we call `createGrade` inside a do/catch statement executing the function call with a try.
 */
 /*:
 ## Clean up after yourself
-
+There are occations that you want to force the execution of code to always happen when exiting a function. This can be accomplished by using the keyword `defer`. You can have as many `defer` statments in varying kinds of scope. `defer` statements are executed in reverse order.
 */
-func createMyGrade(number: Int, letter: String) throws -> (Int, String)? {
-    
+func createMyGrade(number: Int, letter: String) throws -> (Int, String) {
+
+    defer {
+        print("4: order")
+    }
+    defer {
+        print("3: in reverse")
+    }
+
     do {
         defer {
-            print("2: order")
-        }
-        defer {
-            print("3: in reverse")
-        }
-        defer {
-            print("4: defer statements are executed")
+            print("2: defer statements are executed")
         }
         
         let myGrade = try createGrade(number, letter: letter)
         
-        guard (myGrade != nil) else {
-            
-            return nil
-        }
-        
-        print("1: my grade is \(myGrade!.0) or a \(myGrade!.1)")
+        print("1: my grade is \(myGrade.0) or a \(myGrade.1)")
         
         return myGrade
         
@@ -393,7 +394,7 @@ func createMyGrade(number: Int, letter: String) throws -> (Int, String)? {
 
 let myGrade = try createMyGrade(93, letter: "A")
 /*:
-Above ...
+Above we use the `defer` statement to force the execution of statements when the function exits.
 */
 /*:
 **Exercise:** Create a playground with pages with each playground page consisting of the previous four exercises. Refactor each exercise leveraging collection types and functions.

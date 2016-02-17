@@ -265,7 +265,7 @@ Above we rewrote the `saySomething` *global* function as `saySomethingNesting`, 
 */
 /*:
 ## Guarding
-
+A good practice when creating functions is to test that the inputs are valid. The `guard` statement is like an `if` statement except that a `guard` requires that you have an `else` for the false condition. If the `guard` statement evaluates to `false` the statements in the `else` are executed and *must* exit the function.
 */
 func printGrade(grade: (Int, String)) {
     
@@ -285,6 +285,9 @@ func printGrade(grade: (Int, String)) {
 printGrade((101, "A"))
 printGrade((55, "E"))
 printGrade((94, "A"))
+/*:
+Above we validate the grade number and grade letter using a `guard` statement and only executing the correct print statement if the grade number and grade letter are in the correct range.
+*/
 /*:
 ## Error Handling
 
@@ -331,6 +334,9 @@ func createGrade(number: Int, letter: String) throws -> (Int, String)? {
     return gradeTuple;
 }
 /*:
+Above ...
+*/
+/*:
 ### Catch it there
 
 */
@@ -347,7 +353,10 @@ do {
     print("You passed in a bad number")
 }
 /*:
-### Clean up after yourself
+Above ...
+*/
+/*:
+## Clean up after yourself
 
 */
 func createMyGrade(number: Int, letter: String) throws -> (Int, String)? {
@@ -380,37 +389,36 @@ func createMyGrade(number: Int, letter: String) throws -> (Int, String)? {
         
         throw GradeError.BadLetter(youPassed: passed, shouldBe: shouldBe)
     }
-    
 }
 
 let myGrade = try createMyGrade(93, letter: "A")
 /*:
-**Exercise:**
->> **Example Output:**
-* HERE
->> **Constraints:**
-* HERE
+Above ...
+*/
+/*:
+**Exercise:** Create a playground with pages with each playground page consisting of the previous four exercises. Refactor each exercise leveraging collection types and functions.
 */
 /*:
 **Checkpoint:**
-At this point, ...
+At this point, you should have a good understanding of calling and creating functions. Functions can be declared with or without parameters and with or without return values. Functions can also indicate that an exception could occur as well as exit early if certain conditions are met.
 */
 /*:
 **Keywords to remember:**
-- `func` =
-- `inout` =
-- `return` =
-- `guard` =
-- `do` =
-- `try` =
-- `throw` =
-- `throws` =
-- `catch` =
-- `defer` =
+- `func` = to declare a function
+- `inout` = changing a value of a parameter will change the value of the argument
+- `return` = exiting a function passing to the caller a potential value
+- `guard` = used to test conditions and if false, short circuit the function
+- `do` = indicate a block of code that handles exceptions
+- `try` = execute a statement that could throw an exception
+- `throw` = to make an exception happen
+- `throws` = used on a function declarations to tell the caller that an exception could happen
+- `catch` = block of code to execute for a specific exception
+- `defer` = block of code to execute after the function exits either by completing, returning or catching
 */
 /*:
 **Supporting Chapters:**
 - [Functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html)
+- [Control Flow](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html)
 - [Error Handling](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 */
 /*:

@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](Table%20of%20Contents) | [Previous](@previous)
 */
 /*:
 Copyright (c) 2015-Present Mathew Sheets - https://github.com/mathewsheets

@@ -8,7 +8,7 @@
 - [Control Flow](Control%20Flow)
 - [Collection Types](Collection%20Types)
 - [Functions](Functions)
-- [Closures](Closures)
+- [More Functions](More%20Functions)
 - [Enumerations](Enumerations)
 - [Classes & Structures](Classes%20and%20Structures)
 - [More Classes & Structures](More%20Classes%20and%20Structures)

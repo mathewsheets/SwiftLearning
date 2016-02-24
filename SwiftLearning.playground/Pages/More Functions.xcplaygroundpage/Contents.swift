@@ -144,7 +144,7 @@ Above we use the `defer` statement to force the execution of statements when the
 */
 /*:
 ## Closures
-Closures are self contained functions that are able to reference other constants or variables that are defined in that same context. Global and nested functions are actually closures, but have different rules for what constants and variables they can reference. Unnamed closures have a terse syntax that can reference values from their surrounding context.
+Closures are self contained functions that are able to reference other constants or variables that are defined in the same context. Global and nested functions are actually closures, but have different rules for what constants and variables they can reference. Unnamed closures have a terse syntax that can reference values from their surrounding context.
 */
 /*:
 ## Passing Closures
@@ -215,9 +215,9 @@ print(terse)
 //: Above we collect all the ages into the `ages` variable and sort only using the greater-than operator. We could have also used the less-then operator, since the `Int` data type provides it's own implementation.
 /*:
 ### Trailing Closures
-
+When the final argument or only argument to a function is a closure, you can write what is called a *trailing closure*. A trailing closure uses the closure expression syntax that is written outside and after the parentheses, helping reduce the amout of code to satisfy the functon call.
 */
-func printSpecifics(member: (name: String, role: String, age: Int), closure: ((name: String, role: String, age: Int) -> String)) {
+func printAttribute(member: (name: String, role: String, age: Int), closure: ((name: String, role: String, age: Int) -> String)) {
     
     print(closure(member))
 }
@@ -226,21 +226,22 @@ for member in family.sort({ $0.age > $1.age }) {
     
     // closure expression within parentheses
     
-    printSpecifics(member, closure: { (name, role, age) -> String in
+    printAttribute(member, closure: { (name, role, age) -> String in
         
         return name
     })
     
     // trailing closure outside and after parentheses
     
-    printSpecifics(member){ (name, role, age) -> String in
+    printAttribute(member){ (name, role, age) -> String in
         
         return role
     }
 }
+//: Above we call the `printAttribute` function using both ways to pass a closure. The first way is the longer form of specifying the arguments of `member` and `closure` and the second shorter form usin the trailing closure syntax.
 /*:
 ## Referring to Closures
-
+Closures, just like functions can be stored in constants and variables. When storing closures, you are actually storing a reference to the closure.
 */
 var names: [String] = []
 for member in family {
@@ -254,9 +255,10 @@ print(sortedName)
 let sortTheNames = names.sort
 
 print(sortTheNames())
+//: Above we sort the names of each member by calling sort method passing the operator function and then store the sort method in a constant to be called at a later time.
 /*:
 ## Access to outer variables
-
+Closures have a special ability to have their scope (the area of code on which the closure can access constants or varaibles) limited to where it is defined. Functions on the other hand have their scope limited to where the function is executed.
 */
 func counter(closure: (counter: Int) -> Void) -> () -> Void {
     
@@ -264,77 +266,89 @@ func counter(closure: (counter: Int) -> Void) -> () -> Void {
     
     func call() {
         
-        ++counter
         closure(counter: counter);
+        ++counter
     }
     
     return call
 }
 
-let call = counter { (counter) -> Void in print("called \(counter) times") }
+let call = counter { print("called \($0) times") }
 
-for times in 0..<5 { call() }
+for times in 0..<10 { call() }
+//: Above is a function `counter` with only one parameter, a closure of type `(Int) -> Void`, and returns a closure of type `() -> Void`. Within the body of the function, a `counter` variable is declared as well as a function `call()`. Since `counter` and `call` are defined in the context, the `call` function is able to access the `counter` variable, even when execution of code passes.
 /*:
 ## Creating Closures
-
+Creating a closure is just like creating a function. The only difference being what constants and variables the closure can access.
 */
 func each(items: [String], closure: (item: String, index: Int) -> Void) {
-    
+
     func iterator(items: [String], closure: (item: String) -> Void) {
-        
+
         for var index = 0; index < items.count; ++index {
-            
+
             closure(item: items[index])
         }
     }
-    
+
     var index = 0;
-    
-    iterator(items) { (item) -> Void in
-        
-        closure(item: item, index: index++)
-    }
+
+    iterator(items) { closure(item: $0, index: index++) }
 }
 
-each(["Mathew", "Annie", "Sam", "Jack", "Hudson", "Oliver"]) { (item, index) in
-    
-    print("item \(index) is \(item)")
-}
+each(sortTheNames()) { print("item \($1) is \($0)") }
+//: Above we have declared a function 'each' accepting arguments of `[String]` and a closure of type `(String, Int) -> Void`. Within the body of the function we create an other function, in this context a closure called `iterator`. The `iterator` function has access to the `index` variable. Inside the `each` function we call the `iterator` passing it the `items` and using the trailing closure syntx, the closure to accept a single `item` and the `index`.
 /*:
 ### Autoclosures
 
 */
+
+// parameter talk as a normal closure
+
 func sayHello(talk: () -> Void) {
     
     talk()
 }
 
+// called with the normal trailing closure syntax
+
 sayHello({ print("Hello!") })
+
+// parameter talk as a autoclosure
 
 func sayGoodbye(@autoclosure talk: () -> Void) {
     
     talk()
 }
 
+// called with out the bracket, the @autoclosure supplies them for us
+
 sayGoodbye(print("Goodbye!"))
+
+// store an array of closures
 
 var talking: [() -> Void] = []
 
 func chatter(@autoclosure(escaping) talk: () -> Void) {
-    
+
     talking.append(talk)
 }
 
+// each call to chatter stores a closures
+
 chatter(print("Hello!"))
 chatter(print("Goodbye!"))
 chatter(print("Hello!"))
 chatter(print("Goodbye!"))
 chatter(print("Hello!"))
 
+// iterater over all the `talking`
+
 for talk in talking {
-    
+
     talk()
 }
+//: Above, since the reference to each `talk` closure is used, we need to declare the closure as `escaping` or allowed to exist outside `chatter`
 /*:
 **Exercise:**
 */

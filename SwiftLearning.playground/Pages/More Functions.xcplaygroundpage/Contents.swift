@@ -6,7 +6,7 @@
 */
 /*:
 > **Session Overview:**
-> ADD CONTENT
+> In previous sessions, we learned that we can group related statements together, giving them a name with parameters and a return type, calling them functions. Functions are also data types, enabling us to assign a function to a constant or variable, return a function, and pass a function as an argument to another function. We can even nest functions inside other functions to change the visibility of the function from global to local only to the parent function. In this session we continue to explore the capabilities of functions as well as learn about a special functions called **Closures**.
 */
 import Foundation
 /*:
@@ -48,11 +48,11 @@ enum GradeError: ErrorType {
     case BadNumber
 }
 /*:
-Above we create `GradeError`, conforming to the *protocol* `ErrorType` with cases of `MissingLetter`, `BadLetter`, `BadNumber`
+Above we create an enumeration `GradeError`, conforming to the *protocol* `ErrorType` with cases of `MissingLetter`, `BadLetter`, `BadNumber`
 */
 /*:
 ### Throw it here
-To indicate to the caller that an exception condition could be met is by using the `throws` keyword. Then within the function, when the exception condition is met you cause the exception to execute by using the `throw` keyword.
+To indicate to the caller that an exception condition could be met is by using the `throws` keyword just before the arrrow and return type. Then within the function, when the exception condition is met you cause the exception to execute by using the `throw` keyword using the `ErrorType`.
 */
 func createGrade(number: Int, letter: String) throws -> (Int, String) {
     
@@ -143,19 +143,18 @@ let myGrade = try createMyGrade(93, letter: "A")
 Above we use the `defer` statement to force the execution of statements when the function exits.
 */
 /*:
-## Closures
+# Closures
 Closures are self contained functions that are able to reference other constants or variables that are defined in the same context. Global and nested functions are actually closures, but have different rules for what constants and variables they can reference. Unnamed closures have a terse syntax that can reference values from their surrounding context.
 */
 /*:
 ## Passing Closures
 Just like normal functions, closures are data types themselves, allowing you to assign them to constants or variables as well as arguments to other functions.
 */
-let family = [(name: "Oliver",  role: "child",  age: 1),
-            (name: "Matt",      role: "father", age: 39),
-            (name: "Sam",       role: "child",  age: 10),
-            (name: "Jack",      role: "child",  age: 7),
-            (name: "Hudson",    role: "child",  age: 5),
-            (name: "Annie",     role: "mother", age: 37)]
+let family = [(name: "Luke",    role: "child",          age: 3),
+            (name: "Anakin",    role: "father",         age: 24),
+            (name: "Rey",       role: "grand_child",    age: 17),
+            (name: "Leia",      role: "child",          age: 3),
+            (name: "Padme",     role: "mother",         age: 37)]
 
 func sortFamily(element1: (String, String, Int), element2: (String, String, Int)) -> Bool {
 
@@ -168,7 +167,7 @@ print(orderedByAge)
 //: Above we are calling the sort method of an Array passing in a closure. The Closure is defined with two parameters, both being of the same type, in this case a tuple of `(String, String, Int)`.
 /*:
 ### The Syntax
-Notice above that the syntax for a closure is just like the functon syntax. There are parameters, a return type and a group of statements, the function body. We could have also used the closure expression syntax described below.
+Notice above that the syntax for a closure is just like the function syntax. There are parameters, a return type and a group of statements, the function body. We could have also used the closure expression syntax described below.
 */
 /*:
 `{ (parameters) -> return type} in ... }`
@@ -178,7 +177,7 @@ Using the closure expression syntax allows us to be more expressive when dealing
 */
 /*:
 ### Inferring Types
-Above constant `sortFamily` stores a reference to a closure that is later passed in as an argument to the sort method of an array. But leveraging the closure expression syntax our code is more consise.
+The above function `sortFamily` is a closure that is later passed in as an argument to the sort method of an array. But leveraging the closure expression syntax our code is more consise.
 */
 let inferring = family.sort({ element1, element2 in return element1.name < element2.name })
 
@@ -194,12 +193,12 @@ print(noreturn)
 //: Above we omit the `return` keyword, continuing to reduce the code to satisfied the closure definition.
 /*:
 ### Shorthand
-For inline closures using the closure expression syntax, Swift automatically provides access to the arguments using the index of the argument prefixed with `$`
+For inline closures using the closure expression syntax, Swift automatically provides access to the arguments using the index of the argument prefixed with `$`.
 */
 let shorthand = family.sort({ $0.name < $1.name })
 
 print(shorthand)
-//: Above we use the shorthand argument names, such as `$0` and `$1` to access the argument values, and are allowed to omit the argument list from the definition.
+//: Above we use the shorthand argument names, such as `$0` and `$1` to access the argument values, allowing us to omit the argument list from the definition.
 /*:
 ### Even more terse... Operator Functions
 One last way to write a closure for the sort method is to leverage the data types implementation of the greater-than operator. `Int` overloads the greater-than operator for the purpose of only having to deal with the `Int` data type.
@@ -215,7 +214,7 @@ print(terse)
 //: Above we collect all the ages into the `ages` variable and sort only using the greater-than operator. We could have also used the less-then operator, since the `Int` data type provides it's own implementation.
 /*:
 ### Trailing Closures
-When the final argument or only argument to a function is a closure, you can write what is called a *trailing closure*. A trailing closure uses the closure expression syntax that is written outside and after the parentheses, helping reduce the amout of code to satisfy the functon call.
+When the final argument or only argument to a function is a closure, you can write what is called a *trailing closure*. A trailing closure uses the closure expression syntax that is written outside and after the parentheses, helping reduce the amout of code to satisfy the function call.
 */
 func printAttribute(member: (name: String, role: String, age: Int), closure: ((name: String, role: String, age: Int) -> String)) {
     
@@ -238,7 +237,7 @@ for member in family.sort({ $0.age > $1.age }) {
         return role
     }
 }
-//: Above we call the `printAttribute` function using both ways to pass a closure. The first way is the longer form of specifying the arguments of `member` and `closure` and the second shorter form usin the trailing closure syntax.
+//: Above we call the `printAttribute` function using both ways to pass a closure. The first way is the longer form of specifying the arguments of `member` and `closure` and the second shorter form using the trailing closure syntax.
 /*:
 ## Referring to Closures
 Closures, just like functions can be stored in constants and variables. When storing closures, you are actually storing a reference to the closure.
@@ -297,10 +296,10 @@ func each(items: [String], closure: (item: String, index: Int) -> Void) {
 }
 
 each(sortTheNames()) { print("item \($1) is \($0)") }
-//: Above we have declared a function 'each' accepting arguments of `[String]` and a closure of type `(String, Int) -> Void`. Within the body of the function we create an other function, in this context a closure called `iterator`. The `iterator` function has access to the `index` variable. Inside the `each` function we call the `iterator` passing it the `items` and using the trailing closure syntx, the closure to accept a single `item` and the `index`.
+//: Above we have declared a function 'each' accepting arguments of `[String]` and a closure of type `(String, Int) -> Void`. Within the body of the function we create another function, in this context a closure called `iterator`. The `iterator` function has access to the `index` variable. Inside the `each` function we call the `iterator` passing it the `items` and using the trailing closure syntx, the closure to accept a single `item` and the `index`.
 /*:
 ### Autoclosures
-
+Autoclosures, using the '@autoclosure' attribute when declared with the function closure parameter, let you only pass the closure body. The '@autoclosure' attribute automatically wraps the expression in a closure.
 */
 
 // parameter talk as a normal closure
@@ -329,6 +328,9 @@ sayGoodbye(print("Goodbye!"))
 
 var talking: [() -> Void] = []
 
+
+// the escaping attribute allows talk to live outside the function
+
 func chatter(@autoclosure(escaping) talk: () -> Void) {
 
     talking.append(talk)
@@ -350,11 +352,40 @@ for talk in talking {
 }
 //: Above, since the reference to each `talk` closure is used, we need to declare the closure as `escaping` or allowed to exist outside `chatter`
 /*:
-**Exercise:**
+**Exercise:** Leveraging the `each` and `iterator` functions above, and using the students constant below, create the following functions passing in a closure to satisfy the function requirement.
+*/
+let students = [
+    ["first" : "Obi-Wan",   "last" : "Kenobi",      "age" : "55", "class" : "Math"],
+    ["first" : "Darth",     "last" : "Vader",		"age" : "76", "class" : "Engligh"],
+    ["first" : "Anakin",    "last" : "Skywalker",	"age" : "17", "class" : "History"],
+    ["first" : "Darth",     "last" : "Sidious",		"age" : "88", "class" : "Science"],
+    ["first" : "Padme",     "last" : "Amidala",		"age" : "25", "class" : "Math"],
+    ["first" : "Mace",      "last" : "Windu",		"age" : "56", "class" : "Science"],
+    ["first" : "Count",     "last" : "Dooku",		"age" : "67", "class" : "History"],
+    ["first" : "Luke",      "last" : "Skywalker",	"age" : "21", "class" : "Math"],
+    ["first" : "Han",       "last" : "Solo",		"age" : "35", "class" : "Science"],
+    ["first" : "Leia",      "last" : "Organa",		"age" : "21", "class" : "Engligh"],
+    ["first" : "Chew",      "last" : "Bacca",		"age" : "33", "class" : "Science"],
+    ["first" : "Boba",      "last" : "Fett",		"age" : "32", "class" : "History"],
+    ["first" : "Lando",     "last" : "Calrissian",	"age" : "55", "class" : "Engligh"],
+    ["first" : "Kylo",      "last" : "Ren",			"age" : "21", "class" : "Math"],
+    ["first" : "Poe",       "last" : "Dameron",		"age" : "25", "class" : "History"],
+    ["first" : "Finn",      "last" : "FN-2187",		"age" : "23", "class" : "Science"],
+    ["first" : "Rey",       "last" : "Rey",			"age" : "16", "class" : "Engligh"]
+]
+/*:
+**Functions:**
+* all = Returns true if all of the element is not false
+* any = Returns true if at least one of the elements is not false
+* indexOf = Returns the index at which element can be found
+* contains = Returns true if the element is present in the list
+* reject = Returns the elements in the array without the elements that pass a truth test (predicate).
+* filter = Returns an array of all the elements that pass a truth test (predicate).
+* pluck = Returns an array of a specific value from all the elements
 */
 /*:
 **Checkpoint:**
-At this point, ...
+At this point, you should be able validate the parameter values using the guard statment as well as throw exceptions from a function and catch exceptions from throwing functions. We also learned about a special function called a **closure** which is able to gain access to constants and variables defined in the same context as the closure is defined.
 */
 /*:
 **Keywords to remember:**

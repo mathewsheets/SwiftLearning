@@ -365,6 +365,7 @@ At this point, ...
 - `throws` = used on a function declarations to tell the caller that an exception could happen
 - `catch` = block of code to execute for a specific exception
 - `defer` = block of code to execute after the function exits either by completing, returning or catching
+- `in` = indicates that the next set of statements are for the closure
 */
 /*:
 **Supporting Chapters:**

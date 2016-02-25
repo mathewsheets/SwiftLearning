@@ -90,9 +90,10 @@ Above we test the valid values of the parameters, throwing exceptions if the val
 When you are calling a function that `throws` exceptions you can `catch` the possible exceptions by wrapping the function call in `do{...} catch{...}` statement, with each catch representing each possible exception. Then use the keyword `try` before the call to the function.
 */
 do {
-    let myGrade = try createGrade(93, letter: "B")
-//    let myGrade = try createGrade(100, letter: "")
+//    let myGrade = try createGrade(93, letter: "B")
+    let myGrade = try createGrade(100, letter: "")
 //    let myGrade = try createGrade(101, letter: "A")
+//    let myGrade = try createGrade(100, letter: "A")
 
     print("my grade is \(myGrade.0) or a \(myGrade.1)")
 
@@ -208,7 +209,8 @@ for member in family {
     ages.append(member.age)
 }
 
-let terse = ages.sort(<)
+var terse = ages.sort()
+terse = ages.sort(>)
 
 print(terse)
 //: Above we collect all the ages into the `ages` variable and sort only using the greater-than operator. We could have also used the less-then operator, since the `Int` data type provides it's own implementation.

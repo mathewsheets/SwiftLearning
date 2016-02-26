@@ -377,12 +377,13 @@ let students = [
 ]
 /*:
 **Functions:**
+* each = Iterate over each element in the array
 * all = Returns true if all of the element is not false
 * any = Returns true if at least one of the elements is not false
 * indexOf = Returns the index at which element can be found
 * contains = Returns true if the element is present in the list
-* reject = Returns the elements in the array without the elements that pass a truth test (predicate).
 * filter = Returns an array of all the elements that pass a truth test (predicate).
+* reject = Returns the elements in the array without the elements that pass a truth test (predicate).
 * pluck = Returns an array of a specific value from all the elements
 */
 /*:

@@ -6,12 +6,12 @@
 */
 /*:
 > **Session Overview:**
-> Overview content here ....
+> An enumeration is a type-safe way to group related values. These values would typically be an `Int` that outside the context of the enumeration, would become ambiguous. Enumerations in swift are far more rich in functionality when compared to other languages.
 */
 import Foundation
 /*:
 ## Creating Enumerations
-
+Enumerations are declared with the keyword `enum` and the `case`s are placed in the pair of braces.
 */
 enum Grade {
     case A
@@ -27,22 +27,27 @@ mathGrade = .A
 
 print(mathGrade)
 /*:
+Above we created a `Grade` enumeration with cases of `A`, `B`, `C`, `D` and `F`. We can assign a `Grade` enumeration with a dot syntax with the enumeration before the dot and the case after the dot. Or, using Swift's type inference we case just use the dot preceding the case.
+*/
+/*:
 ## Switch & Enumerations
-
+You can use enumerations with `switch`, `case` statements.
 */
 switch mathGrade {
 case .A: fallthrough
 case .B: fallthrough
 case .C:
     print("You can move on.")
-case .D:
+case .D: fallthrough
+case .F:
     print("You can not move on.")
-default:
-    break // this break is needed because all cases need a body
 }
 /*:
+Above we use a `switch` and multiple `case` statements to match on `mathGrade`. We can also use type inference to match on to make our code less verbose. Note also that `swith-case` statements need to be exhaustive, meaning we must provide a case on which `mathGrade` needs to match. We always have the `default` case to match on `case`s where we don't what to handle explicitly.
+*/
+/*:
 ## Associated Values
-
+Enumerations in Swift provide the capabiliy to store other information, called associated values along with the case value.
 */
 enum TimeOfStudy {
     case AM, PM
@@ -64,9 +69,16 @@ case let .ThreeFive(hours):
 case .SixPlus(let hours, let time):
     print("You spent \(hours) hours studying, in the 6+ hours range, mostly in the \(time)")
 }
+
+if case let HoursStudying.SixPlus(hours, time) = studying {
+    print("You spent \(hours) hours studying, in the 6+ hours range, mostly in the \(time)")
+}
+/*:
+Above we declare an enumeration `TimeOfStudy` with cases `AM` and `PM`. We also declare an enumeration `HoursStudying` with cases of `OneTwo`, 'ThreeFive', `SixPlus`. Notice that each case looks like it has parameters. These values are the associated values which can be extracted in a `switch-case` statement. You can also use pattern matching with an if-let to extract the values.
+*/
 /*:
 ## Raw Values
-
+Enumerations in Swift can also store raw values of types `Int`, `String`, `Bool`, or one of the floating point numbers.
 */
 enum GradingScaleStr : String {
     case A = "A Grade"
@@ -78,14 +90,28 @@ enum GradingScaleStr : String {
 
 print(GradingScaleStr.A.rawValue)
 /*:
+Above we created an enumeration that stores `String`s as a raw value. You can access the raw value by using `rawValue` after the enumeration case.
+*/
+/*:
 ### Implicitly Assigned
-
+Swift will also implicitly assign values to enumerations.
 */
 enum GradingScaleNum : Int {
     case A = 1, B, C, D, F
 }
 
 print(GradingScaleNum.B.rawValue)
+
+enum GradeLetter: String {
+    case A
+    case B
+    case C
+    case D
+    case F
+}
+/*:
+
+*/
 /*:
 ### Initializing
 

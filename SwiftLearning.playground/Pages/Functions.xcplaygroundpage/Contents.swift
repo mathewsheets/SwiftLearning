@@ -274,7 +274,7 @@ At this point, you should have a good understanding of calling and creating func
 */
 /*:
 **Keywords to remember:**
-- `func` = to declare a function
+- `func` = to create a function
 - `inout` = changing a value of a parameter will change the value of the argument
 - `return` = exiting a function passing to the caller a potential value
 */

@@ -200,8 +200,8 @@ let phones = [iPhone, iPhone3G, iPhone3Gs, iPhone4, iPhone4s, iPhone5, iPhone5c,
 /*:
 >> **Constraints:**
 * Create the following Enumerations:
-    * ModelName = Enumeration for all the modal names
-    * ModelNumber = Enumeration for all the modal numbers
+    * ModelName = Enumeration for all the model names
+    * ModelNumber = Enumeration for all the model numbers
     * HardwareString = Enumeration for all hardware string
     * OSVersion = Enumeration for all os versions
 * Create the following Functions

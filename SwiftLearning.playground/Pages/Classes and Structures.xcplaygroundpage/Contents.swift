@@ -21,11 +21,11 @@ struct Term {
     
 }
 /*:
-Above we created a class 'President' and a structure 'Term'. Right now they don't store data or have behavior, throughout this session we will build out what a `President` and `Term` can store the behavior it provides.
+Above we created a class `President` and a structure `Term`. Right now they don't store data or have behavior. Throughout this session we will build out what a `President` and `Term` can store the behavior it provides.
 */
 /*:
 ## Types vs. Instances
-`President` and `Term` are types. There is only 1 in existence throughout your program. We can create many instances of a `President` or `Term`. Remember the simple type such as `Int` and `String`? There is only 1 `Int` and `String` data type in Swift, but we can create as many instances as `Int` or `String` that we like.
+`President` and `Term` are types. There is only 1 in existence throughout your program. We can create many instances of a `President` or `Term`. Remember the simple data types such as `Int` and `String`? There is only 1 `Int` and 1 `String` data type in Swift, but we can create as many instances as `Int` or `String` that we like.
 */
 let president = President()
 
@@ -39,7 +39,7 @@ Value types are data types like `Int` and `String`, their values are copied when
 */
 /*:
 ## Properties
-Properties enable you to store data within the class or structure. Properties are just like constants or variable and can be tied to the class or instance of the data type.
+Properties enable you to store data within the class or structure. Properties are constants or variables tied to the class/structure (data type) or to an instance of the of the class/structure.
 */
 class President1 {
     

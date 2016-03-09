@@ -35,13 +35,11 @@ Above we have store instances of type `President` and `Term` into constants. We 
 */
 /*:
 ## Value Types vs. Reference Types
-
+Value types are data types like `Int` and `String`, their values are copied when either assigned to constancts or variables or passed to functions. Reference types are data type like closures, you are assigning or passing a location pointing to a memory space. Structures are *value types*. Classes are *reference types*. The difference is very important.
 */
-
-
 /*:
 ## Properties
-
+Properties enable you to store data within the class or structure. Properties are just like constants or variable and can be tied to the class or instance of the data type.
 */
 class President1 {
     
@@ -59,8 +57,11 @@ struct Term1 {
     var end: NSDate? // stored instance propery
 }
 /*:
+Above we created a class `President1` and structure `Term1`, each with a type property and instance properties of constant and variables. Some properties are initialized and some are optional.
+*/
+/*:
 ### Instance Stored Properties
-
+`President1` and `Term1` both have instance stored properties. You can change instance stored properties through out your program for that particular instance.
 */
 let president1 = President1()
 
@@ -71,15 +72,21 @@ var term1 = Term1()
 term1.start = DateUtils.createDate(year: 1789, month: 4, day: 30)
 term1.end = DateUtils.createDate(year: 1797, month: 3, day: 4)
 /*:
+Above we assign the `president1.name`,  `term1.start` and `term1.end` instance stored property.
+*/
+/*:
 ### Type Stored Properties
-
+Stored properties that only exist for the class and *not* the instance of a class are type stored properties. You create a type property with the keyword `static`.
 */
 President1.address = "1600 Pennsylvania Ave NW, Washington, DC 20500"
 
 let presidentAddress = President1.address
 
 let presidentialLength = Term1.length
-//: > **Experiment**:
+/*:
+Above we assign the `President1.address` type store property. We are able to do this because it's a variable. The `Term.length` is a constance, therefore we can not assign a new value to it.
+*/
+//: > **Experiment**: Uncomment below to see what happens.
 //president1.country = "South"
 
 //Term1.length = 8
@@ -89,7 +96,7 @@ let presidentialLength = Term1.length
 //term2.start = nil
 /*:
 ### Lazy Stored Properties
-
+Classes and structures are very similar to other data types. Therefore you can have properties that are of a class or structure. There are times when it makes sense to initialize a class or structure whenever you access the property and not durning the initialization of the container class. We can do this lazy initializing with the `lazy` keyword.
 */
 class Party {
     
@@ -103,7 +110,7 @@ class Party {
         }
     }
     
-    init() {
+    init() { // initialization explained below
         
         print("Party initialzed")
         
@@ -130,8 +137,11 @@ print(president2.name!)
 print(president2.party.members)
 print(president2.party.sayThankYou(president2.name!))
 /*:
+Above we created a `Party` class and a `President2` class which has a stored instance property of type `Party`. `Party` could take a while to initialize. We use the `lazy` keyword to indicate that we want `party` only to be assigned when we access the `party` property of an instance of the `President2` class.
+*/
+/*:
 #### Computed Properties
-
+Swift provides properties that look and act like stored properties, but they don't store anything, they derive values or accept values to be stored in a different way. These types of properties are called computed properties.
 */
 class President3 {
 
@@ -203,6 +213,9 @@ print("had \(ronald.yearsAlive) years on earth")
 
 print("if alive he would be \(ronald.age) years old")
 /*:
+Above we created a `President3` class with stored properties of `birthDate` and `deathDate` and computed properteis of `yearsAlive`, `diedHowLongAgo`, `age`. Notice how the computed properteis act like proxies for the stored properties. Also notice how a computed property can be read-only as well as the shorhand version of the `set` for the `diedHowLongAgo` computed property.
+*/
+/*:
 ### Property Observers
 
 */
@@ -236,6 +249,9 @@ print("You need more than \(ElectoralVote.electoralVotesNeedToWin) electoral vot
 let electoralVote = ElectoralVote()
 electoralVote.count = 100
 electoralVote.count = 270
+/*:
+
+*/
 /*:
 ## Initializing
 

@@ -39,13 +39,14 @@ Value types are data types like `Int` and `String`, their values are copied when
 */
 /*:
 ## Properties
-Properties enable you to store data within the class or structure. Properties are constants or variables tied to the class/structure (data type) or to an instance of the of the class/structure.
+Properties enable you to store data within a class or structure. Properties are constants or variables tied to the class/structure (data type) or to an instance of the class/structure.
 */
 class President1 {
     
     static var address = "" // stored type property
     
     let country = "United States of America" // stored instance constant property
+    
     var name = "" // stored instance variable propery
 }
 
@@ -57,7 +58,7 @@ struct Term1 {
     var end: NSDate? // stored instance propery
 }
 /*:
-Above we created a class `President1` and structure `Term1`, each with a type property and instance properties of constant and variables. Some properties are initialized and some are optional.
+Above we created a class `President1` and structure `Term1`, each with a type property and instance properties of a constant and variables. Some properties are initialized and some are optional.
 */
 /*:
 ### Instance Stored Properties
@@ -67,16 +68,18 @@ let president1 = President1()
 
 president1.name = "George Washington"
 
+//president1 = President1()
+
 var term1 = Term1()
 
 term1.start = DateUtils.createDate(year: 1789, month: 4, day: 30)
 term1.end = DateUtils.createDate(year: 1797, month: 3, day: 4)
 /*:
-Above we assign the `president1.name`,  `term1.start` and `term1.end` instance stored property.
+Above we assign the `president1.name`, `term1.start` and `term1.end` instance stored property.
 */
 /*:
 ### Type Stored Properties
-Stored properties that only exist for the class and *not* the instance of a class are type stored properties. You create a type property with the keyword `static`.
+Stored properties that only exist for the class/structure and *not* the instance of a class/structure are type stored properties. You create a type property with the keyword `static`.
 */
 President1.address = "1600 Pennsylvania Ave NW, Washington, DC 20500"
 
@@ -84,7 +87,7 @@ let presidentAddress = President1.address
 
 let presidentialLength = Term1.length
 /*:
-Above we assign the `President1.address` type store property. We are able to do this because it's a variable. The `Term.length` is a constance, therefore we can not assign a new value to it.
+Above we assign the `President1.address` type store property. We are able to do this because it's a variable. The `Term.length` is a constant, therefore we can not assign a new value to it.
 */
 //: > **Experiment**: Uncomment below to see what happens.
 //president1.country = "South"
@@ -95,53 +98,8 @@ Above we assign the `President1.address` type store property. We are able to do 
 
 //term2.start = nil
 /*:
-### Lazy Stored Properties
-Classes and structures are very similar to other data types. Therefore you can have properties that are of a class or structure. There are times when it makes sense to initialize a class or structure whenever you access the property and not durning the initialization of the container class. We can do this lazy initializing with the `lazy` keyword.
-*/
-class Party {
-    
-    var members = [String]()
-    
-    func sayThankYou(president: String) {
-        
-        for member in members {
-            
-            print("Thank you \(member), your president \(president)")
-        }
-    }
-    
-    init() { // initialization explained below
-        
-        print("Party initialzed")
-        
-        members.append("Matt")
-        members.append("Annie")
-        members.append("Samuel")
-        members.append("Jack")
-        members.append("Hudson")
-        members.append("Oliver")
-    }
-}
-
-class President2 {
-
-    lazy var party = Party()
-    
-    var name: String?
-}
-
-let president2 = President2()
-president2.name = "John Adams"
-
-print(president2.name!)
-print(president2.party.members)
-print(president2.party.sayThankYou(president2.name!))
-/*:
-Above we created a `Party` class and a `President2` class which has a stored instance property of type `Party`. `Party` could take a while to initialize. We use the `lazy` keyword to indicate that we want `party` only to be assigned when we access the `party` property of an instance of the `President2` class.
-*/
-/*:
 #### Computed Properties
-Swift provides properties that look and act like stored properties, but they don't store anything, they derive values or accept values to be stored in a different way. These types of properties are called computed properties.
+Swift provides properties that look and act like stored properties, but they don't store anything; they derive values or accept values to be stored in a different way. These types of properties are called *computed properties*.
 */
 class President3 {
 
@@ -183,7 +141,7 @@ class President3 {
             return DateUtils.yearSpan(deathDate!, to: NSDate())
         }
         
-        set {
+        set { // no custom parameter
             
             let nowComps = NSCalendar.currentCalendar().components([.Year, .Month, .Day], fromDate: NSDate())
             
@@ -213,18 +171,18 @@ print("had \(ronald.yearsAlive) years on earth")
 
 print("if alive he would be \(ronald.age) years old")
 /*:
-Above we created a `President3` class with stored properties of `birthDate` and `deathDate` and computed properteis of `yearsAlive`, `diedHowLongAgo`, `age`. Notice how the computed properteis act like proxies for the stored properties. Also notice how a computed property can be read-only as well as the shorhand version of the `set` for the `diedHowLongAgo` computed property.
+Above we created a `President3` class with stored properties of `birthDate` and `deathDate` and computed properties of `yearsAlive`, `diedHowLongAgo`, and `age`. Notice how the computed properteis act like proxies for the stored properties. Also notice how a computed property can be read-only as well as the shorhand version of the `set` for the `diedHowLongAgo` computed property.
 */
 /*:
 ### Property Observers
-
+Swift provides the abiliy to observe changes to properties when values change. The `willSet` method is called just before the property value is set and the `didSet` is called just after the property value is set.
 */
 class ElectoralVote {
     
     static let houseVotes = 435
     static let senateVotes = 100
-    static let dictrictOfColumbisVotes = 3
-    static let maxElectoralVotes = houseVotes + senateVotes + dictrictOfColumbisVotes
+    static let dictrictOfColumbiaVotes = 3
+    static let maxElectoralVotes = houseVotes + senateVotes + dictrictOfColumbiaVotes
     static let electoralVotesNeedToWin = maxElectoralVotes / 2
     
     var count: Int = 0 {
@@ -250,11 +208,11 @@ let electoralVote = ElectoralVote()
 electoralVote.count = 100
 electoralVote.count = 270
 /*:
-
+Above we have a stored property `count` that is using the property observers of `willSet` and `didSet`. `willSet` provides the special `newValue` variable of *what* the property will change to. `didSet` provides both a `oldValue` ad `newValue` variables after the property as been changed.
 */
 /*:
 ## Initializing
-
+Initializers on classes and structures are specials methods that initialize the class or structure.
 */
 class President4 {
     
@@ -270,7 +228,7 @@ struct Term4 {
 }
 /*:
 ### Default Initializer
-
+Both classes and structures data types have default initializers.
 */
 let president4 = President4()
 
@@ -278,16 +236,22 @@ print(president4.name)
 print(president4.state)
 print(president4.party)
 /*:
+Above we create a new instance of class `President4` by using the default initializer.
+*/
+/*:
 ### Structures: Memberwise Initializer
-
+Swift automatically provides structures an initializer with parameters for every variable stored property.
 */
 let startTerm4 = DateUtils.createDate(year: 2004, month: 11, day: 2)
 let endTerm4 = DateUtils.createDate(year: 2008, month: 11, day: 2)
 
 let term4 = Term4(start: startTerm4!, end: endTerm4!)
 /*:
+Above we create a new instance of structure `Term4` by using the initializer memberwise initializer.
+*/
+/*:
 ## The `self` property and Custom Initializers
-
+Custom initializers are initializers created by you for the purpose of supplying values to a class/structure. You use the argument values of the initializer to set properties. If the argument names are the same as the property names, you can use `self` to distinguish between the class/structure and the argument. One important note on custom initializers is that all non-optional stored properties must be initialized.
 */
 class President5 {
     
@@ -295,7 +259,7 @@ class President5 {
     var state: String
     var party: String
     
-    init(name: String, state: String, party: String) {
+    init(name: String, state: String, party: String) { // initializer to set values using "self"
         
         self.name = name
         self.state = state
@@ -308,7 +272,7 @@ struct Term5 {
     var start: NSDate
     var end: NSDate
     
-    init(start: NSDate, end: NSDate) {
+    init(start: NSDate, end: NSDate) { // you can have multiple initializers
         
         self.start = start
         self.end = end
@@ -320,7 +284,7 @@ struct Term5 {
         
         let end = DateUtils.createDate(year: startComps.year + years, month: startComps.month, day: startComps.day)!
         
-        self.init(start: start, end: end)
+        self.init(start: start, end: end) // allowed to call another initialize and need to initialize all non-optional stored properties
     }
 }
 
@@ -335,8 +299,11 @@ print(term5_1.end)
 print(term5_2.start)
 print(term5_2.end)
 /*:
+Above we have class `President5` and structure `Term5`, both with custom initializer using `self` inside the initializer.
+*/
+/*:
 ## Methods
-
+Methods give you the abiliy to provide behavior to your class/structure. Methods are just like functions, but are tied the class/structure and are able to access properties within the class/structure.
 */
 class President6 {
     
@@ -348,16 +315,22 @@ class President6 {
     var state: String!
     var zip: String!
     
+    // custom initializer
+    
     init(firstname: String, lastname: String) {
         
         self.firstname = firstname
         self.lastname = lastname
     }
     
+    // instance method
+    
     func getFullname() -> String {
         
         return firstname + " " + lastname
     }
+    
+    // type method
     
     static func buildFullname(firstname: String, lastname: String) -> String {
         
@@ -376,6 +349,8 @@ class President6 {
         
         return fullname
     }
+    
+    // type method that can be overridden by a subclass... inheritance not cover yet
     
     class func buildAddress(street: String, city: String, state: String, zip: String) -> String {
         
@@ -411,14 +386,17 @@ class President6 {
 }
 /*:
 ### Instance Methods
-
+`President6` has 1 instance method. It has access to instance properties.
 */
 let president6 = President6(firstname: "John", lastname: "Adams")
 
 print(president6.getFullname())
 /*:
+Above we assign an instance of `President6` to a constance and print the return of the instance method `getFullname()`
+*/
+/*:
 ### Type Methods
-
+`President6` has 2 type methods. Type methods do not have access to instance properties.
 */
 president6.street = "1600 Pennsylvania Ave NW"
 president6.city = "Washington"
@@ -433,8 +411,11 @@ let fullname = President6.buildFullname(president6.firstname, lastname: presiden
 
 print("The name of the president is \(fullname)")
 /*:
+Above we call `buildAddress` and `buildFullname` type methods of class `President6` passing in arguments from instance properties.
+*/
+/*:
 ### Working with Parameters
-
+Remember that methods are really functions but tied to
 */
 class President7 {
     
@@ -456,6 +437,9 @@ let president7 = President7()
 
 president7.setFullname(first: "Andrew", last: "Jackson")
 president7.setVpName("Martin", "Van Buren")
+/*:
+
+*/
 /*:
 ### `mutating` value types within instance methods
 
@@ -485,6 +469,9 @@ term7.setTerm(DateUtils.createDate(year: 1833, month: 3, day: 4)!)
 print(term7.start)
 print(term7.end)
 /*:
+
+*/
+/*:
 ### `mutating` your`self` in value types within instance methods
 
 */
@@ -511,6 +498,9 @@ term8.setTerm(term8.end)
 print(term8.start)
 print(term8.end)
 /*:
+
+*/
+/*:
 ## Deinitialization
 
 */
@@ -536,52 +526,8 @@ var president10: President10?
 president10 = President10(name: "John Tyler")
 president10 = nil
 /*:
-## Subscripts
 
 */
-class Presidents {
-    
-    var presidentsByCentury = [Int: [String]]()
-    
-    init () {
-        
-        presidentsByCentury[18] = getPresidentsByCentury(18)
-        presidentsByCentury[19] = getPresidentsByCentury(19)
-        presidentsByCentury[20] = getPresidentsByCentury(20)
-        presidentsByCentury[21] = getPresidentsByCentury(21)
-    }
-    
-    subscript(century: Int, number: Int) -> String? {
-        
-        get {
-            let presidents = presidentsByCentury[century]
-            
-            return presidents![number]
-        }
-        
-        set {
-            var presidents = presidentsByCentury[century]
-            
-            presidents![number] = newValue!
-            
-            presidentsByCentury[century] = presidents
-        }
-    }
-}
-
-let presidents = Presidents()
-
-if let madison = presidents[19, 1] {
-    
-    print("The second president of the 19th century \(madison)")
-}
-
-presidents[21, 0] = "George W. Bush"
-
-if let bush = presidents[21, 0] {
-    
-    print("The first president of the 21th century \(bush)")
-}
 /*:
 ## Identity Operators for Reference Types
 
@@ -602,7 +548,10 @@ if(president10_2_a !== president10_1_b) {
     print("referring to different instance")
 }
 /*:
-**Exercise:** We need to model the set of possible iPhones manufactured. Replace each possible tuple property value with an enumeration that would be appropriate to the current non enumeration value.
+
+*/
+/*:
+**Exercise:**
 */
 
 /*:
@@ -613,8 +562,20 @@ if(president10_2_a !== president10_1_b) {
 **Checkpoint:**
 At this point, ...
 */
-
-
+/*:
+**Keywords to remember:**
+- `class` = defines a Class
+- `struct` = defines a Structure
+- `willSet` =
+- `didSet` =
+- `static` =
+- `init` =
+- `self` =
+- `mutating` =
+- `deinit` =
+- `get` =
+- `set` =
+*/
 /*:
 **Supporting Chapters:**
 - [Classes and Structures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html)
@@ -622,7 +583,6 @@ At this point, ...
 - [Methods](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Methods.html)
 - [Initialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html) ... up to section Class Inheritance and Initialization
 - [Deinitialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Deinitialization.html)
-- [Subscripts](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Subscripts.html)
 */
 /*:
 [Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)

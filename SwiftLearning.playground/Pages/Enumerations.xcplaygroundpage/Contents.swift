@@ -113,7 +113,7 @@ Above we have two enumerations. `GradeNumber` of type `Int` and `GradeLetter` of
 */
 /*:
 ### Initializing
-When declaring enumerations what accept raw values, an initializer is automatically created. The initializer has a parameter called `rawValue` and returns an optional. The initializer returns an optional because the value that you can pass could be an invalid value for the case.
+When declaring enumerations that accept raw values, an initializer is automatically created. The initializer has a parameter called `rawValue` and returns an optional. The initializer returns an optional because the value that you can pass could be an invalid value for the case.
 */
 let scienceGrade = GradeNumber(rawValue: 2)
 

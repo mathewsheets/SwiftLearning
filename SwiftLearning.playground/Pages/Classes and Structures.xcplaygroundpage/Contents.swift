@@ -392,11 +392,11 @@ let president6 = President6(firstname: "John", lastname: "Adams")
 
 print(president6.getFullname())
 /*:
-Above we assign an instance of `President6` to a constance and print the return of the instance method `getFullname()`
+Above we assign an instance of `President6` to a constant and print the return of the instance method `getFullname()`
 */
 /*:
 ### Type Methods
-`President6` has 2 type methods. Type methods do not have access to instance properties.
+`President6` has 2 type methods. Type methods do not have access to instance properties. You use the name of the class/structure then the method name to call a type method
 */
 president6.street = "1600 Pennsylvania Ave NW"
 president6.city = "Washington"
@@ -415,7 +415,7 @@ Above we call `buildAddress` and `buildFullname` type methods of class `Presiden
 */
 /*:
 ### Working with Parameters
-Remember that methods are really functions but tied to
+Remember that methods are really functions but tied to either a class/structure or an instance of a class/structure and therefore have access to properties. One important note, type properties don't have access to instance properties, but instance properties can access type properties.
 */
 class President7 {
     
@@ -564,8 +564,10 @@ At this point, ...
 */
 /*:
 **Keywords to remember:**
-- `class` = defines a Class
-- `struct` = defines a Structure
+- `class` = 
+- `struct` =
+- `get` =
+- `set` =
 - `willSet` =
 - `didSet` =
 - `static` =
@@ -573,8 +575,6 @@ At this point, ...
 - `self` =
 - `mutating` =
 - `deinit` =
-- `get` =
-- `set` =
 */
 /*:
 **Supporting Chapters:**

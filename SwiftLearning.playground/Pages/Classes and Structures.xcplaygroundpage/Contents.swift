@@ -148,8 +148,7 @@ class President3 {
             deathDate = DateUtils.createDate(year: nowComps.year - newValue, month: nowComps.month, day: nowComps.day - 1) // subtract 1 so we don't end on same date
         }
     }
-    
-    
+
     var age: Int { // Read-Only Computed Properties, allowed to omit the "get"
         
         guard birthDate != nil else {
@@ -441,66 +440,6 @@ president7.setVpName("Martin", "Van Buren")
 
 */
 /*:
-### `mutating` value types within instance methods
-
-*/
-struct Term7 {
-    
-    var start: NSDate!
-    var end: NSDate!
-    
-    mutating func setTerm(start: NSDate) {
-        
-        self.start = start
-        
-        let startComps = NSCalendar.currentCalendar().components([.Year, .Month, .Day], fromDate: start)
-        
-        self.end = DateUtils.createDate(year: startComps.year + 4, month: 3, day: 4)
-    }
-}
-
-var term7 = Term7(start: DateUtils.createDate(year: 1829, month: 3, day: 4), end: DateUtils.createDate(year: 1833, month: 3, day: 4))
-
-print(term7.start)
-print(term7.end)
-
-term7.setTerm(DateUtils.createDate(year: 1833, month: 3, day: 4)!)
-
-print(term7.start)
-print(term7.end)
-/*:
-
-*/
-/*:
-### `mutating` your`self` in value types within instance methods
-
-*/
-struct Term8 {
-    
-    var start: NSDate!
-    var end: NSDate!
-    
-    mutating func setTerm(start: NSDate) {
-        
-        let startComps = NSCalendar.currentCalendar().components([.Year, .Month, .Day], fromDate: start)
-        
-        self = Term8(start: start, end: DateUtils.createDate(year: startComps.year + 4, month: 3, day: 4))
-    }
-}
-
-var term8 = Term8(start: DateUtils.createDate(year: 1829, month: 3, day: 4), end: DateUtils.createDate(year: 1833, month: 3, day: 4))
-
-print(term8.start)
-print(term8.end)
-
-term8.setTerm(term8.end)
-
-print(term8.start)
-print(term8.end)
-/*:
-
-*/
-/*:
 ## Deinitialization
 
 */
@@ -529,28 +468,6 @@ president10 = nil
 
 */
 /*:
-## Identity Operators for Reference Types
-
-*/
-let president10_1_a = President10(name: "John Tyler")
-
-let president10_1_b = president10_1_a
-
-let president10_2_a = President10(name: "John Tyler")
-
-if(president10_1_a === president10_1_b) {
-    
-    print("referring to same instance")
-}
-
-if(president10_2_a !== president10_1_b) {
-    
-    print("referring to different instance")
-}
-/*:
-
-*/
-/*:
 **Exercise:**
 */
 
@@ -566,14 +483,13 @@ At this point, ...
 **Keywords to remember:**
 - `class` = 
 - `struct` =
+- `static` = `class`
 - `get` =
 - `set` =
 - `willSet` =
 - `didSet` =
-- `static` =
 - `init` =
 - `self` =
-- `mutating` =
 - `deinit` =
 */
 /*:

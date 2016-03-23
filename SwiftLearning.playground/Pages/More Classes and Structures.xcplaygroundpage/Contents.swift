@@ -5,13 +5,12 @@
 # More Classes & Structures
 */
 /*:
-> **Session Overview:**
-> NEED
+> **Session Overview:** Last session we learned about the main concepts of classes and structures. This session explains other aspects of classes and structures that you will leverage to make your programs more readable and expressive.
 */
 import Foundation
 /*:
 ## Convenient Initializing
-
+Initializers are used to initialize your class/structure and to initialize the stored properties. The special `init` method is used as the initializer and should be defined with parameters that will initialize your stored properties. Swift provides a way to declare another type of initializer that could be more convenient. These `convenience` initializer must *delegate* to another `convenience` initializer or to an actual `init`.
 */
 class President {
     
@@ -35,19 +34,19 @@ class President {
     
     convenience init() {
         
-        self.init(firstName: "", lastName: "", party: "", age: 0)
-//        self.init(firstName: "", lastName: "")
+        self.init(firstName: "", lastName: "", party: "", age: 0) // delegate to init
+//        self.init(firstName: "", lastName: "") // delegate to another convenience init
     }
 }
 
 var none = President()
 var abe = President(firstName: "Abraham", lastName: "Lincoln")
 /*:
-
+Above we created a `class` President that has 1 initializer defined to initialize all the stored properties and 2 `convenience` initializers to give the option to create an instance of a President with just first and last names or with no values.
 */
 /*:
 ## Optional Chaining
-
+You will create programs that have properties that have not been initialized. This means that you need to check if the property does have a value and then access the properties or call methods on that property. Optional chaining provides you the ability to access or call methods of a property contained in a class/structure without having to check for `nil`.
 */
 struct Term {
 
@@ -74,11 +73,11 @@ class President1 {
     }
 }
 /*:
-
+Above we have defined a structure `Term` and class `President1`. President1 has an optional property `term` of type `Term`.
 */
 /*:
 ### When to use it
-
+Below we have the typical way in which we would check to see if we can get the date range of President Kennedy's term, by checking if `term` in not `nil`.
 */
 let kennedy = President1(firstName: "John", lastName: "Kennedy")
 if kennedy.term != nil {
@@ -87,33 +86,30 @@ if kennedy.term != nil {
     print("President Kennedy's term was \(range)")
 }
 /*:
-
-*/
-/*:
 ### Used with Properties
-
+Optional chaining lets us access a potential `nil` property, and access properties down the chain.
 */
 if let termStart = kennedy.term?.start, let termEnd = kennedy.term?.end {
 
     print("President Kennedy's term was \(termStart) - \(termEnd)")
 }
 /*:
-
+Above we leverage optional chaining, by using the question mark symbol directly after the property that could be `nil`, to access properties of that instance. We only print the term if both `termStart` and `termEnd` are not `nil`.
 */
 /*:
 ### Used with Methods
-
+We can also used optional chaining to call methods on a potentially `nil` property.
 */
 if let termRange = kennedy.term?.dateRange() {
 
     print("President Kennedy's term was \(termRange)")
 }
 /*:
-
+Above we call the `dateRange` method on an instance of the property `term` (an instance of class `Term`). If `term` is `nil`, the `dateRange` method is never called and with the rules of option binding, the print statement is not executed.
 */
 /*:
 ## `mutating` value types within instance methods
-
+Properties within value types in Swift (Enumerations & Structures) cannot be modified from within instance methods. You can change this behavior by placing the `mutating` keyword in front of the method name indicating that the method will mutate (change property values) the current instance.
 */
 struct Term2 {
 
@@ -140,11 +136,11 @@ term2.setTerm(DateUtils.createDate(year: 1833, month: 3, day: 4)!)
 print(term2.start)
 print(term2.end)
 /*:
-
+Above we created a `Term2` class that defines a mutating instance method `setTerm`, that accepts a date as an argument but also changes the property values of `start` and `end`.
 */
 /*:
 ## `mutating` your`self` in value types within instance methods
-
+`mutating` instance methods can even change what `self` refers to.
 */
 struct Term3 {
     
@@ -169,7 +165,7 @@ term3.setTerm(term3.end)
 print(term3.start)
 print(term3.end)
 /*:
-
+Above we created another class `Term3` with a mutating instance method `setTerm`, that accepts a date as an argument, but this time the implicit self property is assigned an entirely new instance.
 */
 /*:
 ## Lazy Stored Properties
@@ -218,7 +214,7 @@ Above we created a `Party` class and a `President2` class which has a stored ins
 */
 /*:
 ## Subscripts
-
+Subscripts within classes/structures provide a shorthand way to access/mutate member elements of collection types that your class/structure defines.
 */
 class Presidents {
     
@@ -264,11 +260,11 @@ if let bush = presidents[21, 0] {
     print("The first president of the 21th century was \(bush)")
 }
 /*:
-
+Above we created a `Presidents` class that has a property that stores presidents by the century in which they stared their presidency. We also define a `subscript` accepting as arguments, century and number, both `Int`s and returning a `String`. We provide both the `get` and `set` subscript methods to access and mutate the `presidentsByCentury` property.
 */
 /*:
 ## `strong`, `weak`, `unowned`, oh my!
-
+Swift provides three types of reference types. We have already worked with the `strong` reference type; it's the default reference type with assigning an instance of a reference type to a constance/variable. The other two `weak` and `unowned` are used to prevent *strong reference cycles* within your instance.
 */
 class President3 {
 
@@ -280,33 +276,49 @@ class President3 {
         
         self.name = name
     }
+    
+    deinit {
+        
+        print("bye bye president")
+    }
 }
 
-struct Term4 {
+class Term4 {
 
-    weak var president: President3? // Term4 holds a weak reference to President3
+    weak var president: President3? // Term4 holds a weak reference to President3. weak indicates that president could be nil
 
     init(president: President3) {
         
         self.president = president
+    }
+    
+    deinit {
+        
+        print("bye bye term")
     }
 }
 
 class WhiteHouse {
     
-    unowned var president: President3 // WhiteHouse holds an unowned reference to President3
+    unowned var president: President3 // WhiteHouse holds an unowned reference to President3. unowned indicates that president will never be nil
     
     init(president: President3) {
         
         self.president = president
     }
+    
+    deinit {
+        
+        print("bye bye whitehouse")
+    }
 }
 
-let roosevelt = President3(name: "Theodore Roosevelt")
-let whiteHouse = WhiteHouse(president: roosevelt)
-let term = Term4(president: roosevelt)
+var roosevelt: President3? = President3(name: "Theodore Roosevelt")
+roosevelt!.whiteHouse = WhiteHouse(president: roosevelt!)
+roosevelt!.term = Term4(president: roosevelt!)
+roosevelt = nil
 /*:
-
+Above we created `President3`, `Term4`, and `WhiteHouse` classes. `President3` stores an instance of `WhiteHouse` and `Term4`. `Term4` stores an instance to `President3` and `WhiteHouse` stores an instance 'President3'. Without `weak` and `unowned`, the `deinit`s would never be called and hence creating a memory leak.
 */
 /*:
 ## Identity Operators for Reference Types
@@ -331,11 +343,18 @@ if(president10_2_a !== president10_1_b) {
 
 */
 /*:
+## Control access with `public`, `internal`, `private`
+
+*/
+/*:
+
+*/
+/*:
 **Exercise:**
 */
 
 /*:
->> **Constraints:**
+**Constraints:**
 */
 
 /*:
@@ -358,7 +377,6 @@ At this point, ...
 - [Initialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html)
 - [Optional Chaining](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html)
 - [ARC](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html)
-
 */
 /*:
 [Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)

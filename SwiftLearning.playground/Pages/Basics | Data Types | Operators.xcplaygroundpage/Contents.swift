@@ -289,18 +289,8 @@ Operators are symbols that execute specific operations on one, two, or three ope
 */
 /*:
 ## Unary Operators
-Unary operators operate on one target. Only the increment (`++`) and decrement operators (`--`) can be placed before or after the target, but the side effects are different.
+Unary operators operate on one target. The increment (`++`) and decrement operators (`--`) are no longer suppported in Swift.
 */
-/*:
-### Increment and Decrement Operators
-Operators such as the increment and decrement operators are shortcut operators for the binary binary operator of adding or subtracting 1 to a number. The increment and decrement operators can be placed before (a.k.a *prefix*) the target which will execute the operation before returning the result or after (a.k.a *postfix*) the target which will execute the operation after the result is returned.
-*/
-var i = 0
-// increment prefix
-print(++i)
-// decrement postfix
-print(i--)
-print(i)
 /*:
 ### Unary Minus Operators
 Using the unary minus operator, you can switch the sign (positive or negative) of a number.
@@ -432,7 +422,7 @@ The closed range operator `a...b` defines a range starting with `a`, includes al
 */
 var showClosedRange = 0
 for closedRangeIndex in 1...10 {
-    showClosedRange++
+    showClosedRange += 1
 }
 print(showClosedRange)
 /*:
@@ -441,18 +431,18 @@ The half-open range operator `a..<b` defines a range starting with `a`, includes
 */
 var showHalfOpenRange = 0
 for halfOpenRangeIndex in 1..<10 {
-    showHalfOpenRange++
+    showHalfOpenRange += 1
 }
 print(showHalfOpenRange)
 /*:
 **Exercise:**
 Your a big tipper! When ever you go out to eat you tip 20% of the bill and never tip less than $3. Create a playground that prints the tip amount and the total amount. Within the playground, you should be able to change the bill to see how the tip amount varies.
->> **Example Output:**
+**Example Output:**
 * `What is the bill? $x.xx`
 * `What is the tip percentage? x`
 * `The tip is $x.xx`
 * `The total is $x.xx`
->> **Constraints:**
+**Constraints:**
 * Don't use the `String(format:, _, _)` initilizer
 * Use the remainder operator while creating the string
 * Use the ternary conditional operator
@@ -472,12 +462,12 @@ At this point, you should be able to describe in detail the purpose of each data
 - `nil` = assign a constant or variable as valueless
 */
 /*:
-**Supporting Chapters:**
-- [About Swift](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
-- [A Swift Tour](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
-- [The Basics](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html)
-- [Basic Operators](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html)
-- [The Basics: Optionals](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330)
+**Supporting Material:**
+- [Guide: About Swift](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
+- [Guide: A Swift Tour](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
+- [Guide: The Basics](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html)
+- [Guide: Basic Operators](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html)
+- [Guide: The Basics: Optionals](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330)
 - [Video: Swift Playgrounds](https://developer.apple.com/videos/play/wwdc2014-408/)
 - [Video: Authoring Rich Playgrounds](https://developer.apple.com/videos/play/wwdc2015-405/)
 - [Video: Introduction to Swift](https://developer.apple.com/videos/play/wwdc2014-402/)

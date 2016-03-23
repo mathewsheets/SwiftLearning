@@ -68,8 +68,6 @@ let president1 = President1()
 
 president1.name = "George Washington"
 
-//president1 = President1()
-
 var term1 = Term1()
 
 term1.start = DateUtils.createDate(year: 1789, month: 4, day: 30)
@@ -250,7 +248,7 @@ Above we create a new instance of structure `Term4` by using the initializer mem
 */
 /*:
 ## The `self` property and Custom Initializers
-Custom initializers are initializers created by you for the purpose of supplying values to a class/structure. You use the argument values of the initializer to set properties. If the argument names are the same as the property names, you can use `self` to distinguish between the class/structure and the argument. One important note on custom initializers is that all non-optional stored properties must be initialized.
+Custom initializers are initializers created by you for the purpose of supplying values to a class/structure. You use the argument values of the initializer to set properties. If the argument names are the same as the property names, you can use the implicit `self` property to distinguish between the class/structure and the argument. One important note on custom initializers is that all non-optional stored properties must be initialized.
 */
 class President5 {
     
@@ -437,11 +435,11 @@ let president7 = President7()
 president7.setFullname(first: "Andrew", last: "Jackson")
 president7.setVpName("Martin", "Van Buren")
 /*:
-
+Above are two methods, each mutating a name, either the president's name or vice president's name. All the rules we learned about functions in the [Functions](Functions) session apply to methods.
 */
 /*:
 ## Deinitialization
-
+Every class/structure has an `init`ializer and also an `deinit`ializer. The only purpose for the deinitializer is to do any cleanup tasks just before the memory of the class/structure becomes unreferencable.
 */
 class President10 {
     
@@ -465,32 +463,35 @@ var president10: President10?
 president10 = President10(name: "John Tyler")
 president10 = nil
 /*:
-
+Above we have a print statement in the `init` and the `deinit` to show that the `deinit` will get called when the instance is no longer accessible.
 */
 /*:
-**Exercise:**
+**Exercise:** Create two classes `Dog` and `Cat`. Each will have properties of `bread`, `color`, `age` and 'name'. They also have methods of `barking` (dog's) only, `meowing` (cats only), `eating`, `sleeping` and `playing`, and `chase`.
 */
-
 /*:
->> **Constraints:**
+**Constraints:** You must also have:
+* Initializr & Deinitializr
+* Computed Properties
+* Property Observers
 */
-
 /*:
 **Checkpoint:**
-At this point, ...
+At this point, you should be able to extend the Swift language by providing your own `class` or `struct`ure and create instances of your class/structure using properties and methods.
 */
 /*:
 **Keywords to remember:**
-- `class` = 
-- `struct` =
-- `static` = `class`
-- `get` =
-- `set` =
-- `willSet` =
-- `didSet` =
-- `init` =
-- `self` =
-- `deinit` =
+- `class` = The declaration of a class
+- `struct` = The declaration of a structure
+- `static` = And also `class` (used for inheritance) indicates a type property or method
+- `get` = The accessor method of a computed property
+- `set` = The mutator method of a computed property
+- `willSet` = A property observer method; called before the property is assigned the new value
+- `didSet` = A property observer method; called after the property was assigned the new value
+- `newValue` = The implicit variable used within the `get` and `willSet` property methods
+- `oldValue` = The implicit variable used within the `didSet` property observer method
+- `init` = Indicates the block of code to initialize a class/structure
+- `self` = Used within the initializer or method to reference the same class/structure the code is executing in
+- `deinit` = Indicates the block of code to perform cleanup tasks before the class/structure is unreferencable
 */
 /*:
 **Supporting Chapters:**

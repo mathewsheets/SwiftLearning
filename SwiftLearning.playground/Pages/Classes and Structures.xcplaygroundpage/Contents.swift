@@ -6,7 +6,7 @@
 */
 /*:
 > **Session Overview:**
-> The Swift language features that we learned in the previous sessions dealt with simple data types. We learned about 'Int's, 'String's, 'Bool's that allowed us to store values with the correct data type. We can group a small number of data type values together as an atomic unit using tuples and we can store data type values in containers that will enabled us to collect data throughout our programs. Swift also provides us the ability to extend Swift itself by creating custom data types in the form of Classes and Structures. These custom data type in their simplest form are really composite data types, data types that contain other data types.
+> The Swift language features that we learned in the previous sessions dealt with simple data types. We learned about 'Int's, 'String's, 'Bool's that allowed us to store values with the correct data type. We can group a small number of data type values together as an atomic unit using tuples and we can store data type values in containers that will enabled us to collect data throughout our programs. Swift also provides us the ability to extend Swift itself by creating custom data types in the form of Classes and Structures. These custom data types in their simplest form are really composite data types, data types that contain other data types.
 */
 import Foundation
 /*:
@@ -225,7 +225,7 @@ struct Term4 {
 }
 /*:
 ### Default Initializer
-Both classes and structures data types have default initializers.
+Both classes and structures data types have default initializers. The default initializer is simply `()`, an empty pair of parentheses.
 */
 let president4 = President4()
 
@@ -233,7 +233,7 @@ print(president4.name)
 print(president4.state)
 print(president4.party)
 /*:
-Above we create a new instance of class `President4` by using the default initializer.
+Above we create a new instance of class `President4` by using the default initializer of `()`.
 */
 /*:
 ### Structures: Memberwise Initializer
@@ -466,13 +466,14 @@ president10 = nil
 Above we have a print statement in the `init` and the `deinit` to show that the `deinit` will get called when the instance is no longer accessible.
 */
 /*:
-**Exercise:** Create two classes `Dog` and `Cat`. Each will have properties of `bread`, `color`, `age` and 'name'. They also have methods of `barking` (dog's) only, `meowing` (cats only), `eating`, `sleeping` and `playing`, and `chase`.
+**Exercise:** Create two classes `Dog` and `Cat`. Each will have properties of `breed`, `color`, `age` and `name`. They also have methods of `barking` (dog's) only, `meowing` (cats only), `eating`, `sleeping`, `playing`, and `chase`.
 */
 /*:
 **Constraints:** You must also have:
-* Initializr & Deinitializr
+* Initializer & Deinitializer
 * Computed Properties
 * Property Observers
+* Method body is up to you, but your method signatures need parameter(s)
 */
 /*:
 **Checkpoint:**

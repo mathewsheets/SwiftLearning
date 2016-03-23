@@ -5,12 +5,12 @@
 # More Classes & Structures
 */
 /*:
-> **Session Overview:** Last session we learned about the main concepts of classes and structures. This session explains other aspects of classes and structures that you will leverage to make your programs more readable and expressive.
+> **Session Overview:** Last session we learned about the main features of classes and structures. This session explains other features of classes and structures that you will leverage to make your programs more useable and readable.
 */
 import Foundation
 /*:
 ## Convenient Initializing
-Initializers are used to initialize your class/structure and to initialize the stored properties. The special `init` method is used as the initializer and should be defined with parameters that will initialize your stored properties. Swift provides a way to declare another type of initializer that could be more convenient. These `convenience` initializer must *delegate* to another `convenience` initializer or to an actual `init`.
+Initializers are used to initialize your class/structure. The special `init` method is used as the initializer and should be defined with parameters that will initialize your stored properties. Swift provides a way to declare another type of initializer that could be more *convenient*. These `convenience` initializers must *delegate* to another `convenience` initializer or to an actual `init`.
 */
 class President {
     
@@ -73,7 +73,7 @@ class President1 {
     }
 }
 /*:
-Above we have defined a structure `Term` and class `President1`. President1 has an optional property `term` of type `Term`.
+Above we have defined a structure `Term` and class `President1`. `President1` has an optional property `term` of type `Term`.
 */
 /*:
 ### When to use it
@@ -87,25 +87,25 @@ if kennedy.term != nil {
 }
 /*:
 ### Used with Properties
-Optional chaining lets us access a potential `nil` property, and access properties down the chain.
+Optional chaining lets us access a potential `nil` property, and access properties *potentially* down a chain of properties.
 */
-if let termStart = kennedy.term?.start, let termEnd = kennedy.term?.end {
+if let termStart = kennedy.term?.start, let termEnd = kennedy.term?.end {  // combining option binding in one `if`
 
     print("President Kennedy's term was \(termStart) - \(termEnd)")
 }
 /*:
-Above we leverage optional chaining, by using the question mark symbol directly after the property that could be `nil`, to access properties of that instance. We only print the term if both `termStart` and `termEnd` are not `nil`.
+Above we leverage optional chaining, by using the question mark symbol directly after the property that could be `nil`, to access properties of that instance. We only print the date range if both `termStart` and `termEnd` are not `nil`.
 */
 /*:
 ### Used with Methods
-We can also used optional chaining to call methods on a potentially `nil` property.
+We can also use optional chaining to call methods on a potentially `nil` property.
 */
 if let termRange = kennedy.term?.dateRange() {
 
     print("President Kennedy's term was \(termRange)")
 }
 /*:
-Above we call the `dateRange` method on an instance of the property `term` (an instance of class `Term`). If `term` is `nil`, the `dateRange` method is never called and with the rules of option binding, the print statement is not executed.
+Above we call the `dateRange()` method on an instance of the property `term` (an instance of class `Term`). If `term` is `nil`, the `dateRange()` method is never called and with the rules of option binding, the print statement is not executed.
 */
 /*:
 ## `mutating` value types within instance methods
@@ -136,7 +136,7 @@ term2.setTerm(DateUtils.createDate(year: 1833, month: 3, day: 4)!)
 print(term2.start)
 print(term2.end)
 /*:
-Above we created a `Term2` class that defines a mutating instance method `setTerm`, that accepts a date as an argument but also changes the property values of `start` and `end`.
+Above we created a `Term2` structure that defines a mutating instance method `setTerm`, that accepts a date as an argument but also changes the property values of `start` and `end`.
 */
 /*:
 ## `mutating` your`self` in value types within instance methods
@@ -165,11 +165,11 @@ term3.setTerm(term3.end)
 print(term3.start)
 print(term3.end)
 /*:
-Above we created another class `Term3` with a mutating instance method `setTerm`, that accepts a date as an argument, but this time the implicit self property is assigned an entirely new instance.
+Above we created another structure, `Term3` with a mutating instance method `setTerm`, that accepts a date as an argument, but this time the implicit self property is assigned an entirely new instance.
 */
 /*:
 ## Lazy Stored Properties
-Classes and structures are very similar to other data types. Therefore you can have properties that are of a class or structure. There are times when it makes sense to initialize a class or structure whenever you access the property and not durning the initialization of the container class. We can do this lazy initializing with the `lazy` keyword.
+Classes and structures are very similar to other data types. Therefore you can have properties that are of a class or structure type. There are times when it makes sense to initialize a class or structure whenever you access the property and not durning the initialization of the container class. We can do this lazy initializing with the `lazy` keyword.
 */
 class Party {
     
@@ -214,7 +214,7 @@ Above we created a `Party` class and a `President2` class which has a stored ins
 */
 /*:
 ## Subscripts
-Subscripts within classes/structures provide a shorthand way to access/mutate member elements of collection types that your class/structure defines.
+Subscripts within classes/structures provide a shorthand way to access/mutate member elements of collection types that your class/structure stores.
 */
 class Presidents {
     
@@ -260,11 +260,11 @@ if let bush = presidents[21, 0] {
     print("The first president of the 21th century was \(bush)")
 }
 /*:
-Above we created a `Presidents` class that has a property that stores presidents by the century in which they stared their presidency. We also define a `subscript` accepting as arguments, century and number, both `Int`s and returning a `String`. We provide both the `get` and `set` subscript methods to access and mutate the `presidentsByCentury` property.
+Above we created a `Presidents` class that has a property that stores presidents by the century in which they started their presidency. We also define a `subscript` method accepting as arguments, century and number, both `Int`s and returning a `String`. We provide both the `get` and `set` subscript methods to access and mutate the `presidentsByCentury` property.
 */
 /*:
 ## `strong`, `weak`, `unowned`, oh my!
-Swift provides three types of reference types. We have already worked with the `strong` reference type; it's the default reference type with assigning an instance of a reference type to a constance/variable. The other two `weak` and `unowned` are used to prevent *strong reference cycles* within your instance.
+Swift provides three types of reference types. We have already worked with the `strong` reference type; it's the default reference type when assigning an instance of a reference type to a constant/variable. The other two `weak` and `unowned` are used to prevent *strong reference cycles* within your instance.
 */
 class President3 {
 
@@ -318,11 +318,11 @@ roosevelt!.whiteHouse = WhiteHouse(president: roosevelt!)
 roosevelt!.term = Term4(president: roosevelt!)
 roosevelt = nil
 /*:
-Above we created `President3`, `Term4`, and `WhiteHouse` classes. `President3` stores an instance of `WhiteHouse` and `Term4`. `Term4` stores an instance to `President3` and `WhiteHouse` stores an instance 'President3'. Without `weak` and `unowned`, the `deinit`s would never be called and hence creating a memory leak.
+Above we created `President3`, `Term4`, and `WhiteHouse` classes. `President3` stores an instance of `WhiteHouse` and `Term4`. `Term4` stores an instance to `President3` and `WhiteHouse` stores an instance 'President3'. Without `weak` and `unowned`, the `deinit`s would never be called therefore creating a memory leak.
 */
 /*:
 ## Identity Operators for Reference Types
-
+Identity operators are used to determine if two instances of the same class refer to the same location in memory; they are in fact the same instance. Identity operators for reference types are `===` three equal symbols or `!==` exclamation point and two equal symbols. This is not to be confussed with equatable operators `==` and `!=`, explained in [Protocols](Protocols), which typically compare the actual property values in each instance.
 */
 let president10_1_a = President(firstName: "John", lastName: "Tyler")
 
@@ -340,36 +340,64 @@ if(president10_2_a !== president10_1_b) {
     print("referring to different instance")
 }
 /*:
-
+Above we have two instances of the `President` class, both with the same first and last name. We assign the first `President` instance to another constant and compare if they are the exact same instance. The second instance is compared to the first to prove that they are not the same instance.
 */
 /*:
 ## Control access with `public`, `internal`, `private`
+Swift provides three ways to control what is visible to other classes. The `public` keyword marks the class/member visible outside the module. The `internal` keyword marks the class/member visible only to inside the module. The `private` keyword marks the class/member visible to only the class itself. The default access is `internal`. You need to explicitly set a class/member to `public` for the class/member to be visible outside the module. Access control can be applied to properties, function, custom types and their properties and methods.
+*/
+public class Congress {             // explicitly public class
+    
+    public var members: [String]?   // explicitly public variable
+    var date: NSDate?               // implicitly internal variable
+    private var leader: String?     // explicitly private variable
+}
 
+class Senate {                      // implicitly internal class
+
+    internal var members: [String]? // explicitly internal variable
+    private var leader: String?     // explicitly private variable
+}
+
+private class SenateMember {        // explicitly private class
+
+    var firstName: String?          // implicitly private variable
+    var lastName: String?           // implicitly private variable
+    
+    private func name() -> String { // explicitly private function
+    
+        return "\(firstName) \(lastName)"
+    }
+}
+/*:
+Above we have created 3 classes showing what control access rules are allowed to set and what is explicitly and implicitly applied.
 */
 /*:
-
+**Exercise:** Build upon your `Dog` and `Cat` classes in the previous exercise by applying the appropriate access control for each class/class member. Add a `Owner` class that contains a collection of `Dog` instances and `Cat` instances. Have your `Dog` and `Cat` hold the correct reference type to an `Owner` instance. The `Ower` property of the `Cat` instance reference optional. Provide a `subscript` to interact with your `Dog` and `Cat` instances.
 */
-/*:
-**Exercise:**
-*/
-
 /*:
 **Constraints:**
+- Use `weak`
+- Use `unowned`
+- Use `subscript`
+- Create a `convenience` initializer for creating your `Dog` and `Cat` instance
 */
-
 /*:
 **Checkpoint:**
-At this point, ...
+At this point, we learned about other features that classes/structures support such as lazy initialization of properties and subscripts to interact with classes/structures in a collection type way. We also learned about how you can change property values in value types within the instance as well as testing if two instances are identical. Finally we learned how to avoid memory leaks by using the correct reference type and how to leverage the access controls for properties, functions, classes and class members. 
 */
 
 /*:
 **Keywords to remember:**
-- `convenience` =
-- `lazy` =
-- `subscript` =
-- `mutating` =
-- `weak` =
-- `unowned` =
+- `convenience` = define an initializer that delegates the initialization to other initializers
+- `lazy` = define a stored property to be initialized when the property is first accessed
+- `subscript` = provide the ability to access/mutate a class/structure with subscripts as in `[5]`
+- `mutating` = allowing a value type instance method to change properties within the instance
+- `weak` = defining a optional stored property as storing a weak reference to avoid *strong reference cycles*
+- `unowned` = defining a non optional stored property as storing an unowned reference to avoid *strong reference cycles*
+- `public` = marks the class/member visible outside the module
+- `internal` = marks the class/member visible only to inside a module
+- `private` = marks the class/member visible to only the class
 */
 /*:
 **Supporting Chapters:**
@@ -377,6 +405,7 @@ At this point, ...
 - [Initialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html)
 - [Optional Chaining](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html)
 - [ARC](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html)
+- [Access Control](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AccessControl.html)
 */
 /*:
 [Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)

@@ -48,26 +48,25 @@ Above we created a `class` President that has 1 initializer defined to initializ
 
 let num = Int("five")
 
-//class Prez {
+class Prez {
 
-//    var age: Int
-//
-//    init(age: String) {
-//        if let ageNum = Int(age) {
-//            self.age = ageNum
-//        }
-//    }
-    
-//    init?(age: String) {
-//        if let ageNum = Int(age) {
-//            self.age = ageNum
-//        } else {
-//            return nil
-//        }
-//    }
-//}
+    var age: Int
 
-//let prez = Prez(age: "fifty")
+    init?(age: String) {
+        if let ageNum = Int(age) {
+            self.age = ageNum
+        } else {
+            return nil
+        }
+    }
+}
+
+let prez = Prez(age: "fifty")
+if prez != nil {
+    print(prez!.age)
+} else {
+    print("prez didn't get initialized")
+}
 /*:
 ## Optional Chaining
 You will create programs that have properties that have not been initialized. This means that you need to check if the property does have a value and then access the properties or call methods on that property. Optional chaining provides you the ability to access or call methods of a property contained in a class/structure without having to check for `nil`.

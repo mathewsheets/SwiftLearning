@@ -244,7 +244,7 @@ var index = 0
 while (index < 5) {
     
     print(index)
-    index++
+    index += 1
 }
 //: The above `while` loop statement evaluates `index < 5`, if the result is `true` looping continues, if `false` looping ends.
 /*:
@@ -255,7 +255,7 @@ index = 0
 repeat {
 
     print(index)
-    index++
+    index += 1
 } while (index < 5)
 //: The above `repeat-while` loop statement executes the code block first then evaluates `index < 5`, if the result is `true` looping continues, if `false` looping ends.
 /*:
@@ -274,7 +274,7 @@ The `continue` statement tells a loop to stop and start again at the beginning o
 index = 0
 repeat {
     
-    index++
+    index += 1
     
     if index == 3 {
         continue
@@ -295,7 +295,7 @@ A `break` in a loop exits the loop.
 index = 0
 repeat {
     
-    index++
+    index += 1
     
     if index == 3 {
         break

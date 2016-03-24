@@ -44,6 +44,30 @@ var abe = President(firstName: "Abraham", lastName: "Lincoln")
 /*:
 Above we created a `class` President that has 1 initializer defined to initialize all the stored properties and 2 `convenience` initializers to give the option to create an instance of a President with just first and last names or with no values.
 */
+// TODO Failable Initializers
+
+let num = Int("five")
+
+//class Prez {
+
+//    var age: Int
+//
+//    init(age: String) {
+//        if let ageNum = Int(age) {
+//            self.age = ageNum
+//        }
+//    }
+    
+//    init?(age: String) {
+//        if let ageNum = Int(age) {
+//            self.age = ageNum
+//        } else {
+//            return nil
+//        }
+//    }
+//}
+
+//let prez = Prez(age: "fifty")
 /*:
 ## Optional Chaining
 You will create programs that have properties that have not been initialized. This means that you need to check if the property does have a value and then access the properties or call methods on that property. Optional chaining provides you the ability to access or call methods of a property contained in a class/structure without having to check for `nil`.
@@ -325,10 +349,9 @@ Above we created `President3`, `Term4`, and `WhiteHouse` classes. `President3` s
 Identity operators are used to determine if two instances of the same class refer to the same location in memory; they are in fact the same instance. Identity operators for reference types are `===` three equal symbols or `!==` exclamation point and two equal symbols. This is not to be confussed with equatable operators `==` and `!=`, explained in [Protocols](Protocols), which typically compare the actual property values in each instance.
 */
 let president10_1_a = President(firstName: "John", lastName: "Tyler")
+let president10_2_a = President(firstName: "John", lastName: "Tyler")
 
 let president10_1_b = president10_1_a
-
-let president10_2_a = President(firstName: "John", lastName: "Tyler")
 
 if(president10_1_a === president10_1_b) {
     

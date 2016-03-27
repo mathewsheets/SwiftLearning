@@ -10,7 +10,7 @@
 import Foundation
 /*:
 ## Convenient Initializing
-Initializers are used to initialize your class/structure. The special `init` method is used as the initializer and should be defined with parameters that will initialize your stored properties. Swift provides a way to declare another type of initializer that could be more *convenient*. These `convenience` initializers must *delegate* to another `convenience` initializer or to an actual `init`.
+Initializers are used to initialize your class/structure. The special `init` method is used as the initializer and should be defined with parameters that will initialize your stored properties. Swift provides a way to declare another type of initializer that could be more *convenient*. These `convenience` initializers must *delegate* to another `convenience` initializer or to a custom initializer.
 */
 class President {
     
@@ -44,10 +44,9 @@ var abe = President(firstName: "Abraham", lastName: "Lincoln")
 /*:
 Above we created a `class` President that has 1 initializer defined to initialize all the stored properties and 2 `convenience` initializers to give the option to create an instance of a President with just first and last names or with no values.
 */
-// TODO Failable Initializers
-
-let num = Int("five")
-
+/*:
+## Failable Initializers
+*/
 class Prez {
 
     var age: Int
@@ -67,6 +66,9 @@ if prez != nil {
 } else {
     print("prez didn't get initialized")
 }
+/*:
+ 
+ */
 /*:
 ## Optional Chaining
 You will create programs that have properties that have not been initialized. This means that you need to check if the property does have a value and then access the properties or call methods on that property. Optional chaining provides you the ability to access or call methods of a property contained in a class/structure without having to check for `nil`.
@@ -386,7 +388,7 @@ private class SenateMember {        // explicitly private class
     var firstName: String?          // implicitly private variable
     var lastName: String?           // implicitly private variable
     
-    private func name() -> String { // explicitly private function
+    private func name() -> String { // explicitly private method
     
         return "\(firstName) \(lastName)"
     }

@@ -410,7 +410,6 @@ Above we have created 3 classes showing what control access rules are allowed to
 **Checkpoint:**
 At this point, we learned about other features that classes/structures support such as lazy initialization of properties and subscripts to interact with classes/structures in a collection type way. We also learned about how you can change property values in value types within the instance as well as testing if two instances are identical. Finally we learned how to avoid memory leaks by using the correct reference type and how to leverage the access controls for properties, functions, classes and class members. 
 */
-
 /*:
 **Keywords to remember:**
 - `convenience` = define an initializer that delegates the initialization to other initializers

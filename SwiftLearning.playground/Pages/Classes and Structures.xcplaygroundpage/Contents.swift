@@ -127,7 +127,7 @@ class President3 {
         }
     }
     
-    var diedHowLongAgo: Int { // Shorthand Setter Declaration, allowed to omit the (parenthesis and custom parameter name)
+    var diedHowLongAgo: Int { // shorthand setter declaration, allowed to omit the (parenthesis and custom parameter name)
         
         get {
             
@@ -147,7 +147,7 @@ class President3 {
         }
     }
 
-    var age: Int { // Read-Only Computed Properties, allowed to omit the "get"
+    var age: Int { // read-only computed oroperty, allowed to omit the "get"
         
         guard birthDate != nil else {
             

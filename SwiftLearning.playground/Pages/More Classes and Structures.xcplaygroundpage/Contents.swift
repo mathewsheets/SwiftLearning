@@ -46,8 +46,9 @@ Above we created a `class` President that has 1 initializer defined to initializ
 */
 /*:
 ## Failable Initializers
+ When implementing custom initializers, it may be appropriate to fail the initialization. You can indicate that an initializer can fail with a `init?` initializer. Then within the initializer, you return `nil` and the result of the stored instance will be `nil`.
 */
-class Prez {
+class PresidentFailable {
 
     var age: Int
 
@@ -60,14 +61,13 @@ class Prez {
     }
 }
 
-let prez = Prez(age: "fifty")
-if prez != nil {
-    print(prez!.age)
+if let failable = PresidentFailable(age: "fifty") {
+    print("The president is \(failable.age)")
 } else {
     print("prez didn't get initialized")
 }
 /*:
- 
+ Above we created a `PresidentFailable` class that has a failable initializer. We create an instance of `PresidentFailable` and by leveraging `if let` optional binding, and print a string of the president’s age.
  */
 /*:
 ## Optional Chaining
@@ -397,7 +397,7 @@ private class SenateMember {        // explicitly private class
 Above we have created 3 classes showing what control access rules are allowed to set and what is explicitly and implicitly applied.
 */
 /*:
-**Exercise:** Build upon your `Dog` and `Cat` classes in the previous exercise by applying the appropriate access control for each class/class member. Add a `Owner` class that contains a collection of `Dog` instances and `Cat` instances. Have your `Dog` and `Cat` hold the correct reference type to an `Owner` instance. The `Ower` property of the `Cat` instance reference optional. Provide a `subscript` to interact with your `Dog` and `Cat` instances.
+**Exercise:** Build upon your `Dog` and `Cat` classes in the previous exercise by applying the appropriate access control for each class/class member. Add a `Owner` class that contains a collection of `Dog` instances and `Cat` instances. Have your `Dog` and `Cat` hold the correct reference type to an `Owner` instance. The `Ower` property of the `Cat` instance reference is optional. Provide a `subscript` to interact with your `Dog` and `Cat` instances.
 */
 /*:
 **Constraints:**

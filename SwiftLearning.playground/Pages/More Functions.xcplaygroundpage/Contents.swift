@@ -1,12 +1,9 @@
 /*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
-/*:
-# More Functions
-*/
-/*:
-> **Session Overview:**
-> In previous sessions, we learned that we can group related statements together, giving them a name with parameters and a return type, calling them functions. Functions are also data types, enabling us to assign a function to a constant or variable, return a function, and pass a function as an argument to another function. We can even nest functions inside other functions to change the visibility of the function from global to local only to the parent function. In this session we continue to explore the capabilities of functions as well as learn about a special functions called **Closures**.
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ - - -
+ # More Functions
+ * callout(Session Overview):
+ In previous sessions, we learned that we can group related statements together, giving them a name with parameters and a return type, calling them functions. Functions are also data types, enabling us to assign a function to a constant or variable, return a function, and pass a function as an argument to another function. We can even nest functions inside other functions to change the visibility of the function from global to local only to the parent function. In this session we continue to explore the capabilities of functions as well as learn about a special functions called **Closures**.
 */
 import Foundation
 /*:
@@ -397,22 +394,19 @@ Use the above functions to query your students.
 At this point, you should be able validate the parameter values using the guard statment as well as throw exceptions from a function and catch exceptions from throwing functions. We also learned about a special function called a **closure** which is able to gain access to constants and variables defined in the same context as the closure is defined.
 */
 /*:
-**Keywords to remember:**
-- `guard` = used to test conditions and if false, short circuit the function
-- `do` = indicate a block of code that handles exceptions
-- `try` = execute a statement that could throw an exception
-- `throw` = to make an exception happen
-- `throws` = used on a function declarations to tell the caller that an exception could happen
-- `catch` = block of code to execute for a specific exception
-- `defer` = block of code to execute after the function exits either by completing, returning or catching
-- `in` = indicates that the next set of statements are for the closure
-*/
-/*:
-**Supporting Chapters:**
-- [Control Flow](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html)
-- [Error Handling](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
-- [Closures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html)
-*/
-/*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
+ - important: Keywords to remember:
+ - `guard` = used to test conditions and if false, short circuit the function
+ - `do` = indicate a block of code that handles exceptions
+ - `try` = execute a statement that could throw an exception
+ - `throw` = to make an exception happen
+ - `throws` = used on a function declarations to tell the caller that an exception could happen
+ - `catch` = block of code to execute for a specific exception
+ - `defer` = block of code to execute after the function exits either by completing, returning or catching
+ - `in` = indicates that the next set of statements are for the closure
+ * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
+ - [Guide: Control Flow](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html)
+ - [Guide: Error Handling](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
+ - [Guide: Closures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html)
+ - - - 
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ */

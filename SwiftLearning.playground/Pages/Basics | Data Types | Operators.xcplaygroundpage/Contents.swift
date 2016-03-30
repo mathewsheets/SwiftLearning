@@ -1,11 +1,8 @@
 /*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
-/*:
-# Basics | Data Types | Operators
-*/
-/*:
-**Session Overview:**
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ - - -
+ # Basics | Data Types | Operators
+ * callout(Session Overview):
 All software languages have building blocks or foundational concepts upon which large programs are implemented. These building blocks first need to be understood in order to move to more functional aspects of the language. This session focuses on the basics of the Swift language, simple data types that are used extensively throughout your programs, and the most common operators such as assignment, adding and equals operators.
 */
 /*:
@@ -452,26 +449,23 @@ Your a big tipper! When ever you go out to eat you tip 20% of the bill and never
 At this point, you should be able to describe in detail the purpose of each data type and why it would be used within your programs. You also should be able to leverage tuples to group values together and work with operators on constants and variables. These building blocks will be used in the following chapters to create richer programs.
 */
 /*:
-**Keywords to remember:**
-- `import` = tells the compiler to make available to my program a specified framework
-- `let` = declare a constant, a value that will never change throughout the program
-- `var` = declare a variable, a value that will vary throughout the program
-- `true` = indicate that something is true
-- `false` = indicate that something is false
-- `typealias` = to give a more meaningful name to an already existing data type
-- `nil` = assign a constant or variable as valueless
-*/
-/*:
-**Supporting Material:**
-- [Guide: About Swift](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
-- [Guide: A Swift Tour](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
-- [Guide: The Basics](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html)
-- [Guide: Basic Operators](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html)
-- [Guide: The Basics: Optionals](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330)
-- [Video: Swift Playgrounds](https://developer.apple.com/videos/play/wwdc2014-408/)
-- [Video: Authoring Rich Playgrounds](https://developer.apple.com/videos/play/wwdc2015-405/)
-- [Video: Introduction to Swift](https://developer.apple.com/videos/play/wwdc2014-402/)
-*/
-/*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
+ - important: Keywords to remember:
+ - `import` = tells the compiler to make available to my program a specified framework
+ - `let` = declare a constant, a value that will never change throughout the program
+ - `var` = declare a variable, a value that will vary throughout the program
+ - `true` = indicate that something is true
+ - `false` = indicate that something is false
+ - `typealias` = to give a more meaningful name to an already existing data type
+ - `nil` = assign a constant or variable as valueless
+ * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
+ - [Guide: About Swift](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
+ - [Guide: A Swift Tour](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
+ - [Guide: The Basics](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html)
+ - [Guide: Basic Operators](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html)
+ - [Guide: The Basics: Optionals](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330)
+ - [Video: Swift Playgrounds](https://developer.apple.com/videos/play/wwdc2014-408/)
+ - [Video: Authoring Rich Playgrounds](https://developer.apple.com/videos/play/wwdc2015-405/)
+ - [Video: Introduction to Swift](https://developer.apple.com/videos/play/wwdc2014-402/)
+ - - -
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ */

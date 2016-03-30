@@ -1,12 +1,9 @@
 /*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
-/*:
-# Classes & Structures
-*/
-/*:
-> **Session Overview:**
-> The Swift language features that we learned in the previous sessions dealt with simple data types. We learned about 'Int's, 'String's, 'Bool's that allowed us to store values with the correct data type. We can group a small number of data type values together as an atomic unit using tuples and we can store data type values in containers that will enabled us to collect data throughout our programs. Swift also provides us the ability to extend Swift itself by creating custom data types in the form of Classes and Structures. These custom data types in their simplest form are really composite data types, data types that contain other data types.
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ - - -
+ # Classes & Structures
+ * callout(Session Overview):
+ The Swift language features that we learned in the previous sessions dealt with simple data types. We learned about 'Int's, 'String's, 'Bool's that allowed us to store values with the correct data type. We can group a small number of data type values together as an atomic unit using tuples and we can store data type values in containers that will enabled us to collect data throughout our programs. Swift also provides us the ability to extend Swift itself by creating custom data types in the form of Classes and Structures. These custom data types in their simplest form are really composite data types, data types that contain other data types.
 */
 import Foundation
 /*:
@@ -480,28 +477,25 @@ Above we have a print statement in the `init` and the `deinit` to show that the 
 At this point, you should be able to extend the Swift language by providing your own `class` or `struct`ure and create instances of your class/structure using properties and methods.
 */
 /*:
-**Keywords to remember:**
-- `class` = The declaration of a class
-- `struct` = The declaration of a structure
-- `static` = And also `class` (used for inheritance) indicates a type property or method
-- `get` = The accessor method of a computed property
-- `set` = The mutator method of a computed property
-- `willSet` = A property observer method; called before the property is assigned the new value
-- `didSet` = A property observer method; called after the property was assigned the new value
-- `newValue` = The implicit variable used within the `get` and `willSet` property methods
-- `oldValue` = The implicit variable used within the `didSet` property observer method
-- `init` = Indicates the block of code to initialize a class/structure
-- `self` = Used within the initializer or method to reference the same class/structure the code is executing in
-- `deinit` = Indicates the block of code to perform cleanup tasks before the class/structure is unreferencable
-*/
-/*:
-**Supporting Chapters:**
-- [Classes and Structures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html)
-- [Properties](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html)
-- [Methods](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Methods.html)
-- [Initialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html) ... up to section Class Inheritance and Initialization
-- [Deinitialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Deinitialization.html)
-*/
-/*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
+ - important: Keywords to remember:
+ - `class` = The declaration of a class
+ - `struct` = The declaration of a structure
+ - `static` = And also `class` (used for inheritance) indicates a type property or method
+ - `get` = The accessor method of a computed property
+ - `set` = The mutator method of a computed property
+ - `willSet` = A property observer method; called before the property is assigned the new value
+ - `didSet` = A property observer method; called after the property was assigned the new value
+ - `newValue` = The implicit variable used within the `get` and `willSet` property methods
+ - `oldValue` = The implicit variable used within the `didSet` property observer method
+ - `init` = Indicates the block of code to initialize a class/structure
+ - `self` = Used within the initializer or method to reference the same class/structure the code is executing in
+ - `deinit` = Indicates the block of code to perform cleanup tasks before the class/structure is unreferencable
+ * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
+ - [Guide: Classes and Structures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html)
+ - [Guide: Properties](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html)
+ - [Guide: Methods](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Methods.html)
+ - [Guide: Initialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html) ... up to section Class Inheritance and Initialization
+ - [Guide: Deinitialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Deinitialization.html)
+ - - -
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ */

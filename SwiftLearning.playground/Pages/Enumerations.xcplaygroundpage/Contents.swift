@@ -1,12 +1,9 @@
 /*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
-/*:
-# Enumerations
-*/
-/*:
-> **Session Overview:**
-> An enumeration is a type-safe way to group related values. These values would typically be an `Int` that outside the context of the enumeration, would become ambiguous. Enumerations in swift are far more rich in functionality when compared to other languages.
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ - - -
+ # Enumerations
+ * callout(Session Overview):
+ An enumeration is a type-safe way to group related values. These values would typically be an `Int` that outside the context of the enumeration, would become ambiguous. Enumerations in swift are far more rich in functionality when compared to other languages.
 */
 import Foundation
 /*:
@@ -219,14 +216,11 @@ let phones = [iPhone, iPhone3G, iPhone3Gs, iPhone4, iPhone4s, iPhone5, iPhone5c,
 At this point, you should have an good understanding of how to create enumerations with associated and raw values and also how to leverage `switch-case` statements to match a constant or variable on the possible cases and extract the values from the enumeration. You also learned about recursive enumerations providing the ability to have a case that accepted as an associated value of the same enumeration type.
 */
 /*:
-**Keywords to remember:**
-- `enum` = defines an Enumeration
-- `indirect` = enables an Enumeration to be used recursively
-*/
-/*:
-**Supporting Chapters:**
-- [Enumerations](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html)
-*/
-/*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
+ - important: Keywords to remember:
+ - `enum` = defines an Enumeration
+ - `indirect` = enables an Enumeration to be used recursively
+ * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
+ - [Guide: Enumerations](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html)
+ - - -
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ */

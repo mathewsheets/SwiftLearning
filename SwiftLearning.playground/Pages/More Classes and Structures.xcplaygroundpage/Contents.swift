@@ -1,11 +1,9 @@
 /*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
-/*:
-# More Classes & Structures
-*/
-/*:
-> **Session Overview:** Last session we learned about the main features of classes and structures. This session explains other features of classes and structures that you will leverage to make your programs more useable and readable.
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ - - -
+ # More Classes & Structures
+ * callout(Session Overview):
+ Last session we learned about the main features of classes and structures. This session explains other features of classes and structures that you will leverage to make your programs more useable and readable.
 */
 import Foundation
 /*:
@@ -411,25 +409,22 @@ Above we have created 3 classes showing what control access rules are allowed to
 At this point, we learned about other features that classes/structures support such as lazy initialization of properties and subscripts to interact with classes/structures in a collection type way. We also learned about how you can change property values in value types within the instance as well as testing if two instances are identical. Finally we learned how to avoid memory leaks by using the correct reference type and how to leverage the access controls for properties, functions, classes and class members. 
 */
 /*:
-**Keywords to remember:**
-- `convenience` = define an initializer that delegates the initialization to other initializers
-- `lazy` = define a stored property to be initialized when the property is first accessed
-- `subscript` = provide the ability to access/mutate a class/structure with subscripts as in `[5]`
-- `mutating` = allowing a value type instance method to change properties within the instance
-- `weak` = defining a optional stored property as storing a weak reference to avoid *strong reference cycles*
-- `unowned` = defining a non optional stored property as storing an unowned reference to avoid *strong reference cycles*
-- `public` = marks the class/member visible outside the module
-- `internal` = marks the class/member visible only to inside a module
-- `private` = marks the class/member visible to only the class
-*/
-/*:
-**Supporting Chapters:**
-- [Subscripts](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Subscripts.html)
-- [Initialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html)
-- [Optional Chaining](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html)
-- [ARC](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html)
-- [Access Control](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AccessControl.html)
-*/
-/*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
+ - important: Keywords to remember:
+ - `convenience` = define an initializer that delegates the initialization to other initializers
+ - `lazy` = define a stored property to be initialized when the property is first accessed
+ - `subscript` = provide the ability to access/mutate a class/structure with subscripts as in `[5]`
+ - `mutating` = allowing a value type instance method to change properties within the instance
+ - `weak` = defining a optional stored property as storing a weak reference to avoid *strong reference cycles*
+ - `unowned` = defining a non optional stored property as storing an unowned reference to avoid *strong reference cycles*
+ - `public` = marks the class/member visible outside the module
+ - `internal` = marks the class/member visible only to inside a module
+ - `private` = marks the class/member visible to only the class
+ * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
+ - [Guide: Subscripts](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Subscripts.html)
+ - [Guide: Initialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html)
+ - [Guide: Optional Chaining](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html)
+ - [Guide: ARC](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html)
+ - [Guide: Access Control](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AccessControl.html)
+ - - -
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ */

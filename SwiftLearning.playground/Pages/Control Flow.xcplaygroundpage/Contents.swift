@@ -1,12 +1,9 @@
 /*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
-/*:
-# Control Flow
-*/
-/*:
-**Session Overview:**
-Processing logic is what gives your programs personality. These decision making statements are known as control flow. Control flow statements can fork your execution path or even repeat a series of statements. Please visit the Swift Programming Language Guide section on [Control Flow](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120) for more details on control flow.
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ - - -
+ # Control Flow
+ * callout(Session Overview):
+ Processing logic is what gives your programs personality. These decision making statements are known as control flow. Control flow statements can fork your execution path or even repeat a series of statements. Please visit the Swift Programming Language Guide section on [Control Flow](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120) for more details on control flow.
 */
 import Foundation
 /*:
@@ -350,25 +347,22 @@ if #available(iOS 9, OSX 10.11, *) {
 At this point, you have learned the majority of the control flow statements that enable you to make decisions and execute a set of statements zero or more times until some condition is met.
 */
 /*:
-**Keywords to remember:**
-- `if` = evaluate an express for `true` and execute the following statements
-- `else` = execute the following statements when the `if` evaluates an express to false
-- `for` = to iterate
-- `in` = when used with `for`, iterate over items in *something*
-- `while` = execute statements indefinitely until a false expression is met
-- `repeat` = used with `while`, execute statments first then loop
-- `switch` = the start of matching a value on possible outcomes
-- `case` = used with `switch`, a single outcome
-- `default` = used with 'switch', the any outcome
-- `fallthrough` = used with `switch`, execute the next case's statements
-- `continue` = move on to the next iteration and don't execute the following statements
-- `break` = when used with looping, stop looping and don't execute the following statements
-- `where` = when used with switch, to expand matching conditions
-*/
-/*:
-**Supporting Chapters:**
-- [Control Flow](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html)
-*/
-/*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
+ - important: Keywords to remember:
+ - `if` = evaluate an express for `true` and execute the following statements
+ - `else` = execute the following statements when the `if` evaluates an express to false
+ - `for` = to iterate
+ - `in` = when used with `for`, iterate over items in *something*
+ - `while` = execute statements indefinitely until a false expression is met
+ - `repeat` = used with `while`, execute statments first then loop
+ - `switch` = the start of matching a value on possible outcomes
+ - `case` = used with `switch`, a single outcome
+ - `default` = used with 'switch', the any outcome
+ - `fallthrough` = used with `switch`, execute the next case's statements
+ - `continue` = move on to the next iteration and don't execute the following statements
+ - `break` = when used with looping, stop looping and don't execute the following statements
+ - `where` = when used with switch, to expand matching conditions
+ * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
+ - [Guide: Control Flow](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html)
+ - - -
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ */

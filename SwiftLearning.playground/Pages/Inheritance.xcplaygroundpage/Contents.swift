@@ -1,11 +1,9 @@
 /*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/
-/*:
-# Inheritance
-*/
-/*:
- > **Session Overview:** Code reuse is paramount in all programming languages. For languages that support object oriented programming or *OOP*, such as Swift, code inheritance is a technique in sharing and extending code within your programs.
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
+ - - -
+ # Inheritance
+ * callout(Session Overview):
+ Code reuse is paramount in all programming languages. For languages that support object oriented programming or *OOP*, such as Swift, code inheritance is a technique in sharing and extending code within your programs.
  */
 import Foundation
 /*:
@@ -428,7 +426,7 @@ for anyThing in anyThings {
  At this point, you have learned how to leverage inheritance to share and reuse code and how to access the properties, methods and subscripts of a superclass. Overriding a superclass provide a subclass with having it’s custom implementation of a property, method or subscript. You can prevent a class, property, method or subscript from being overridden with he `final` keyword. `AnyObject` and `Any` are used to mark a type or collection of types as unspecified types while using the type check operator and type cast operator to convert the type type into a type you are interested in.
  */
 /*:
- **Keywords to remember:**
+ - important: Keywords to remember:
  - `super` = To access a superclass's properties, methods or subscripts
  - `override` = Overriding a property or method of a base class
  - `required` = All subclasses must implement an initializer that is `required`
@@ -437,13 +435,10 @@ for anyThing in anyThings {
  - `as` = Type cast operator that will downcast to the subclass type. Use `as?` of casting can fail, use `as!` if downcast will always succeed
  - `AnyObject` = Represents an instance of any class type
  - `Any` = Represents an instance of any type, including function types and tuples
+ * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
+ - [Guide: Inheritance](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Inheritance.html)
+ - [Guide: Type Casting](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TypeCasting.html)
+ - [Video: Intermediate Swift](https://developer.apple.com/videos/play/wwdc2014-403/)
+ - - -
+ [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */
-/*:
-**Supporting Chapters:**
-- [Inheritance](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Inheritance.html)
-- [Type Casting](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TypeCasting.html)
-- [Video: Intermediate Swift](https://developer.apple.com/videos/play/wwdc2014-403/)
-*/
-/*:
-[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
-*/

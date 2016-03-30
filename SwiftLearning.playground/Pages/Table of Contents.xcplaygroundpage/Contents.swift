@@ -1,21 +1,23 @@
 /*:
+ [Next](@next)
+ - - -
  # Table of Contents
  - important: This course is an overview of the Swift programming language developed by Apple. The content and code within this playground is inspired by Apple's [Swift Programming Language Guide](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). The Swift Programming Language Guide is the source of truth for this playground. This is a living playground and is subject to change to keep up to date with changes to the Swift language.
- - [Basics | Data Types | Operators](Basics%20%7C%20Data%20Types%20%7C%20Operators)
- - [Strings & Characters](Strings%20and%20Characters)
- - [Control Flow](Control%20Flow)
- - [Collection Types](Collection%20Types)
- - [Functions](Functions)
- - [More Functions](More%20Functions)
- - [Enumerations](Enumerations)
- - [Classes & Structures](Classes%20and%20Structures)
- - [More Classes & Structures](More%20Classes%20and%20Structures)
- - [Inheritance](Inheritance)
- - [Protocols](Protocols)
- - [Extensions](Extensions)
- - [Generics](Generics)
- - [JSON & Objects](JSON%20and%20Objects)
- - [HTTP & ReST](HTTP%20and%20ReST)
+ 1. [Basics | Data Types | Operators](Basics%20%7C%20Data%20Types%20%7C%20Operators)
+ 2. [Strings & Characters](Strings%20and%20Characters)
+ 3. [Control Flow](Control%20Flow)
+ 4. [Collection Types](Collection%20Types)
+ 5. [Functions](Functions)
+ 6. [More Functions](More%20Functions)
+ 7. [Enumerations](Enumerations)
+ 8. [Classes & Structures](Classes%20and%20Structures)
+ 9. [More Classes & Structures](More%20Classes%20and%20Structures)
+ 10. [Inheritance](Inheritance)
+ 11. [Protocols](Protocols)
+ 12. [Extensions](Extensions)
+ 13. [Generics](Generics)
+ 14. [JSON & Objects](JSON%20and%20Objects)
+ 15. [HTTP & ReST](HTTP%20and%20ReST)
  * callout(Supporting Materials):Below is a list of resources that will help your learning of the Swift language.
  - [Search Apple's Developer Documentation](https://developer.apple.com/search/?q=Swift)
  - Swift Documentation

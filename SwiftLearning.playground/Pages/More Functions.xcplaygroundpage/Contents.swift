@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */
 /*:
 # More Functions
@@ -414,5 +414,5 @@ At this point, you should be able validate the parameter values using the guard 
 - [Closures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html)
 */
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */

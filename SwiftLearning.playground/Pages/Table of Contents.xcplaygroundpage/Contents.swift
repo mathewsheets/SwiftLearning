@@ -3,7 +3,7 @@
 */
 /*:
 **Important:** This course is an overview of the Swift 2.1 language developed by Apple. The content and code within this playground is inspired by Apple's [Swift Programming Language Guide](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). The Swift Programming Language Guide is the source of truth for this playground. This is a living playground and is subject to change to keep up to date with changes to the Swift language.
-- [Basics | Data Types | Operators](Basics%20|%20Data%20Types%20|%20Operators)
+- [Basics | Data Types | Operators](Basics%20%7C%20Data%20Types%20%7C%20Operators)
 - [Strings & Characters](Strings%20and%20Characters)
 - [Control Flow](Control%20Flow)
 - [Collection Types](Collection%20Types)

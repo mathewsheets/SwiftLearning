@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous)
+[Table of Contents](@first) | [Previous](@previous)
 */
 /*:
 Copyright (c) 2015-Present Mathew Sheets - https://github.com/mathewsheets
@@ -23,5 +23,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous)
+[Table of Contents](@first) | [Previous](@previous)
 */

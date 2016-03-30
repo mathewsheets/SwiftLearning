@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */
 /*:
 # Functions
@@ -283,5 +283,5 @@ At this point, you should have a good understanding of calling and creating func
 - [Functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html)
 */
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */

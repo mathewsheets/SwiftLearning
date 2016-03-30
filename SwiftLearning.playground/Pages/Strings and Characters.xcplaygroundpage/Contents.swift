@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */
 /*:
 # Strings & Characters
@@ -183,5 +183,5 @@ At this point, you should be able to create, mutate, and execute statements on `
 - [Strings and Characters](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
 */
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */

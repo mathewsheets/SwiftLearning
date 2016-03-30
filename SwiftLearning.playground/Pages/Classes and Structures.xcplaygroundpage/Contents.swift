@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */
 /*:
 # Classes & Structures
@@ -503,5 +503,5 @@ At this point, you should be able to extend the Swift language by providing your
 - [Deinitialization](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Deinitialization.html)
 */
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */

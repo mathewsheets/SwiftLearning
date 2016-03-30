@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */
 /*:
 # Protocols
@@ -11,5 +11,5 @@ import Foundation
 - [Video: Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015-408/)
 */
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */

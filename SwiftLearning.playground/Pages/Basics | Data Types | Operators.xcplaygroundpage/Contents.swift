@@ -1,5 +1,5 @@
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */
 /*:
 # Basics | Data Types | Operators
@@ -473,5 +473,5 @@ At this point, you should be able to describe in detail the purpose of each data
 - [Video: Introduction to Swift](https://developer.apple.com/videos/play/wwdc2014-402/)
 */
 /*:
-[Table of Contents](Table%20of%20Contents) | [Previous](@previous) | [Next](@next)
+[Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 */

@@ -322,30 +322,28 @@ Above statements use the `for-in` loop to iterate over the `titles` giving you a
 //: > **Experiment**: Create a array of dictionaries and iterate over the array printing the key and value of each dictionary
 
 /*:
-**Exercise:** You have to record all the students for your school. Leveraging arrays, dictionaries, and sets, create table like containers for each class. Your classes are Math, Science, English and History with a total of 17 unique students with 7 students in each class. Print out each class roster and experiment with set operations, membership and equality.
->> **Example Output:**
-* `Math = Mathew Sheets, John Winters, Sam Smith`
-* `Science = Sam Smith, Carson Daily, Adam Aarons`
-* `Union of Math and Science = Mathew Sheets, John Winters, Sam Smith, Carson Daily, Adam Aarons`
->> **Constraints:**
-* Use Set Operations
-    * intersect
-    * exclusiveOr
-    * union
-    * subtract
-* Use Set Membership and Equality
-    * is equal
-    * isSubsetOf
-    * isSupersetOf
-    * isStrictSubsetOf
-    * isStrictSupersetOf
-    * isDisjointWith
-*/
-/*:
-**Checkpoint:**
-At this point, you should have a basic understanding of the collection types provided by the Swift programming language. Using arrays, you can store a collection of ordered values. Using sets, you can store a collection of unordered unique values. Using dictionaries, you can store a collection of key-value associations. With these three collection types, processing and manipulating data will be easier.
-*/
-/*:
+ - - -
+ * callout(Exercise): You have to record all the students for your school. Leveraging arrays, dictionaries, and sets, create table like containers for each class. Your classes are Math, Science, English and History with a total of 17 unique students with 7 students in each class. Print out each class roster and experiment with set operations, membership and equality.
+
+ **Example Output:**
+ - `Math = Mathew Sheets, John Winters, Sam Smith`
+ - `Science = Sam Smith, Carson Daily, Adam Aarons`
+ - `Union of Math and Science = Mathew Sheets, John Winters, Sam Smith, Carson Daily, Adam Aarons`
+
+ **Constraints:**
+ - Use Set Operations
+    - intersect
+    - exclusiveOr
+    - union
+    - subtract
+ - Use Set Membership and Equality
+    - is equal
+    - isSubsetOf
+    - isSupersetOf
+    - isStrictSubsetOf
+    - isStrictSupersetOf
+    - isDisjointWith
+ * callout(Checkpoint): At this point, you should have a basic understanding of the collection types provided by the Swift programming language. Using arrays, you can store a collection of ordered values. Using sets, you can store a collection of unordered unique values. Using dictionaries, you can store a collection of key-value associations. With these three collection types, processing and manipulating data will be easier.
  * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
  - [Guide: Collection Types](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html)
  - - -

@@ -178,8 +178,8 @@ count(Count.Backward(Count.Number(10), Count.Number(1))) { print("backward from 
 Above we have an enumeration called `Count`. `Count` has three `case`s with each accepting an associated value. `case Forward` and `case Backward` accept an associated value of `Count`. Using the `indirect` keyword preceding the `enum` indicates that we intend to use itself as an associated value. Next we create a function called `count` with parameters of type `Count` and a closure `(Int) -> Void`. The `count` function recursively calls itself until the first `Count` number equals the second `Count` number.
 */
 /*:
-**Exercise:** We need to model the set of possible iPhones manufactured. Replace each possible tuple property value with an enumeration that would be appropriate to the current non enumeration value.
-*/
+ * callout(Exercise): We need to model the set of possible iPhones manufactured. Replace each possible tuple property value with an enumeration that would be appropriate to the current non enumeration value.
+ */
 let iPhone          = (modelName: "iPhone", modelNumbers: ["A1203"], hardwareStrings: ["iPhone1,1"], osVersions: [1, 2, 3])
 let iPhone3G        = (modelName: "iPhone 3G", modelNumbers: ["A1324", "A1241"], hardwareStrings: ["iPhone1,2"], osVersions: [2, 3, 4])
 let iPhone3Gs       = (modelName: "iPhone 3Gs", modelNumbers: ["A1325", "A1303"], hardwareStrings: ["iPhone2,1"], osVersions: [3, 4, 5, 6])
@@ -195,28 +195,24 @@ let iPhone6sPlus    = (modelName: "iPhone 6s Plus", modelNumbers: ["A1634", "A16
 
 let phones = [iPhone, iPhone3G, iPhone3Gs, iPhone4, iPhone4s, iPhone5, iPhone5c, iPhone5s, iPhone6, iPhone6Plus, iPhone6s, iPhone6sPlus]
 /*:
->> **Constraints:**
-* Create the following Enumerations:
-    * ModelName = Enumeration for all the model names
-    * ModelNumber = Enumeration for all the model numbers
-    * HardwareString = Enumeration for all hardware string
-    * OSVersion = Enumeration for all os versions
-* Create the following Functions
-    * Create a device passing in as arguments each enumeration
-        * Validate the parameters using a guard statement
-        * Throw an error that's appropriate to the invalid parameter value
-        * Return a tuple similar to above only using the above enumerations
-    * Get Device with ModelName
-    * Get Device with ModelNumber
-    * Get Device with HardwareString
-    * Get Devices with OSVersion
-*/
-/*:
-**Checkpoint:**
-At this point, you should have an good understanding of how to create enumerations with associated and raw values and also how to leverage `switch-case` statements to match a constant or variable on the possible cases and extract the values from the enumeration. You also learned about recursive enumerations providing the ability to have a case that accepted as an associated value of the same enumeration type.
-*/
-/*:
- - important: Keywords to remember:
+ **Constraints:**
+ - Create the following Enumerations:
+     - ModelName = Enumeration for all the model names
+     - ModelNumber = Enumeration for all the model numbers
+     - HardwareString = Enumeration for all hardware string
+     - OSVersion = Enumeration for all os versions
+ - Create the following Functions
+     - Create a device passing in as arguments each enumeration
+         - Validate the parameters using a guard statement
+         - Throw an error that's appropriate to the invalid parameter value
+         - Return a tuple similar to above only using the above enumerations
+     - Get Device with ModelName
+     - Get Device with ModelNumber
+     - Get Device with HardwareString
+     - Get Devices with OSVersion
+* callout(Checkpoint): At this point, you should have an good understanding of how to create enumerations with associated and raw values and also how to leverage `switch-case` statements to match a constant or variable on the possible cases and extract the values from the enumeration. You also learned about recursive enumerations providing the ability to have a case that accepted as an associated value of the same enumeration type.
+
+ **Keywords to remember:**
  - `enum` = defines an Enumeration
  - `indirect` = enables an Enumeration to be used recursively
  * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC

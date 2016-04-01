@@ -395,21 +395,16 @@ private class SenateMember {        // explicitly private class
 Above we have created 3 classes showing what control access rules are allowed to set and what is explicitly and implicitly applied.
 */
 /*:
-**Exercise:** Build upon your `Dog` and `Cat` classes in the previous exercise by applying the appropriate access control for each class/class member. Add a `Owner` class that contains a collection of `Dog` instances and `Cat` instances. Have your `Dog` and `Cat` hold the correct reference type to an `Owner` instance. The `Ower` property of the `Cat` instance reference is optional. Provide a `subscript` to interact with your `Dog` and `Cat` instances.
-*/
-/*:
-**Constraints:**
-- Use `weak`
-- Use `unowned`
-- Use `subscript`
-- Create a `convenience` initializer for creating your `Dog` and `Cat` instance
-*/
-/*:
-**Checkpoint:**
-At this point, we learned about other features that classes/structures support such as lazy initialization of properties and subscripts to interact with classes/structures in a collection type way. We also learned about how you can change property values in value types within the instance as well as testing if two instances are identical. Finally we learned how to avoid memory leaks by using the correct reference type and how to leverage the access controls for properties, functions, classes and class members. 
-*/
-/*:
- - important: Keywords to remember:
+ * callout(Exercise): Build upon your `Dog` and `Cat` classes in the previous exercise by applying the appropriate access control for each class/structure member. Add a `Owner` class that contains a collection of `Dog` instances and `Cat` instances. Have your `Dog` and `Cat` hold the correct reference type to an `Owner` instance. The `Ower` property of the `Cat` instance reference is optional. Provide a `subscript` to interact with your `Dog` and `Cat` instances.
+ 
+ **Constraints:**
+ - Use `weak`
+ - Use `unowned`
+ - Use `subscript`
+ - Create a `convenience` initializer for creating your `Dog` and `Cat` instance
+ * callout(Checkpoint): At this point, we learned about other features that classes/structures support such as lazy initialization of properties and subscripts to interact with classes/structures in a collection type way. We also learned about how you can change property values in value types within the instance as well as testing if two instances are identical. Finally we learned how to avoid memory leaks by using the correct reference type and how to leverage the access controls for properties, functions, classes and class members.
+ 
+ **Keywords to remember:**
  - `convenience` = define an initializer that delegates the initialization to other initializers
  - `lazy` = define a stored property to be initialized when the property is first accessed
  - `subscript` = provide the ability to access/mutate a class/structure with subscripts as in `[5]`

@@ -2,48 +2,46 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Basics | Data Types | Operators
- * callout(Session Overview):
-All software languages have building blocks or foundational concepts upon which large programs are implemented. These building blocks first need to be understood in order to move to more functional aspects of the language. This session focuses on the basics of the Swift language, simple data types that are used extensively throughout your programs, and the most common operators such as assignment, adding and equals operators.
-*/
-/*:
+ * callout(Session Overview): All software languages have building blocks or foundational concepts upon which large programs are implemented. These building blocks first need to be understood in order to move to more functional aspects of the language. This session focuses on the basics of the Swift language, simple data types that are used extensively throughout your programs, and the most common operators such as assignment, adding and equals operators.
 ## The Important `import` statement
-The first line of text you will see within a file of a program is a statement that tells the compiler what external libraries or frameworks your program will use. The following statement `import Foundation` is telling the compiler to make available to my program all the Classes, Protocols, Functions, Constants, Data Types defined within the `Foundation` framework (a.k.a library). Please visit the Foundation Framework [Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/ObjC_classic/index.html) to see what is available to your program. The `Foundation` framework is provided to us by Apple. Custom frameworks can also be used and/or created for your program.
-*/
+ The first line of text you will see within a file of a program is a statement that tells the compiler what external libraries or frameworks your program will use. The following statement `import Foundation` is telling the compiler to make available to my program all the Classes, Protocols, Functions, Constants, Data Types defined within the `Foundation` framework (a.k.a library). Please visit the Foundation Framework [Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/ObjC_classic/index.html) to see what is available to your program. The `Foundation` framework is provided to us by Apple. Custom frameworks can also be used and/or created for your program.
+ */
 import Foundation
-//: > **Experiment**: Put an `s` at the end of `Foundation`. Is there an indication that something is wrong?
+//: - experiment: Put an `s` at the end of `Foundation`. Is there an indication that something is wrong?
 
 /*:
-## Storing values
-Storing information within your program is a basic necessity. Swift provides two ways to store values. The first way is to store a value that you know will never change. This is referred to as a constant. The second way is to store value that will vary over time. This is referred to as a variable. The process of storing values, either constants or variables is referred to as assignment. When creating a constant or variable, you can use almost any characters or Unicode characters, but your constant or variable cannot begin with a number or contain whitespace, mathematical symbols or arrows.
-*/
-/*:
-The **`let`** keyword stores constants
-*/
+ ## Storing values
+ Storing information within your program is a basic necessity. Swift provides two ways to store values. The first way is to store a value that you know will never change. This is referred to as a constant. The second way is to store value that will vary over time. This is referred to as a variable. The process of storing values, either constants or variables is referred to as assignment. When creating a constant or variable, you can use almost any characters or Unicode characters, but your constant or variable cannot begin with a number or contain whitespace, mathematical symbols or arrows.
+
+ The **`let`** keyword stores constants
+ */
 let π = 3.14159265358979
 
 let school = "Columbus State"
 let teacher = "Mathew Sheets"
-//: > **Experiment**: Assign `teacher` another value.
+//: - experiment: Assign `teacher` another value.
 
 /*:
-The **`var`** keyword stores variables
-*/
+ The **`var`** keyword stores variables
+ */
 var student = "John Doe"
 var studentGrade = "A"
 var numberOfCredits = 14
-//: > **Experiment**: Assign `studentGrade` another value.
+//: - experiment: Assign `studentGrade` another value.
 
 /*:
-## Printing values
-Being able to print values of constants and variables is an easy way to see the true value of what's stored. Provided to your program is the `print` function. A more detail explanation of functions is covered in a later session.
-*/
+ ## Printing values
+ Being able to print values of constants and variables is an easy way to see the true value of what's stored. Provided to your program is the `print` function. A more detail explanation of functions is covered in a later session.
+ */
 print(school)
 print(teacher, terminator: "")
-//: The `terminator` in the statement `print(teacher, terminator: "")` tells the `print` function to not append the new line character `\n`.
-//: You can also combine other text and your constant or variable to be passed to the `print` function. This is called *string interpolation*.
+/*;
+ The `terminator` in the statement `print(teacher, terminator: "")` tells the `print` function to not append the new line character `\n`.
+ You can also combine other text and your constant or variable to be passed to the `print` function. This is called *string interpolation*.
+ */
 print("\(school) is a great place to learn mobile development!")
 print("\(teacher) is an adjunct professor at \(school).")
-//: > **Experiment**: Assign `student` to your name and print the value of the grade you would like to get.
+//: - experiment: Assign `student` to your name and print the value of the grade you would like to get.
 
 /*:
 ## Comments
@@ -79,7 +77,7 @@ var positive = 4
 var negative = -4
 
 var yourNumber: Int = 4
-//: > **Experiment**: Change the assignment of `yourNumber` to 4.1.
+//: - experiment: Change the assignment of `yourNumber` to 4.1.
 
 /*:
 Swift also provides more explicit storage limits for numbers.
@@ -432,24 +430,22 @@ for halfOpenRangeIndex in 1..<10 {
 }
 print(showHalfOpenRange)
 /*:
-**Exercise:**
-Your a big tipper! When ever you go out to eat you tip 20% of the bill and never tip less than $3. Create a playground that prints the tip amount and the total amount. Within the playground, you should be able to change the bill to see how the tip amount varies.
-**Example Output:**
-* `What is the bill? $x.xx`
-* `What is the tip percentage? x`
-* `The tip is $x.xx`
-* `The total is $x.xx`
-**Constraints:**
-* Don't use the `String(format:, _, _)` initilizer
-* Use the remainder operator while creating the string
-* Use the ternary conditional operator
-*/
-/*:
-**Checkpoint:**
-At this point, you should be able to describe in detail the purpose of each data type and why it would be used within your programs. You also should be able to leverage tuples to group values together and work with operators on constants and variables. These building blocks will be used in the following chapters to create richer programs.
-*/
-/*:
- - important: Keywords to remember:
+ - - -
+ * callout(Exercise): Your a big tipper! When ever you go out to eat you tip 20% of the bill and never tip less than $3. Create a playground that prints the tip amount and the total amount. Within the playground, you should be able to change the bill to see how the tip amount varies.
+ 
+ **Example Output:**
+ * `What is the bill? $x.xx`
+ * `What is the tip percentage? x`
+ * `The tip is $x.xx`
+ * `The total is $x.xx`
+ 
+ **Constraints:**
+ * Don't use the `String(format:, _, _)` initilizer
+ * Use the remainder operator while creating the string
+ * Use the ternary conditional operator
+ * callout(Checkpoint): At this point, you should be able to describe in detail the purpose of each data type and why it would be used within your programs. You also should be able to leverage tuples to group values together and work with operators on constants and variables. These building blocks will be used in the following chapters to create richer programs.
+ 
+ **Keywords to remember:**
  - `import` = tells the compiler to make available to my program a specified framework
  - `let` = declare a constant, a value that will never change throughout the program
  - `var` = declare a variable, a value that will vary throughout the program

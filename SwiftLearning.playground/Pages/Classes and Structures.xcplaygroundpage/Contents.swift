@@ -463,28 +463,23 @@ president10 = nil
 Above we have a print statement in the `init` and the `deinit` to show that the `deinit` will get called when the instance is no longer accessible.
 */
 /*:
-**Exercise:** Create two classes `Dog` and `Cat`. Each will have properties of `breed`, `color`, `age` and `name`. They also have methods of `barking` (dog's) only, `meowing` (cats only), `eating`, `sleeping`, `playing`, and `chase`.
-*/
-/*:
-**Constraints:** You must also have:
-* Initializer & Deinitializer
-* Computed Properties
-* Property Observers
-* Method body is up to you, but your method signatures need parameter(s)
-*/
-/*:
-**Checkpoint:**
-At this point, you should be able to extend the Swift language by providing your own `class` or `struct`ure and create instances of your class/structure using properties and methods.
-*/
-/*:
- - important: Keywords to remember:
+ * callout(Exercise): Create two classes `Dog` and `Cat`. Each will have properties of `breed`, `color`, `age` and `name`. They also have methods of `barking` (dog's) only, `meowing` (cats only), `eating`, `sleeping`, `playing`, and `chase`.
+
+ **Constraints:** You must also have:
+ - Initializer & Deinitializer
+ - Computed Properties
+ - Property Observers
+ - Method body is up to you, but your method signatures need parameter(s)
+ * callout(Checkpoint): At this point, you should be able to extend the Swift language by providing your own classes or structures and create instances of your class/structure using properties and methods.
+ 
+ **Keywords to remember:**
  - `class` = The declaration of a class
  - `struct` = The declaration of a structure
  - `static` = And also `class` (used for inheritance) indicates a type property or method
  - `get` = The accessor method of a computed property
  - `set` = The mutator method of a computed property
  - `willSet` = A property observer method; called before the property is assigned the new value
- - `didSet` = A property observer method; called after the property was assigned the new value
+ - `didSet` = A property observer method; called after the property is assigned the new value
  - `newValue` = The implicit variable used within the `get` and `willSet` property methods
  - `oldValue` = The implicit variable used within the `didSet` property observer method
  - `init` = Indicates the block of code to initialize a class/structure

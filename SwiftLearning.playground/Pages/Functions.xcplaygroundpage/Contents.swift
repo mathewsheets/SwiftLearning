@@ -261,21 +261,19 @@ print(saySomethingNested(justMet: false)("Jason"))
 Above we rewrote the `saySomething` *global* function as `saySomethingNested`, *nesting* functions `hello` and `goodBye` and return the correct nested function.
 */
 /*:
-**Exercise:** Create a playground with pages with each playground page consisting of the previous four exercises. Refactor each exercise leveraging collection types and functions.
->> **Constraints:**
-Create a swift file containing your functions for each exercise in the **Sources** directory. Make sure each function has the keyword `public` in front of the keyword `func`.
-*/
-/*:
-**Checkpoint:**
-At this point, you should have a good understanding of calling and creating functions. Functions can be declared with or without parameters and with or without return values. Functions can also be used just like any other data type. You can assign functions to a constant or variable, pass functions as arguments to other functions and return functions from functions.
-*/
-/*:
- - important: Keywords to remember:
+ - - -
+ * callout(Exercise): Create a playground with pages with each playground page consisting of the previous four exercises. Refactor each exercise leveraging collection types and functions.
+
+ **Constraints:**
+ Create a swift file containing your functions for each exercise in the **Sources** directory. Make sure each function has the keyword `public` in front of the keyword `func`.
+ * callout(Checkpoint): At this point, you should have a good understanding of calling and creating functions. Functions can be declared with or without parameters and with or without return values. Functions can also be used just like any other data type. You can assign functions to a constant or variable, pass functions as arguments to other functions and return functions from functions.
+
+ **Keywords to remember:**
  - `func` = to create a function
  - `inout` = changing a value of a parameter will change the value of the argument
  - `return` = exiting a function passing to the caller a potential value
  * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
  - [Guide: Functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html)
- - - - 
+ - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */

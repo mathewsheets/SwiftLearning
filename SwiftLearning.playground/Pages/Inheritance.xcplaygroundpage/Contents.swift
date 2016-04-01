@@ -12,7 +12,7 @@ import Foundation
  */
 /*:
  ## The Base Class
- Classes that don’t inherit from any other class is called the base class. Unlike most OOP languages, Swift classes don’t inherit from a universal base class like *Object*. Classes you define without specifying a superclass automatically become base classes for you do subclass.
+ Classes that don’t inherit from any other class is called the base class. Unlike most OOP languages, Swift classes don’t inherit from a universal base class like *Object*. Classes you define without specifying a superclass automatically become base classes for you to subclass.
  */
 class Father {
 
@@ -411,28 +411,23 @@ for anyThing in anyThings {
  Above we do something similar to storing instances of `AnyObject`, here we store an array of `Any`, representing any type, such as tuples of function types. Again we iterate and use the `switch-case` statement to match on a type and print the correct string.
  */
 /*:
- **Exercise:**
- Build upon your `Dog` and `Cat` classes in the previous exercise by applying inheritance. Create a superclass that both `Dog` and `Cat` can inherit from. Modify your `Owner` class to hold a collection of pets. Iterate over your pets and print what sound the pet makes.
- */
-/*:
+ * callout(Exercise): Build upon your `Dog` and `Cat` classes in the previous exercise by applying inheritance. Create a superclass that both `Dog` and `Cat` can inherit from. Modify your `Owner` class to hold a collection of pets. Iterate over your pets and print what sound the pet makes.
+
  **Constraints:**
  - Create a new class as the superclass to `Dog` and `Cat`
  - The superclass needs to have a method of `makeSound()`
  - The subclasses need to override the `makeSound()` method and print the appropriate sound
  - The `pets` property needs to store both `Dog` and `Cat` instances
- */
-/*:
- **Checkpoint:**
- At this point, you have learned how to leverage inheritance to share and reuse code and how to access the properties, methods and subscripts of a superclass. Overriding a superclass provide a subclass with having it’s custom implementation of a property, method or subscript. You can prevent a class, property, method or subscript from being overridden with he `final` keyword. `AnyObject` and `Any` are used to mark a type or collection of types as unspecified types while using the type check operator and type cast operator to convert the type type into a type you are interested in.
- */
-/*:
- - important: Keywords to remember:
+
+ * callout(Checkpoint): At this point, you have learned how to leverage inheritance to share and reuse code and how to access the properties, methods and subscripts of a superclass. Overriding a superclass provide a subclass with having it’s custom implementation of a property, method or subscript. You can prevent a class, property, method or subscript from being overridden with he `final` keyword. `AnyObject` and `Any` are used to mark a type or collection of types as unspecified types while using the type check operator and type cast operator to convert the type type into a type you are interested in.
+
+ **Keywords to remember:**
  - `super` = To access a superclass's properties, methods or subscripts
- - `override` = Overriding a property or method of a base class
- - `required` = All subclasses must implement an initializer that is `required`
+ - `override` = Custom implementation within the subclass of a superclass's properties, methods or subscripts
+ - `required` = An initializer that all subclasses must implement
  - `final` = A class, property or method that cannot be overridden
  - `is` = Type check operator to check if an instance is of a specific type
- - `as` = Type cast operator that will downcast to the subclass type. Use `as?` of casting can fail, use `as!` if downcast will always succeed
+ - `as` = Type cast operator that will downcast to the subclass type. Use `as?` is casting can fail; use `as!` if downcast will always succeed
  - `AnyObject` = Represents an instance of any class type
  - `Any` = Represents an instance of any type, including function types and tuples
  * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC

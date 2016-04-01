@@ -2,7 +2,7 @@
  [Next](@next)
  - - -
  # Table of Contents
- - important: This course is an overview of the Swift programming language developed by Apple. The content and code within this playground is inspired by Apple's [Swift Programming Language Guide](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). The Swift Programming Language Guide is the source of truth for this playground. This is a living playground and is subject to change to keep up to date with changes to the Swift language.
+ - important: This playground is an overview of the Swift programming language developed by Apple. The content and code within this playground is inspired by Apple's [Swift Programming Language Guide](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). The Swift Programming Language Guide is the source of truth for this playground. This is a living playground and is subject to change to keep up to date with changes to the Swift language.
  1. [Basics | Data Types | Operators](Basics%20%7C%20Data%20Types%20%7C%20Operators)
  2. [Strings & Characters](Strings%20and%20Characters)
  3. [Control Flow](Control%20Flow)
@@ -18,7 +18,7 @@
  13. [Generics](Generics)
  14. [JSON & Objects](JSON%20and%20Objects)
  15. [HTTP & ReST](HTTP%20and%20ReST)
- * callout(Supporting Materials):Below is a list of resources that will help your learning of the Swift language.
+ * callout(Supporting Materials): Below is a list of resources that will help your learning of the Swift language.
  - [Search Apple's Developer Documentation](https://developer.apple.com/search/?q=Swift)
  - Swift Documentation
     - [Swift Programming Language (iBook)](https://itunes.apple.com/us/book/swift-programming-language/id881256329?mt=11)

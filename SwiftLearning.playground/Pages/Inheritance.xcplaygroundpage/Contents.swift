@@ -2,8 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Inheritance
- * callout(Session Overview):
- Code reuse is paramount in all programming languages. For languages that support object oriented programming or *OOP*, such as Swift, code inheritance is a technique in sharing and extending code within your programs.
+ * callout(Session Overview): Code reuse is paramount in all programming languages. For languages that support object oriented programming or *OOP*, such as Swift, code inheritance is a technique in sharing and extending code within your programs.
  */
 import Foundation
 /*:
@@ -411,6 +410,7 @@ for anyThing in anyThings {
  Above we do something similar to storing instances of `AnyObject`, here we store an array of `Any`, representing any type, such as tuples of function types. Again we iterate and use the `switch-case` statement to match on a type and print the correct string.
  */
 /*:
+ - - -
  * callout(Exercise): Build upon your `Dog` and `Cat` classes in the previous exercise by applying inheritance. Create a superclass that both `Dog` and `Cat` can inherit from. Modify your `Owner` class to hold a collection of pets. Iterate over your pets and print what sound the pet makes.
 
  **Constraints:**

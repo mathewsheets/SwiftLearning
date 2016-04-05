@@ -2,8 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Collection Types
- * callout(Session Overview):
- Often times in programs you need to group data into a single container where the number of items is unknown. Swift provides 3 main containers known as *collection types* for storing collections of values. *Arrays* are ordered collections of values, *Sets* are unordered collections of unique values, and *Dictionaries* are unordered collections of key-value associations. Please visit the Swift Programming Language Guide section on [Collection Types](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105) for more detail on collection types.
+ * callout(Session Overview): Often times in programs you need to group data into a single container where the number of items is unknown. Swift provides 3 main containers known as *collection types* for storing collections of values. *Arrays* are ordered collections of values, *Sets* are unordered collections of unique values, and *Dictionaries* are unordered collections of key-value associations. Please visit the Swift Programming Language Guide section on [Collection Types](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105) for more detail on collection types.
 */
 import Foundation
 /*:

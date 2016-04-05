@@ -2,8 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Functions
- * callout(Session Overview):
- Functions are statements of code grouped together to provide readability, reusability, and modularity within your program. The Swift Standard Library provides functions that we have already used within previous Playgrounds. Please visit The Swift Standard Library [Functions](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Reference/Swift_StandardLibrary_Functions/index.html#//apple_ref/doc/uid/TP40016052) online resource to see the full list of global functions available to your programs.
+ * callout(Session Overview): Functions are statements of code grouped together to provide readability, reusability, and modularity within your program. The Swift Standard Library provides functions that we have already used within previous Playgrounds. Please visit The Swift Standard Library [Functions](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Reference/Swift_StandardLibrary_Functions/index.html#//apple_ref/doc/uid/TP40016052) online resource to see the full list of global functions available to your programs.
 */
 import Foundation
 /*:

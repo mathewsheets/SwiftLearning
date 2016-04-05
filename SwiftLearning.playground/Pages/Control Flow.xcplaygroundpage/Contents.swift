@@ -2,8 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Control Flow
- * callout(Session Overview):
- Processing logic is what gives your programs personality. These decision making statements are known as control flow. Control flow statements can fork your execution path or even repeat a series of statements. Please visit the Swift Programming Language Guide section on [Control Flow](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120) for more details on control flow.
+ * callout(Session Overview): Processing logic is what gives your programs personality. These decision making statements are known as control flow. Control flow statements can fork your execution path or even repeat a series of statements. Please visit the Swift Programming Language Guide section on [Control Flow](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120) for more details on control flow.
 */
 import Foundation
 /*:

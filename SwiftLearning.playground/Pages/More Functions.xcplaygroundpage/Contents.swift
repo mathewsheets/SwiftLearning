@@ -2,8 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # More Functions
- * callout(Session Overview):
- In previous sessions, we learned that we can group related statements together, giving them a name with parameters and a return type, calling them functions. Functions are also data types, enabling us to assign a function to a constant or variable, return a function, and pass a function as an argument to another function. We can even nest functions inside other functions to change the visibility of the function from global to local only to the parent function. In this session we continue to explore the capabilities of functions as well as learn about a special functions called **Closures**.
+ * callout(Session Overview): In previous sessions, we learned that we can group related statements together, giving them a name with parameters and a return type, calling them functions. Functions are also data types, enabling us to assign a function to a constant or variable, return a function, and pass a function as an argument to another function. We can even nest functions inside other functions to change the visibility of the function from global to local only to the parent function. In this session we continue to explore the capabilities of functions as well as learn about a special functions called **Closures**.
 */
 import Foundation
 /*:

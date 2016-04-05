@@ -2,8 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Strings & Characters
- * callout(Session Overview):
- Strings are one of Swift's fundamental data types that stores a series of characters such as "Hello Student". In this session we will go into more detail about `String`'s capabilities and learn what properties and functions that are available. Please refer to the Swift Language Guide section [Strings and Characters](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285) and also the [String](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Reference/Swift_String_Structure/index.html#//apple_ref/swift/struct/s:SS) data type in the Swift Standard Library Reference to read even more about Swift's Strings.
+ * callout(Session Overview): Strings are one of Swift's fundamental data types that stores a series of characters such as "Hello Student". In this session we will go into more detail about `String`'s capabilities and learn what properties and functions that are available. Please refer to the Swift Language Guide section [Strings and Characters](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285) and also the [String](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Reference/Swift_String_Structure/index.html#//apple_ref/swift/struct/s:SS) data type in the Swift Standard Library Reference to read even more about Swift's Strings.
 */
 import Foundation
 /*:

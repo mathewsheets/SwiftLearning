@@ -2,8 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Enumerations
- * callout(Session Overview):
- An enumeration is a type-safe way to group related values. These values would typically be an `Int` that outside the context of the enumeration, would become ambiguous. Enumerations in swift are far more rich in functionality when compared to other languages.
+ * callout(Session Overview): An enumeration is a type-safe way to group related values. These values would typically be an `Int` that outside the context of the enumeration, would become ambiguous. Enumerations in swift are far more rich in functionality when compared to other languages.
 */
 import Foundation
 /*:
@@ -178,6 +177,7 @@ count(Count.Backward(Count.Number(10), Count.Number(1))) { print("backward from 
 Above we have an enumeration called `Count`. `Count` has three `case`s with each accepting an associated value. `case Forward` and `case Backward` accept an associated value of `Count`. Using the `indirect` keyword preceding the `enum` indicates that we intend to use itself as an associated value. Next we create a function called `count` with parameters of type `Count` and a closure `(Int) -> Void`. The `count` function recursively calls itself until the first `Count` number equals the second `Count` number.
 */
 /*:
+ - - -
  * callout(Exercise): We need to model the set of possible iPhones manufactured. Replace each possible tuple property value with an enumeration that would be appropriate to the current non enumeration value.
  */
 let iPhone          = (modelName: "iPhone", modelNumbers: ["A1203"], hardwareStrings: ["iPhone1,1"], osVersions: [1, 2, 3])

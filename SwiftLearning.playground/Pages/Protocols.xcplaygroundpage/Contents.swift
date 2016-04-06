@@ -9,15 +9,15 @@ import Foundation
  ## What Are They and Why Use Them?
  Swift protocols are essentially types without the implementation of properties or methods. They create a contract with a conforming type. The conforming type must implement the properties and methods defined in the protocol.
  
- As we have learned in earlier sessions, types can contain other types, as well as creating collection of types. When applying that to protocol, you as the developer are unaware of the implementation, you only care that a property or method exists for you to access or call. This single attribute of protocols, not being aware of the implementation, gives you the ability to change the implementation or have multiple implementations of a protocol. This provides you with low coupling between two data types and a pluggable application architecture.
+ As we have learned in earlier sessions, types can contain other types, as well as contain a collection of types. When applying that to protocols, you as the developer are unaware of the implementation, you only care that a property or method exists for you to access or call. This single attribute of protocols, not being aware of the implementation, gives you the ability to change the implementation or have multiple implementations of a protocol. This provides you with low coupling between two data types and a pluggable application architecture.
  */
 /*:
  ## Conforming To
- In earlier session, we have already encountered protocols. Most of the data types we have worked with such as `Int`, `String` and `Bool` all **conform** to one of the following three protocols, `Equatable`, `Comparable`, and `Hashable`. Conforming to a `protocol` implies that the data type provides the implementation of the properties or methods defined in the `protocol`.
+ In earlier sessions, we have already encountered protocols. Most of the data types we have worked with such as `Int`, `String` and `Bool` all **conform** to one of the following three protocols, `Equatable`, `Comparable`, and `Hashable`. We have also seen the `ErrorType` protocol when creating a enumeration that can be used in a throwing function. Conforming to a protocol implies that the data type provides the implementation of the properties or methods defined in the protocol. You indicate conforming to a protocol by placing the protocol after a colon `:`, similar to how a class is inheriting from a superclass. If a class is inheriting and conforming, place the inheriting class first then the conforming protocols separated by a comma. Protocols can also inherit from one another, similar to classes, but protocols can inherit from multiple protocols unlike classes.
  */
 /*:
  ### `Equatable`
- By conforming to the `Equatable` protocol, you are implying that your data type will implement `public func ==(lhs: Self, rhs: Self) -> Bool` and that instances of that type can be compared for value equality using operators `==` and `!=`
+ By conforming to the `Equatable` protocol, you are implying that your data type will implement `public func ==(lhs: Self, rhs: Self) -> Bool` and that instances of that type can be compared for value equality using operators `==` and `!=`.
  */
 class Father: Equatable {
 
@@ -60,7 +60,7 @@ if moe1 == curly {
     print("not the same father")
 }
 /*:
- 
+ Above we created a `Father` class conforming to the `Equatable` protocol. The `Equatable` protocol requires us to implement `public func ==(lhs: Self, rhs: Self) -> Bool`, which we have with `func ==(lhs: Father, rhs: Father) -> Bool {...}`. Next we created three instances of `Father`, two of which are actually equals according to our implementation of `public func ==(lhs: Self, rhs: Self) -> Bool`. Also notice the use of the *identity Operator* `===`.
  */
 /*:
  ### `Comparable`
@@ -127,7 +127,7 @@ if larry10 > larry7 {
     print("larry 10 >= larry 7")
 }
 /*:
- 
+ Above we created a `Son` class inheriting from `Father` and also conforming to the `Comparable` protocol. The `Son` class need to implement all the functions defined in the `Comparable` protocol. Next we create four instances of a `Son` class exercising the comparison operators of `<, <=, >=, >`.
  */
 /*:
  ### `Hashable`
@@ -184,11 +184,11 @@ if fathersByDaughter[abby2] == fathersByDaughter[katie] {
     print("abby2 and katie have the same father")
 }
 /*:
- 
+ Above we created a `Daughter` class inheriting from `Father` and also conforming to the `Hashable` protocol. The `Daughter` class needs to conform to the ‘Hashable protocol’ by implementing the property `public var hashValue: Int { get }`. Next we create three instances of the `Daughter` class, two of which have the same `hashValue`, but are different instances. We also use a `Dictionary` using the `Daughter` instances as keys.
  */
 /*:
  ## Creating Protocols
- Protocols are created with the `protocol` keyword. The properties and methods definitions of the `protocol` must be implemented by the conforming data type.
+ Protocols are created with the `protocol` keyword. The properties and methods definitions of the protocol must be implemented by the conforming data type.
  */
 protocol Crawlable {
 
@@ -203,11 +203,11 @@ class Crawler: Crawlable {
 
 let crawler = Crawler()
 /*:
- 
+ Above we created a protocol with no properties or methods, simply as an example of how to create a protocol. The `Crawler` conforms to the `Crawlable` protocol, and in this case, nothing has to be implemented.
  */
 /*:
  ## Protocols & Properties
- Protocols can define both type and instance properties. The conforming data type property could be either a stored or computed property, as long as the name and type are correct. When defining a property in a `protocol`, you need to specify what property methods need to be implemented with the `get` and/or `set` property methods.
+ Protocols can define both type and instance properties. The conforming data type property could be either a stored or computed property, as long as the name and type are correct. When defining a property in a protocol, you need to specify what property methods need to be implemented with the `get` and/or `set` property methods.
  */
 protocol Walkable: Crawlable {
     
@@ -228,7 +228,7 @@ let walker = Walker(direction: "North")
 
 print(walker.direction)
 /*:
- 
+ Above we created a `Walkable` protocol with an instance property. We also created a class `Walker` conforming to `Walkable` implementing the instance property. And finally we created an instance of `Walker` printing the direction.
  */
 /*:
  ## Protocols & Methods
@@ -258,7 +258,7 @@ let runner = Runner(direction: "West")
 
 runner.run(6.5)
 /*:
- 
+ Above we created a `Runnable` protocol with an instance method. We also created a class `Runner` conforming to `Runnable` implementing the instance method. And finally we create an instance of `Runner` printing the speed and direction.
  */
 /*:
  ## Protocols & Initializers
@@ -286,39 +286,45 @@ let talker = TalkingSon(son: Son(name: "Oliver", age: 2, truck: "Red"))
 
 print(talker.description)
 /*:
- 
+ Above we created a `Talkable` protocol with an initializer. We also created a class `TalkingSon` inheriting from `Son` and conforming to `Talkable` implementing the required initializer. And finally we create an instance of `TalkingSon` printing the description.
  */
 /*:
  ## Protocols as Types
- With `protocol`s and `class`es, the properties and methods defined in the `protocol` and the properties and methods implemented in the conforming `class` appear to be one in the same. Remember, `protocol`s don’t provide the implementation, but classes do. You cannot create an instance of just a `protocol`, you must create an instance of a concrete data type that conforms to a `protocol`. This enables you do store, return, and pass as arguments to functions, data types confirming to a `protocol` with just the `protocol` name.
+ With protocols and classes, the properties and methods defined in the protocol and the properties and methods implemented in the conforming class appear to be one in the same. Remember, protocols don’t provide the implementation, but classes do. You cannot create an instance of just a protocol, you must create an instance of a concrete data type that conforms to a protocol. This enables you do store, return, and pass as arguments to functions, data types confirming to a protocol with just the protocol name.
  */
 var crawers: [Crawlable] = [] // an array of Crawlable instances. Crawlable is a protocol
 
 let walkable: Walkable? // an instance of Walkable
 
-class RunnerWalker: Runnable {
+protocol RunnerWalkable {
+    
+    init(walker: Walkable)
+}
 
-    let walker: Walkable
+class RunnerWalker: Runnable, RunnerWalkable {
 
     var direction: String
 
-    init(walker: Walkable, direction: String) { // initializer with a protocol parameter
+    required init(walker: Walkable) { // initializer with a protocol parameter
 
-        self.walker = walker
-        self.direction = direction
+        self.direction = walker.direction
     }
 
     func run(speed: Float) {
 
-        print("I can run \(speed) mph")
+        print("I can run \(speed) mph \(direction)")
     }
 }
+
+let runnerWalker = RunnerWalker(walker: Walker(direction: "North"))
+
+runnerWalker.run(4.5)
 /*:
- 
+ Above we store multiple instances of different classes conforming to specific protocols. We store an array of `Crawlable` instances, and an instance of a `Walkable`. We also created a `RunnerWalker` class conforming to `Runnable` and `RunnerWalkable` which accepts a protocol of `Walkable` as in argument in the required initializer. Finally we create an instance of `RunnerWalker` calling the `run(:Int)` method.
  */
 /*:
  ## Delegating the work with Protocols
- In the world of iOS development, the delegation design pattern is leveraged all through out the SDK. The delegation design pattern enables concrete classes to delegate work to other data types that conform to a `protocol`. The `protocol` is responsible to define what work that needs to be executed and conforming data types implement the work. The concrete data type that does the delegation does not need to know the underlining implementation of the `protocol`
+ In the world of iOS development, the delegation design pattern is leveraged all through out the SDK. The delegation design pattern enables concrete classes to delegate work to other data types that conform to a protocol. The protocol is responsible to define what work that needs to be executed and conforming data types implement the work. The concrete data type that does the delegation does not need to know the underlining implementation of the protocol.
  ### The Protocols
  Protocols are what make the delegation design pattern powerful. We don't want our concrete classes coupled to a another concrete class.
  */
@@ -439,11 +445,11 @@ worker.action = BusyWorkAction()
 worker.delegate = DoingSomethingTimeTracker() // pretend that this will actually persist somewhere
 worker.doingWhat()
 /*:
-
+Above we leverage the delegation design pattern swapping out different implementation of the `DoableAction` and `DoableActionDelegate` protocols. We call the `doingWhat()` method on the `worker` constant printing out the different string per implementation.
  */
 /*:
  ## Type Checking & Type Casting Protocols
- As we learned in the [Inheritance](Inheritance) session, we can leverage the type check operator `is` and the type cast operator `as` when checking if a data type is a subclass of a superclass. The same applies to `protocol`s, because `protocol`s  represent an instance of a concrete class.
+ As we learned in the [Inheritance](Inheritance) session, we can leverage the type check operator `is` and the type cast operator `as` when checking if a data type is a subclass of a superclass. The same applies to protocols, because protocols represent an instance of a concrete class.
 
  */
 if talker is Crawlable { // this is false
@@ -479,7 +485,7 @@ for object in objects {
     }
 }
 /*:
- 
+ Above we leverage the type checking and type casting operators to determine what instances conform to specified protocols, similar to the example in the Inheritance session.
  */
 /*:
  - - -

@@ -16,7 +16,7 @@ import Foundation
  In earlier sessions, we have already encountered protocols. Most of the data types we have worked with such as `Int`, `String` and `Bool` all **conform** to one of the following three protocols, `Equatable`, `Comparable`, and `Hashable`. We have also seen the `ErrorType` protocol when creating a enumeration that can be used in a throwing function. Conforming to a protocol implies that the data type provides the implementation of the properties or methods defined in the protocol. You indicate conforming to a protocol by placing the protocol after a colon `:`, similar to how a class is inheriting from a superclass. If a class is inheriting and conforming, place the inheriting class first then the conforming protocols separated by a comma. Protocols can also inherit from one another, similar to classes, but protocols can inherit from multiple protocols unlike classes.
  */
 /*:
- ### `Equatable`
+ ### The `Equatable` Protocol
  By conforming to the `Equatable` protocol, you are implying that your data type will implement `public func ==(lhs: Self, rhs: Self) -> Bool` and that instances of that type can be compared for value equality using operators `==` and `!=`.
  */
 class Father: Equatable {
@@ -63,7 +63,7 @@ if moe1 == curly {
  Above we created a `Father` class conforming to the `Equatable` protocol. The `Equatable` protocol requires us to implement `public func ==(lhs: Self, rhs: Self) -> Bool`, which we have with `func ==(lhs: Father, rhs: Father) -> Bool {...}`. Next we created three instances of `Father`, two of which are actually equals according to our implementation of `public func ==(lhs: Self, rhs: Self) -> Bool`. Also notice the use of the *identity Operator* `===`.
  */
 /*:
- ### `Comparable`
+ ### The `Comparable` Protocol
  By conforming to the `Comparable` protocol, you are implying that your data type will implement:
  - `public func <(lhs: Self, rhs: Self) -> Bool`
  - `public func <=(lhs: Self, rhs: Self) -> Bool`
@@ -130,7 +130,7 @@ if larry10 > larry7 {
  Above we created a `Son` class inheriting from `Father` and also conforming to the `Comparable` protocol. The `Son` class need to implement all the functions defined in the `Comparable` protocol. Next we create four instances of a `Son` class exercising the comparison operators of `<, <=, >=, >`.
  */
 /*:
- ### `Hashable`
+ ### The `Hashable` Protocol
  By conforming to the `Hashable` protocol, you are implying that your data type will implement `public var hashValue: Int { get }` and that instances of that type can be as `Dictionary` keys.
  */
 class Daughter: Father, Hashable {

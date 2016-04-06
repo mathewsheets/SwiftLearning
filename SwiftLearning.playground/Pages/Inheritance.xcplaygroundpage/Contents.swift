@@ -2,12 +2,12 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Inheritance
- * callout(Session Overview): Code reuse is paramount in all programming languages. For languages that support object oriented programming or *OOP*, such as Swift, code inheritance is a technique in sharing and extending code within your programs.
+ * callout(Session Overview): When you think of inheritance, you probably think of material wealth that your parents or grandparents pass along to you when they die. Or possibly the genes you inherited from your parents and grandparents. Those aspects also ring true in object oriented programming. Inheritance is a technique in sharing and extending code within your programs and is an attribute of languages that support object oriented programming or *OOP*, such as Swift.
  */
 import Foundation
 /*:
  ## What Is It?
- When you think of inheritance, you probably think of material wealth that your parents or grandparents pass along to you when they die. Or possibly the genes you inherited from your parents and grandparents. Those aspects also ring true in object oriented programming. In the context of OOP, inheritance means that a class can inherit properties and methods from a superclass. The class that inherited the properties and methods is called the subclass. Swift only has the capability of single inheritance, meaning that a Swift class can only inherit from one superclass. Also, inheritance only applies to reference types, a.k.a classes.
+In the context of OOP, inheritance means that a class can inherit properties and methods from a superclass. The class that inherited the properties and methods is called the subclass. Swift only has the capability of single inheritance, meaning that a Swift class can only inherit from one superclass. Also, inheritance only applies to reference types, a.k.a classes.
  */
 /*:
  ## The Base Class
@@ -126,7 +126,7 @@ print(amelia.sayHi())
  A subclass can change the implementation of a property and method (both type and instance) or a subscript that is inherited from a superclass by *overriding* the implementation inherited. This is done with the `override` keyword in front of the property, method or subscript you want to override.
  */
 /*:
- ## Overriding Methods
+ ### Overriding Methods
  Overriding a method (either instance or type) is done by placing the `override` keyword before the function definition. If you override a method that is not defined in the superclass, you will receive a compiler error. When you override a method, it’s the implementation of the subclass that gets executed.
  */
 class Grandson: Son {
@@ -144,7 +144,7 @@ print(grandson.sayHello())
  Above we have created a new class `Grandson` inheriting from the `Son` class. We want the `sayHello` method of the `Grandson` class to provide a different implementation. We do this by overriding the `sayHello` method defined in the base class `Father`.
  */
 /*:
- ## Overriding Properties
+ ### Overriding Properties
  Overriding a property (either instance or type) is similar to overriding a function; you also place the override keyword before the property definition. It doesn’t matter if the superclass’s property is a stored property or computed property. You can override a property in a subclass as long as the name and type are the same as in the superclass. You can override a property’s get and set methods as well as the property observers.
  */
 class Granddaughter: Daughter {

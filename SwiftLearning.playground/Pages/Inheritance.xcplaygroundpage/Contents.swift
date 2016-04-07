@@ -101,7 +101,7 @@ class Daughter: Mother {
     init(age: Int, name: String, height: Float, hairColor: String, eyeColor: String) {
 
         self.age = age
-
+        
         super.init(name: name, height: height, hairColor: hairColor, eyeColor: eyeColor)
     }
 
@@ -140,6 +140,15 @@ class Grandson: Son {
 let grandson = Grandson(name: "Sam", height: 48, hairColor: "Blond", eyeColor: "Green")
 
 print(grandson.sayHello())
+
+// below is a function that accepts a Father as a parameter. A Grandson is acceptable because a Grandson is a subclass of a Father
+
+func sayHello(father: Father) {
+    
+    print(father.sayHello())
+}
+
+sayHello(grandson)
 /*:
  Above we have created a new class `Grandson` inheriting from the `Son` class. We want the `sayHello` method of the `Grandson` class to provide a different implementation. We do this by overriding the `sayHello` method defined in the base class `Father`.
  */

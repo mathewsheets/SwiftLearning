@@ -1,7 +1,7 @@
 /*:
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
- # JSON & Objects
+ # JSON & Instances
  * callout(Session Overview):
  */
 import Foundation

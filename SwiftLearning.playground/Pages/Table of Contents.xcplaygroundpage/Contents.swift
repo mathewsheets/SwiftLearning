@@ -16,7 +16,7 @@
  11. [Protocols](Protocols)
  12. [Extensions](Extensions)
  13. [Generics](Generics)
- 14. [JSON & Objects](JSON%20and%20Objects)
+ 14. [JSON & Instances](JSON%20and%20Instances)
  15. [HTTP & ReST](HTTP%20and%20ReST)
  * callout(Supporting Materials): Below is a list of resources that will help your learning of the Swift language.
  - [Search Apple's Developer Documentation](https://developer.apple.com/search/?q=Swift)

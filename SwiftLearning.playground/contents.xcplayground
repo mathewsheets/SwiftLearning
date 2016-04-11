@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='rendered' timelineScrubberEnabled='true'>
+<playground version='6.0' target-platform='ios' display-mode='raw' timelineScrubberEnabled='true'>
     <pages>
         <page name='Table of Contents'/>
         <page name='Basics | Data Types | Operators'/>
@@ -15,7 +15,7 @@
         <page name='Protocols'/>
         <page name='Extensions'/>
         <page name='Generics'/>
-        <page name='JSON and Objects'/>
+        <page name='JSON and Instances'/>
         <page name='HTTP and ReST'/>
         <page name='License'/>
     </pages>

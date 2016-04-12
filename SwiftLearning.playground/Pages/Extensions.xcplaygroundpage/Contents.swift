@@ -2,21 +2,21 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Extensions
- * callout(Session Overview): Extensions provide the capability of adding new functionality to existing types. The existing types include types provided to you either by [The Swift Standard Library](https://developer.apple.com/library/ios/documentation/General/Reference/SwiftStandardLibraryReference/index.html) such as `Int` or `String`, types from a  third party framework, or custom types authored by you. In the [Inheritance](Inheritance) session we learned that Inheritance gives you the capability of reusing code that is generic across all subtypes and subtypes can override a superclass’s properties or methods. Extensions are similar in that they allow for sharing of code, but the key difference is that extensions cannot override existing properties or methods. The Swift Standard Library uses extensions extensively.
+ * callout(Session Overview): Extensions provide the capability of adding new functionality to existing types. The existing types include types provided to you either by [The Swift Standard Library](https://developer.apple.com/library/ios/documentation/General/Reference/SwiftStandardLibraryReference/index.html) such as `Int` or `String`, types from a third party framework, or custom types authored by you. In the [Inheritance](Inheritance) session we learned that inheritance gives you the capability of reusing code that is generic across all subtypes and subtypes can override a superclass’s properties or methods. Extensions are similar in that they allow for sharing of code, but the key difference is that extensions cannot override existing properties or methods. The Swift Standard Library uses extensions extensively.
  */
 import Foundation
 /*:
  ## Creating
  Extensions are created with the `extension` keyword. The type that you are extending must exist and be visible for you to create the extension. With extensions, you can:
  - add new type & instance computed properties
- - new type & instance methods
- - new initializers
- - new subscripts
- - new nested types
- - protocol conformance
- - note: Extensions *cannot* add stored properties or property observers, **only computed** properties. Both stored & computed properties can be access within an extension.
- - example: Extending the `Int` type.
- This example creates an extension of the `Int` type. You are allowed to creates as many extension as you like on the same type.
+ - add new type & instance methods
+ - add new initializers
+ - add new subscripts
+ - add new nested types
+ - specify protocol conformance
+ - note: Extensions *cannot* add stored properties or property observers, only **computed** properties. Both stored & computed properties can be accessed within an extension.
+ - example: Extending the `Int` type.\
+ This example creates an extension of the `Int` type. You are allowed to creates as many extensions as you like on the same type.
  */
 extension Int {
 
@@ -34,8 +34,9 @@ extension Int {
 }
 /*:
  ## Adding New Properties
- Extensions allow you to add new type and instance computed properties, not stored properties or property observers. The syntax is exactly like creating a computed property in the original type.  All existing stored and computed properties, methods and subscripts are available for you to use in the extension. You can also use the `self` keyword to explicitly indicate that you are referencing the instance of the type you are extending.
- - example: ADD
+ Extensions allow you to add new type and instance computed properties, not stored properties or property observers. The syntax is exactly like creating a computed property in the original type. All existing stored and computed properties, methods and subscripts are available for you to use in the extension. You can also use the `self` keyword to explicitly indicate that you are referencing the instance of the type you are extending.
+ - example: Extending the `String` type.\
+ This example creates an extension for `String` and adds an instance computed property `length`. The `length` property accesses the `characters` property which accesses the `count` property to return the number of characters in the string.
  */
 extension String {
     
@@ -46,11 +47,11 @@ extension String {
 }
 
 let length = "I should be the length of 28".length
-
 /*:
  ## Adding New Methods
  In similar fashion as adding new computed properties, you add new methods to an existing type by creating an extension and add the new methods. You are not able to override properties and methods.
- - example: ADD
+ - example: Extending the `Double` type.\
+ Below is an extension on a `Double`. Have have added three methods, all of which use the `self` keyword to reference the current instance.
  */
 extension Double {
 
@@ -76,8 +77,9 @@ let piRemainder = pi.remainder()
 let piInt = pi.asInt()
 /*:
  ### Mutation on Value Types
- If you created an extension on a value type such as a enumeration or structure, you can mutate the instance by using the `mutating` keyword`, just like you would have on the original type.
- - example: ADD
+ If you created an extension on a value type such as a enumeration or structure, you can mutate the instance by using the `mutating` keyword, just like you would have on the original type.
+ - example: An extension that mutates a value type.\
+ This example is another extension on `Int`, adding a method that mutates the actual instance. Doing so requires the keyword `mutating`.
  */
 extension Int {
 
@@ -91,12 +93,12 @@ var addTo = 1
 let adding = 1.5
 
 addTo.add(adding)
-
 /*:
  ## Adding New Initializers
  Extensions allow you to create new initializers for you to provide other ways to initialize a type.
  - note: When you are extending a class, you are only allowed to provide convenience initializers. You are still able to delegate the initialization to another convenience initializer or designated initializer implemented in the original class.
- - example: ADD
+ - example: Extension on `Int` to add a new initializer.\
+ This example creates an extension on `Int` adding a new initializer, accepting a variadic parameters of `Int` types. The initializer sums all the `Int` numbers and sets the result to `self`.
  */
 extension Int {
 
@@ -114,7 +116,8 @@ extension Int {
 
 let added = Int(numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9)
 /*:
- - example: ADD
+ - example: Extension adding a convenience initializer on a class.\
+ Below is an example of adding a convenience initializer in an extension for the type `Head`. Since `Head` is a class, the initializer is a convenience initializer, not a designated initializer.
  */
 class Head {
     
@@ -133,16 +136,30 @@ extension Head {
     }
 }
 /*:
+ - experiment: Delete the `convenience` keyword from the extension `Head`. What does the compiler tell you?
+ */
+/*:
  ## Adding Subscripts
- 
- - example: ADD
+ Extensions allow you to add new subscripts to existing types. Remember that subscripts enable you to access or mutate elements in a collection type. You can create subscripts as shortcuts for interacting with a type that contains a collection type internally and provide other subscript methods to interact with that internal collection type.
+ - example: Extension on `String` adding subscripts.\
+ Below we have added two new subscript methods; one to get a `Character` with subscript, and the other to get a substring with a start and end subscripts.
  */
 extension String {
 
+    subscript(index: Int) -> Character? {
+
+        // let's guard against invalid values
+        guard index >= 0 && index < length else {
+            return nil
+        }
+        
+        return Character(substringWithRange(startIndex.advancedBy(index)...startIndex.advancedBy(index)))
+    }
+    
     subscript(start: Int, add: Int) -> String? {
         
         // let's guard against invalid values
-        guard start >= 0 && start < (length - 1) && add >= 0 else {
+        guard start >= 0 && start < length && add >= 0 else {
             return nil
         }
 
@@ -161,13 +178,21 @@ extension String {
 }
 
 let test = "This is a test of the emergency broadcast system"
-let emergency = test[22, 9]
-let invalid = test[42, Int.max]
 
+let emergency = test[22, 9]
+let system = test[42, Int.max]
+
+for var i in 0..<system!.length {
+
+    print(system![i]!)
+
+    i += 1
+}
 /*:
  ## Adding Nested Types
- 
- - example: ADD
+ Extensions give you the ability of adding nested types within other type. This could be useful to further expand on the static nature of the type your extending.
+ - example: Extension adding a nested type to `Int`.\
+ Below is an extension on `Int` adding a nested enumeration `Grade` and an instance computed property `grade`. An instance of `Int` can access the property `grade` to get the appropriate grade enumeration.
  */
 extension Int {
     
@@ -200,8 +225,9 @@ let grade92 = 92.grade
 let grade77 = 77.grade
 /*:
  ## Conforming to a Protocol with an Extension
- 
- - example: ADD
+ Extensions are very useful in breaking up responsibilities of a type into different code blocks or even files. If a type is conforming to a protocol, the implementation of the protocol can be placed in the extension directly. You can even create an extension with the type conforming to a protocol and implement the protocol all in the same extension.
+ - example: Extension to add protocol conformance.\
+ Below we have a `Crawler` class and a `Crawlable` protocol. Before extensions, we specified protocol conformance within the class definition. But with extensions, we can specify protocol conformance and provide the implementaton within an extension.
  */
 class Crawler {
     
@@ -238,16 +264,10 @@ if crawler.walkable() {
 }
 /*:
  ## Protocol Adoption with an Extension
- 
- - example: ADD
+ If a type already conforms to a protocol without specifying so, you can create an extension only to indicate that the type conforms to the protocol.
+ - example: Adopting a protocol with an extension.\
+ Class `Walker` implicitly conforms to the `Walkable` protocol. To indicate protocol adoption, a simple 1 line extension will satisfy the protocol requirements.
  */
-protocol Walkable: Crawlable {
-    
-    var direction: String { get set }
-    
-    func runnable() -> Bool
-}
-
 class Walker: Crawler {
 
     var direction: String
@@ -269,6 +289,13 @@ class Walker: Crawler {
     }
 }
 
+protocol Walkable: Crawlable {
+    
+    var direction: String { get set }
+    
+    func runnable() -> Bool
+}
+
 extension Walker: Walkable {}
 
 let walker: Walkable = Walker(age: 7, direction: "North")
@@ -280,12 +307,10 @@ if walker.runnable() {
 }
 /*:
  ## Protocol Extensions
-
- */
-/*:
- ### Default Implementations for Protocols
- 
- - example: ADD
+Protocol extensions are an impressive feature of the Swift programming language. With extensions applied to protocols, protocols can be extended to provide the implementation of what is defined in the protocol. Think of it as the default implementation of the protocol that the conforming type can leverage.
+ - note: Remember, extensions cannot override functionality, only provide new functionality. Also, if the conforming type also provides the implementation, the implementation in the protocol extension *will not* be use.
+ - example: Default implementation of a protocol.\
+ Below we leverage protocol extensions by providing the default implementation of the `func run(speed: Float)` method on the `Runnable` protocol.
  */
 protocol Runnable: Walkable {
 
@@ -302,18 +327,28 @@ extension Runnable {
     }
 }
 
+extension Runnable {
+
+    func runfast() {
+
+        run(13.8)
+    }
+}
+
 class Runner: Walker, Runnable {
-    
+
     var distance: Double = 0
 }
 
 let runner: Runnable = Runner(age: 16, direction: "North")
 
 runner.run(6.5)
+runner.runfast()
 /*:
  ### Constraining your Protocol Extension 
- 
- - example: ADD
+ With protocol extensions, you can constrain the protocol extension to only make available the properties and methods to specific conforming types. This allows you to create a protocol extension and indicate what conforming types are allowed to receive the default implementation. You add constraints to a protocol extension with the `where` keyword after the type your are extending. The clause of the `where` is what you are constraining the protocol extension to.
+ - example: Protocol extension constraints.\
+ Below we are extending the `Array` collection type adding a method `func totalDistance() -> Double`. The `func totalDistance() -> Double` is only available when the array is storing instances of types conforming to the `Runnable` protocol.
  */
 extension Array where Element: Runnable {
 
@@ -329,10 +364,13 @@ extension Array where Element: Runnable {
 
 var runner1 = Runner(age: 16, direction: "North")
 runner1.distance = 3.0
+
 var runner2 = Runner(age: 17, direction: "South")
 runner2.distance = 5.0
+
 var runner3 = Runner(age: 18, direction: "East")
 runner3.distance = 2.0
+
 var runner4 = Runner(age: 19, direction: "West")
 runner4.distance = 6.0
 
@@ -347,13 +385,19 @@ let runningDistance = runners.totalDistance()
 
 print("the total distance of \(runners.count) runners is \(runningDistance)")
 /*:
+ - experiment: Create a few `Walker` instances, store them in an array and see if the `totalDistance()` method is available.
+ */
+
+/*:
  - - -
- * callout(Exercise): ADD
+ * callout(Exercise): Build upon your simple bank teller system by using extensions. Examine your solution, identity properties and/or methods that would be good candidates for creating an extension. Did you use inheritance? See where you can use extensions in place of inheritance. Where you are specifying protocol conformance, see if extensions can be leveraged.
  
  **Constraints:**
- - ADD
+ - Use extensions instead of inheritance
+ - Use extensions to make types more natural in the system
+ - Use a protocol extension to provide default implementations
  
- * callout(Checkpoint): At this point, ...
+ * callout(Checkpoint): At this point, you have seen the power of extensions. Extensions allow you to add new functionally by the means of adding new type/instance computed properties, type/instance methods, initializers and subscripts to existing types that you authored or external to your program. You can also create protocol extensions, allowing you to provide default implementations for conforming types and even constrain the protocol extension to specific types.
  
  **Keywords to remember:**
  - `extension` = The creation of an extension

@@ -13,7 +13,7 @@ import Foundation
  */
 /*:
  ## Conforming To
- In earlier sessions, we have already encountered protocols. Most of the data types we have worked with such as `Int`, `String` and `Bool` all **conform** to one of the following three protocols, `Equatable`, `Comparable`, and `Hashable`. We have also seen the `ErrorType` protocol when creating a enumeration that can be used in a throwing function. Conforming to a protocol implies that the data type provides the implementation of the properties or methods defined in the protocol. You indicate conforming to a protocol by placing the protocol after a colon `:`, similar to how a class is inheriting from a superclass. If a class is inheriting and conforming, place the inheriting class first then the conforming protocols separated by a comma. Protocols can also inherit from one another, similar to classes, but protocols can inherit from multiple protocols unlike classes.
+ In earlier sessions, we have already encountered protocols. Most of the data types we have worked with such as `Int`, `String` and `Bool` all **conform** to one of the following three protocols, `Equatable`, `Comparable`, and `Hashable`. We have also seen the `ErrorType` protocol when creating a enumeration that can be used in a throwing function. Conforming to a protocol implies that the data type provides the implementation of the properties or methods defined in the protocol. You indicate conforming to a protocol by placing the protocol after a colon `:`, similar to how a class is inheriting from a superclass. If a class is inheriting and conforming, place the inheriting class first then the protocols separated by a comma. Protocols can also inherit from one another, similar to classes, but protocols can inherit from multiple protocols unlike classes.
  */
 /*:
  ### The `Equatable` Protocol
@@ -500,7 +500,7 @@ for object in objects {
  * callout(Checkpoint): At this point, you have learned how to leverage and see the power of protocols. Protocols and the delegation design pattern enable you to build data type low coupling relationships. Protocols provide the capability to swap out the underlying implementation without suffering the consequence of compiler errors if you had coupled to a concrete class.
  
  **Keywords to remember:**
- - `protocol` = The declaration of a protocol
+ - `protocol` = The creation of a protocol
  * callout(Supporting Materials): Chapters and sections from the Guide and Vidoes from WWDC
  - [Guide: Protocols](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html)
  - [Video: Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015-408/)

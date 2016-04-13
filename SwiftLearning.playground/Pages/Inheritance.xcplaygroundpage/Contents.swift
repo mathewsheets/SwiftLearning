@@ -427,7 +427,6 @@ for anyThing in anyThings {
  - The superclass needs to have a method of `makeSound()`
  - The subclasses need to override the `makeSound()` method and print the appropriate sound
  - The `pets` property needs to store both `Dog` and `Cat` instances
-
  * callout(Checkpoint): At this point, you have learned how to leverage inheritance to share and reuse code and how to access the properties, methods and subscripts of a superclass. Overriding a superclass provide a subclass with having it’s custom implementation of a property, method or subscript. You can prevent a class, property, method or subscript from being overridden with he `final` keyword. `AnyObject` and `Any` are used to mark a type or collection of types as unspecified types while using the type check operator and type cast operator to convert the type type into a type you are interested in.
 
  **Keywords to remember:**

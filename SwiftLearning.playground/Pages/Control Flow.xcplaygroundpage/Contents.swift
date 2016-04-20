@@ -216,19 +216,6 @@ for index in 0..<5 {
     print(index)
 }
 /*:
-### For
-The `for` loop executes a set of statements until a specific condition is met, usually by incrementing a counter each time the loop ends.
-*/
-for var index = 0; index < 5; ++index {
-    print(index)
-}
-//: The `for` loop has 3 parts:
-/*:
-- *Initialization* (`var index = 0`), evaluated once.
-- *Condition* (`index < 5`), evaluated at the start of the each loop. If the result is `true` statements in the block are executed, if `false` the loop ends.
-- *Increment* (`++index`), evaluated after all the statements in the block are executed.
-*/
-/*:
 ## Iterating using While Loops
 `while` loops are recommended when the number of iterations is unknown before looping begins.
 */

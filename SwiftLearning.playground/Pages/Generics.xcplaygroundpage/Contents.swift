@@ -101,9 +101,14 @@ iterator(cats) { (pet) in
     print("\(pet.name) makes a \(pet.makeSound()) sound.")
 }
 
-iterator([1, 2, 3, 4, 5]) { (number) in
+iterator([1, 2, 3]) { (number) in
 
     print("I'm on \(number)")
+}
+
+iterator(["one", "two", "three"]) { (string) in
+
+    print("I'm on \(string)")
 }
 /*:
  ### Multiple Type Parameters and Naming
@@ -121,6 +126,9 @@ print(thatString)
 
 let thatInt = chooseThatOverThis(1, that: 10)
 print(thatInt)
+
+let thisSomething = chooseThatOverThis("This", that: 10)
+print(thisSomething)
 /*:
  ## Generic Types
  Swift provides a way for you to create generic types, special types that can work with any type.
@@ -190,8 +198,7 @@ extension Owner {
         
         return items.isEmpty ? nil : items.last
     }
-    
-    
+
     func addPet(item: Pet) {
         
         items.append(item)
@@ -377,7 +384,7 @@ class BuildingKennel: Kennel {
     // ...that boards animals
     var animals = [Animal]()
     
-    // conformance to the Container protocol
+    // conformance to the Kennel protocol
     
     typealias Pet = Animal
     
@@ -408,7 +415,7 @@ class BuildingCatKennel: Kennel {
     // ...that boards cats
     var cats = [Cat]()
     
-    // conformance to the Container protocol
+    // conformance to the Kennel protocol
     
     typealias Pet = Cat
     
@@ -443,13 +450,13 @@ print("Building kennel has \(buildingKennel.count) animals.")
 let catKennel = BuildingCatKennel()
 catKennel.add(snowy)    // a cat
 catKennel.add(snuffles) // a cat
-// catKennel.add(fido)  // can't add a dog
+// catKennel.add(fido)  // dogs not allowed
 
 print("Cat kennel has \(catKennel.count) cats.")
 
 let same = matt.sameKennels(kennel1: backYardKennel, kennel2: buildingKennel)
 /*:
- The following will not comple becuase `buildingKennel` and `catKennel` do not pass the constrains in the where clause
+ The following will not comple because `buildingKennel` and `catKennel` do not pass the constrains in the where clause.
  
  `let same2 = matt.sameKennels(kennel1: buildingKennel, kennel2: catKennel)`
  

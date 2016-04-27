@@ -7,7 +7,7 @@
 import Foundation
 /*:
  ## What is JSON?
- **J**avascript **O**bject **N**otation, or **JSON**, is a simple, human readable and writable data-interchange format easily parsed and converted by applications. You will typically hear JSON data called a **JSON Payload**. You send and receive JSON payloads from external sources or applications.
+ **J**avascript **O**bject **N**otation, or **JSON**, is a simple, human readable and writable data-interchange format easily parsed and created by applications. You will typically hear JSON data called a **JSON Payload**. You send and receive JSON payloads from external sources or applications.
  
  ### *Serialization* or *Marshalling*
  The process of taking data within your application and converting it into a JSON payload is called *serialization* or *marshalling*. The JSON payload can be written to a file or sent over the internet using *HTTP*. Complex data types such as enumerations, structures and classes or simple data type such as `Int`s, `String`s, `Double`s, or `Bool`s are converted to a JSON payload.
@@ -50,9 +50,9 @@ import Foundation
  }
  ````
  ## The Instances or the *Object Graph*
- The data within your application, for more specifically the instances of your enumerations, structures or classes will naturally evolve into a graph of data. The graph looks like a tree, or hierarchy of data with a parent / child relation ship between the types. This tree structure of data fits nicely into a JSON payload that can be sent or received to/from an external source.
+ The data within your application, for more specifically the instances of your enumerations, structures or classes will naturally evolve into a graph of data. The graph looks like a tree, or hierarchy of data with a parent / child relation ship between the types. This tree structure of data fits nicely into a JSON payload that can be sent or received to/from an external source. The following types will be used to create a JSON payload.
  
- `PersonSummary` is a type that represents a light view of a person but provides the an `id` for us to query to receive another type with more properties. `PersonSummary` type would be used in a list comprised properties for display, user action or retrieval of more data.
+ `PersonSummary` is a type that represents a light view of a person but provides an `id` property for us to query with to receive another type with more properties. `PersonSummary` type would be used in a list comprised of properties for display, user action or retrieval of more data.
  */
 class PersonSummary {
 
@@ -89,7 +89,7 @@ class Name {
 }
 
 /*:
- `Coordinate` represents a general geo coordinate of an address that can be leveraged on a map. It is acceptable that `Coordinate` is a structure because inheritance is not valid and we don't want `latitude` to be changed without `longitude` being reset.
+ `Coordinate` represents a geo coordinate that can be leveraged on a map. It is acceptable that `Coordinate` is a structure because inheritance is not valid and we don't want `latitude` to be changed without `longitude` being reset.
  */
 struct Coordinate {
     
@@ -98,7 +98,7 @@ struct Coordinate {
 }
 
 /*:
- `Address` represents a general address with all the parts of an address separated out into properties.
+ `Address` represents an address with all the parts of an address separated out into properties.
  */
 class Address {
 
@@ -166,7 +166,7 @@ class PersonDetail {
 }
 /*:
  ## Enter NSJSONSerialization
- Practically all modern programing languages provide the mechanism to read the contents of a JSON payload and/or take an object graph and create a JSON Payload. The Foundation Framework provides [NSJSONSerialization](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html) for us to deserialized a JSON Payload and serialize an object graph.
+ Practically all modern programing languages provide the mechanism to parse the contents of a JSON payload and/or take an object graph and create a JSON Payload. The Foundation Framework provides [NSJSONSerialization](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html) for us to deserialized a JSON payload and serialize an object graph.
  
  First, we need to get the JSON payload loaded as a `String`. `summaryPayload` is a `String` that has a value of the contents from the file *persons.json* in the Resources directory. `detailPayload` is a `String` that has a value of the contents from the file *person.json*, also in the Resources directory.
  */
@@ -197,7 +197,7 @@ if detailPayload != nil {
 }
 /*:
  ### `NSJSONSerialization.JSONObjectWithData:options:`
- The `NSJSONSerialization.JSONObjectWithData:options:` takes a `NSData` instance and returns an `AnyObject`. Since you know what the structure of the JSON payload will look like, you need to either type case down to an `Array` or `Dictionary`. All other types within the `Array` or `Dictionary` need to be an instance o String, Number, Array, Dictionary, or nil. `Dictionary` key must be `String`s.
+ The method `NSJSONSerialization.JSONObjectWithData:options:` takes a `NSData` instance and returns an `AnyObject`. Since you know what the structure of the JSON payload will look like, you need to either type case down to an `Array` or `Dictionary`. All other types within the `Array` or `Dictionary` need to be an instance of String, Number, Array, Dictionary, or nil. `Dictionary` key must be `String`s.
  */
 // start out with an array to collect all the PersonSummary instances
 var personSummaries = [PersonSummary]()
@@ -322,7 +322,7 @@ print("-----Person Detail Instance-----")
 print(personDetail.description)
 /*:
  ### `NSJSONSerialization.dataWithJSONObject:options`
- The other half of `NSJSONSerialization` is to serialize an instance into a JSON payload. When using `NSJSONSerialization` we need convert our instances into valid types. The rules we must follow to convert instances into a JSON payload are:
+ The other half of `NSJSONSerialization` is to serialize an instance into a JSON payload. When using `NSJSONSerialization` we need to convert our instances into valid types. The rules we must follow to convert instances into a JSON payload are:
  - The top level instance is an `Array` or `Dictionary`
  - All types are instances of `String`, `Int` or `Double` (or `Float`), `Bool`, `Array`, `Dictionary`, or `nil`
  - All dictionary keys are instances of `String`

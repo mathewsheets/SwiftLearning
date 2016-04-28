@@ -60,7 +60,6 @@ class PersonSummary {
     var name: String?   // used for display
     var phone: String?  // used for user to push to call
 }
-
 /*:
  Both enumerations `NamePrefix` and `NameSuffix` represent in a static type-safe way the valid options for a person's name prefix and suffix. Notice that both enumerations are of type `String` giving us the rawValue of the literal case.
  */
@@ -74,7 +73,6 @@ enum NameSuffix: String {
     case Jr
     case Sr
 }
-
 /*:
  `Name` represents all the parts of a name. We model the name this way enabling us to format the name any way we wish.
  */
@@ -86,7 +84,6 @@ class Name {
     var prefix: NamePrefix?
     var suffix: NameSuffix?
 }
-
 /*:
  `Coordinate` represents a geo coordinate that can be leveraged on a map. It is acceptable that `Coordinate` is a structure because inheritance is not valid and we don't want `latitude` to be changed without `longitude` being reset.
  */
@@ -171,7 +168,7 @@ class PersonDetail {
  */
 var summaryPayload: String?
 do {
-    summaryPayload = try FileUtils.getFileContents("persons", type: "json")
+    summaryPayload = try FileUtils.getFileContents("persons.json")
 } catch FileError.ReadError(let error) {
     print(error)
 } catch FileError.NotFound(let path) {
@@ -184,7 +181,7 @@ if summaryPayload != nil {
 
 var detailPayload: String?
 do {
-    detailPayload = try FileUtils.getFileContents("person", type: "json")
+    detailPayload = try FileUtils.getFileContents("person.json")
 } catch FileError.ReadError(let error) {
     print(error)
 } catch FileError.NotFound(let path) {
@@ -368,7 +365,7 @@ do {
     let jsonData = try NSJSONSerialization.dataWithJSONObject(personSummaries.asDictionary, options: .PrettyPrinted)
     
     // create a String from the NSData
-    let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)!
+    let jsonString = String(data: jsonData, encoding: NSUTF8StringEncoding)!
     
     print(jsonString)
     

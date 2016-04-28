@@ -21,13 +21,13 @@ public class FileUtils {
     /*
      Retrieve the contents of a file assuming the file name + extension are in the main NSBundle
      */
-    public static func getFileContents(name: String, type: String) throws -> String {
+    public static func getFileContents(filename: String) throws -> String {
 
-        var json = ""
+        var contents = ""
         
-        if let path = NSBundle.mainBundle().pathForResource(name, ofType: type) {
+        if let path = NSBundle.mainBundle().pathForResource(filename, ofType: nil) {
             do {
-                json = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
+                contents = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
             } catch let error as NSError {
                 throw FileError.ReadError(error: error.localizedDescription)
             }
@@ -35,7 +35,7 @@ public class FileUtils {
             throw FileError.NotFound(path: "No file at path: \(NSBundle.mainBundle().resourcePath!)")
         }
 
-        return json
+        return contents
     }
 
 }

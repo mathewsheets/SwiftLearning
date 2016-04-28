@@ -59,7 +59,6 @@ class PersonSummary {
     var id: String?     // used to retrieve the PersonDetail
     var name: String?   // used for display
     var phone: String?  // used for user to push to call
-    var test = true
 }
 
 /*:

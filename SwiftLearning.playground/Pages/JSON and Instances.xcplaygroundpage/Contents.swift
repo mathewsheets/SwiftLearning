@@ -377,7 +377,7 @@ do {
 }
 /*:
  - - -
- * callout(Exercise): Using the data in your Container from Exercise 13, create the appropriate JSON payload and deserialize it into instance of your data to populate your container with the JSON payload. Then serialize the data back into a JSON payload.
+ * callout(Exercise): Using the data types in your Container from Exercise 13, create the appropriate JSON payload. Deserialize the JSON payload into instances of your data types and populate your container. Then serialize the instances back into a JSON payload.
  
  **Constraints:**
  - New methods where appropriate to deserialize and serialize the data in your container.

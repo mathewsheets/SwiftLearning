@@ -19,7 +19,7 @@ extension FileError: ErrorType {}
 public class FileUtils {
 
     /*
-     Retrieve the contents of a file assuming the file name + extension are in the main NSBundle
+     Retrieve the contents of a file assuming the filename is in the main NSBundle
      */
     public static func getFileContents(filename: String) throws -> String {
 

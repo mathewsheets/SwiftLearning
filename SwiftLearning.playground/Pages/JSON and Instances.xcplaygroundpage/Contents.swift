@@ -92,7 +92,6 @@ struct Coordinate {
     var latitude: Double?
     var longitude: Double?
 }
-
 /*:
  `Address` represents an address with all the parts of an address separated out into properties.
  */
@@ -106,7 +105,6 @@ class Address {
     var state: String?
     var country: String?
 }
-
 /*:
  `PersonDetail` is comprised of all the instances above to represent what a person would look like at a detail level. The `PersonDetail` type is what would be used on a detail screen displaying all the details of a person.
  */
@@ -337,7 +335,6 @@ extension PersonSummary {
         return dictionary
     }
 }
-
 /*:
  Create an extension to get an `Array` representation of `PersonSummary` instances but use type constraints to ensure that the `asDictionary` computed propety is only available on arrays where the element is of type `PersonSummary `.
  */

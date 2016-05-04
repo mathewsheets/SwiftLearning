@@ -30,7 +30,7 @@ import XCPlayground
  }
  ````
  ## **R**epresentational **S**tate **T**ransfer or ReST
- ReST is not a standard, but more of an easily understandable agreement between the HTTP Client and HTTP Server on how and what should be sent and received as well as how the data should be handled. The industry standard of the data format that ReSTful Clients and Servers is the JSON data format. With ReST, you want to narrow your scope of functionality and data to a concept called a Resource. A Person is a resource. The client needs a list of persons, the server knows how to retrieve a list of persons and responds with a JSON payload that the client know how to handle. There are four main components to ReST: the HTTP Method, the URI, the data, and the response code.
+ ReST is not a standard, but more of an easily understandable agreement between the HTTP Client and HTTP Server on how and what should be sent and received as well as how the data should be handled. The industry standard of the data format that ReSTful Clients and Servers use is the JSON data format. With ReST, you want to narrow your scope of functionality and data to a concept called a Resource. A Person is a resource. The client needs a list of persons, the server knows how to retrieve a list of persons and responds with a JSON payload that the client knows how to handle. There are four main components to ReST: the HTTP Method, the URI, the data, and the response code.
 
  ## Methods or Verbs
  The HTTP Method, or HTTP verb, is used by the client in the request to tell the server what should happen. A client typically needs to **C**reate, **R**etrieve, **U**pdate or **D**elete data.
@@ -45,7 +45,7 @@ import XCPlayground
  `/person`
  
  ## Data
- The data that is request by the client or responded to by the server will be in the JSON data format but structured in a way that makes sense for the resource.
+ The data that is requested by the client or responded to by the server will be in the JSON data format but structured in a way that makes sense for the resource.
  
  Client requests to create a Person:
  ````
@@ -66,7 +66,7 @@ import XCPlayground
  ]
  ````
  ## Response Codes
- Along with a JSON payload, a server responds with a status code that can be interpreted by the client for the client to make a decision. Below are the most commonly used status codes when dealing with ReST services.
+ Along with a JSON payload, a server responds with a status code that can be interpreted by the client for the client to make a decision. Below are the most commonly used status codes when dealing with ReSTful services.
  
  - `2xx` Success
     - `200 OK` = The request was successfully handled by the server and will typically have a JSON payload in the response.
@@ -88,7 +88,7 @@ import XCPlayground
  Consider that we want to communicate with a server that will produce a ReSTful service for a Person resource. Our program is the client what will consume the ReSTful service. The following is a brief example of what the HTTP method, URI, data and response code would look like. The HTTP method, URI, data and response code is considered a *route* for the resource and there are typically 5 routes per resource.
  
  ### `GET /persons`
- Above is a *route* of a `GET` request for the *person* resource. Below is the response JSON payload of an array with each element in the array representing a person. This URI indicates all persons.
+ Above is a *route* of a `GET` request for the *person* resource. Below is the response JSON payload of an array with each element in the array representing a person. This URI indicates all persons; here the absence of an `id`
  ````
  [
     {
@@ -130,9 +130,9 @@ import XCPlayground
 /*:
  ## NSURLRequest, NSURLResponse and NSURLSession
  The Foundation Framework provides an API to interact with HTTP and ReSTful services. The three main classes involved in executing HTTP requests and handling responses are `NSURLRequest`, `NSURLResponse` and `NSURLSession`.
- - `NSURLRequest` = The class representing the request portion of the HTTP protocol
- - `NSURLResponse` = The class representing the response portion of the HTTP protocol
- - `NSURLSession` = The class managing the collaboration the request and response and also providing other capabilities such as caching
+ - [NSURLRequest](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/) = The class representing the request portion of the HTTP protocol
+ - [NSURLResponse](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/) = The class representing the response portion of the HTTP protocol
+ - [NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/) = The class managing the collaboration the request and response and also providing other capabilities such as caching
  */
 var host = "http://columbus-state.getsandbox.com"
 var session = NSURLSession.sharedSession()
@@ -161,6 +161,9 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
 task.resume()
  */
 /*:
+ - experiment: Uncomment above and see what happends
+ */
+/*:
  ### `GET /persons/id:`
  - example: Below is an example implementation of the `GET /persons/id:` route on the Person resource. This will get a single person resource.
  */
@@ -183,6 +186,9 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     }
 }
 task.resume()
+ */
+/*:
+ - experiment: Uncomment above and see what happends
  */
 /*:
  ### `POST /persons`
@@ -212,6 +218,9 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
 task.resume()
  */
 /*:
+ - experiment: Uncomment above and see what happends
+ */
+/*:
  ### `PUT /persons/id:`
  - example: Below is an example implementation of the `PUT /persons/id:` route on the Person resource. This will update a person resource.
  */
@@ -239,6 +248,9 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
 task.resume()
  */
 /*:
+ - experiment: Uncomment above and see what happends
+ */
+/*:
  ### `DELETE /persons/id:`
  - example: Below is an example implementation of the `DELETE /persons/id:` route on the Person resource. This will delete a person resource.
  */
@@ -261,6 +273,9 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     }
 }
 task.resume()
+ /*:
+ - experiment: Uncomment above and see what happends
+ */
  */
 /*:
  * callout(Exercise): Create an API leveraging a protocol, a class conforming to the protocol and methods to create, retrieve, update and delete persons. The body of the methods should leverage the above examples but also use what you have learned in [JSON & Instances](JSON%20and%20Instances) to serialize/deserialize person instances.
@@ -275,11 +290,10 @@ task.resume()
  
  * callout(Supporting Materials): Additional Resources For Further Reading
  - [URL Loading System](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html#//apple_ref/doc/uid/10000165i)
- - [NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/)
  - [ReST on Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)
  - [ReST API Tutorial](http://www.restapitutorial.com/)
  - [Response Status Codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
- -
+ - [cURL as a HTTP Client](https://curl.haxx.se/docs/manpage.html)
  - [ReSTful Service Sandboxing](https://getsandbox.com)
   - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)

@@ -2,16 +2,16 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # HTTP & ReST
- * callout(Session Overview): Programs need to communicate to each other. They communicate by retrieving data from other programs and send data to make the other programs perform some actions on its behalf. There are many communication technologies, but the industry standard is to use **H**ypertext **T**ransfer **P**rotocol along with an architectural style called **R**epresentational **S**tate **T**ransfer. HTTP with ReST allows programs implemented in different programming languages and on different operating systems the ability to communicated with each other with out the need to create a specialized technology that only two programs would know about.
+ * callout(Session Overview): Programs need to communicate to each other. They communicate by retrieving data from other programs and send data to make the other programs perform actions on its behalf. There are many communication technologies, but the industry standard is to use **H**ypertext **T**ransfer **P**rotocol along with an architectural style called **R**epresentational **S**tate **T**ransfer. HTTP with ReST allows programs implemented in different programming languages and on different operating systems the ability to communicate with each other with out the need to create a specialized technology that only two programs would know about.
  - important: This is only a brief overview of HTTP and ReST. Please take extra time outside of this session to learn all that HTTP and ReST have to offer.
  */
 import Foundation
 import XCPlayground
 /*:
- ## HTTP
- **H**ypertext **T**ransfer **P**rotocol or HTTP is an application protocol, meaning a set of rules that specifies the shared protocols and interface methods on how to send/receive and create/parse HTTP messages. There are two components to HTTP, the server and the client. The HTTP server is able to handle communicating to multiple HTTP clients simultaneously. The HTTP client, which is what we’ll focus on, will communicate with one HTTP server.
+ ## **H**ypertext **T**ransfer **P**rotocol or HTTP
+ HTTP is an application protocol, meaning a set of rules that specifies the shared protocols and interface methods on how to send/receive and create/parse HTTP messages. There are two components to HTTP, the server and the client. The HTTP server is able to handle communicating to multiple HTTP clients simultaneously. The HTTP client, which is what we’ll focus on, will communicate with one HTTP server.
  ### The Client
- The scope of HTTP that we will focus on is the HTTP Client. The HTTP Client communicates with the HTTP server for a specific purpose by sending/receiving HTTP messages that are tailored to functionality. Think of the HTTP message as an envelope that has to/from addresses with a letter representing the data. We will refer to sending and receiving HTTP message, as request and response.
+ The scope of HTTP that we will focus on is the HTTP Client. The HTTP Client communicates with the HTTP server for a specific purpose by sending/receiving HTTP messages that are tailored to functionality. Think of the HTTP message as an envelope that has to/from addresses with a letter representing the data. We will refer to sending and receiving HTTP messages as request and response.
  
  This is a simple HTTP Request message
  ````
@@ -30,7 +30,7 @@ import XCPlayground
  }
  ````
  ## **R**epresentational **S**tate **T**ransfer or ReST
- ReST is not a standard, but more of an easily understandable agreement between the HTTP Client and HTTP Server on how and what should be sent and received as well as how the data should be handled. The industry standard of the data format that ReSTful Clients and Servers use is the JSON data format. With ReST, you want to narrow your scope of functionality and data to a concept called a Resource. A Person is a resource. The client needs a list of persons, the server knows how to retrieve a list of persons and responds with a JSON payload that the client knows how to handle. There are four main components to ReST: the HTTP Method, the URI, the data, and the response code.
+ ReST is not a standard, but more of an easily understandable agreement between the HTTP Client and HTTP Server on how and what should be sent and received as well as how the data should be handled. The industry standard for the data format that ReSTful Clients and Servers use is the JSON data format. With ReST, you want to narrow your scope of functionality and data to a concept called a Resource. A Person is a resource. The client needs a list of persons, the server knows how to retrieve a list of persons and responds with a JSON payload that the client knows how to handle. There are four main components to ReST: the HTTP Method, the URI, the data or payload, and the response code.
 
  ## Methods or Verbs
  The HTTP Method, or HTTP verb, is used by the client in the request to tell the server what should happen. A client typically needs to **C**reate, **R**etrieve, **U**pdate or **D**elete data.
@@ -42,7 +42,7 @@ import XCPlayground
  ## URI
  The **U**niform **R**esource **I**dentifier or URI is used to identify the resource. Think of the URI as the path portion of a URL. Below is the URI for the person resource.
  
- `/person`
+ `/persons`
  
  ## Data
  The data that is requested by the client or responded to by the server will be in the JSON data format but structured in a way that makes sense for the resource.
@@ -273,20 +273,21 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     }
 }
 task.resume()
- /*:
- - experiment: Uncomment above and see what happends
- */
  */
 /*:
- * callout(Exercise): Create an API leveraging a protocol, a class conforming to the protocol and methods to create, retrieve, update and delete persons. The body of the methods should leverage the above examples but also use what you have learned in [JSON & Instances](JSON%20and%20Instances) to serialize/deserialize person instances.
+ - experiment: Uncomment above and see what happends
+ */
+/*:
+ * callout(Exercise): Create a Person API by creating a protocol and two classes conforming to the protocol with methods to create, retrieve, update and delete persons. One of the classes should *mock* the HTTP Client for the `GET` routes reading files for the JSON payload. The other class should leverage the above examples.
  
  **Constraints:**
  - Protocol with methods to create, retrieve, update and delete person instances
- - Class conforming to the protocol
- - Each method body must use the appropriate example
+ - Class conforming to the protocol reading files for the JSON payloads
+ - Class conforming to the protocol using NSURLRequest, NSURLResponse and NSURLSession
+ - Each method body must use the appropriate example when implementing the HTTP Client class
  - Each method body must use what you learned in [JSON & Instances](JSON%20and%20Instances) to serialize/deserialize a person instances
  
- * callout(Checkpoint): At this point, you should have basic knowledge of HTTP and ReSt outside the context of an operating system and programming language. We learned the five main routes for a ReSTful resource and the HTTP method, URI, data, and possible response codes for each. We also learned about the three main components that is provided from the Foundation Framework available in Swift programs.
+ * callout(Checkpoint): At this point, you should have basic knowledge of HTTP and ReSt outside the context of an operating system and programming language. We learned the five main routes for a ReSTful resource and the HTTP method, URI, data, and possible response codes for each. We also learned about the three main components that is provided from the Foundation Framework available in Swift programs enabling using to communicate with another program.
  
  * callout(Supporting Materials): Additional Resources For Further Reading
  - [URL Loading System](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html#//apple_ref/doc/uid/10000165i)

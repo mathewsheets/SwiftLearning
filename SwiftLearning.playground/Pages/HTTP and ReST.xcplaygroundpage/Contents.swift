@@ -132,7 +132,7 @@ import XCPlayground
  The Foundation Framework provides an API to interact with HTTP and ReSTful services. The three main classes involved in executing HTTP requests and handling responses are `NSURLRequest`, `NSURLResponse` and `NSURLSession`.
  - [NSURLRequest](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/) = The class representing the request portion of the HTTP protocol
  - [NSURLResponse](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/) = The class representing the response portion of the HTTP protocol
- - [NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/) = The class managing the collaboration the request and response and also providing other capabilities such as caching
+ - [NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/) = The class managing the collaboration between the request and response and also providing other capabilities such as caching
  */
 var host = "http://columbus-state.getsandbox.com"
 var session = NSURLSession.sharedSession()

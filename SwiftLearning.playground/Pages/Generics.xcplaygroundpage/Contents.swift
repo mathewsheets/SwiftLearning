@@ -78,7 +78,7 @@ iteratorCats(cats) { (cat) in
  */
 /*:
  ## Using Generics with Functions
- Generic functions are not defined and implemented with specific types. They use placeholder type names can be used in the parameter list or return type and get *replaced* with the correct type. The placeholder type names are placed after the function name between two angle brackets `<...> `
+ Generic functions are not defined and implemented with specific types. They use placeholder type names that are used in the parameter list or return type which get *replaced* with the correct type. The placeholder type names are placed after the function name between two angle brackets `<...> `
  - example: Implementation of a generic iterator function that can be used with any type, not just dogs, cats, or even animals.
  */
 func iterator<T>(items: [T], closure: (item: T) -> Void) {

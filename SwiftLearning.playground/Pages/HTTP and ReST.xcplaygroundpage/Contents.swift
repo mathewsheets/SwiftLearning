@@ -149,11 +149,12 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     if error != nil {
         print(error)
     } else {
-        guard (response as? NSHTTPURLResponse)?.statusCode >= 200, let json = data else {
+        let statusCode = (response as? NSHTTPURLResponse)?.statusCode
+        guard statusCode >= 200 && statusCode < 300, let json = data else {
             return
         }
         
-        var result = NSString(data: json, encoding: NSASCIIStringEncoding)!
+        var result = String(data: json, encoding: NSASCIIStringEncoding)!
         
         print(result)
     }
@@ -168,7 +169,7 @@ task.resume()
  - example: Below is an example implementation of the `GET /persons/id:` route on the Person resource. This will get a single person resource.
  */
 /*
-var request = NSMutableURLRequest(URL: NSURL(string: "\(host)/persons/0")!)
+var request = NSMutableURLRequest(URL: NSURL(string: "\(host)/persons/2")!)
 request.HTTPMethod = "GET"
 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
  
@@ -176,11 +177,12 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     if error != nil {
         print(error)
     } else {
-        guard (response as? NSHTTPURLResponse)?.statusCode >= 200, let json = data else {
+        let statusCode = (response as? NSHTTPURLResponse)?.statusCode
+        guard statusCode >= 200 && statusCode < 300, let json = data else {
             return
         }
         
-        var result = NSString(data: json, encoding: NSASCIIStringEncoding)!
+        var result = String(data: json, encoding: NSASCIIStringEncoding)!
         
         print(result)
     }
@@ -206,11 +208,12 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     if error != nil {
         print(error)
     } else {
-        guard (response as? NSHTTPURLResponse)?.statusCode >= 200, let json = data else {
+        let statusCode = (response as? NSHTTPURLResponse)?.statusCode
+        guard statusCode >= 200 && statusCode < 300, let json = data else {
             return
         }
         
-        var result = NSString(data: json, encoding: NSASCIIStringEncoding)!
+        var result = String(data: json, encoding: NSASCIIStringEncoding)!
         
         print(result)
     }
@@ -236,11 +239,12 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     if error != nil {
         print(error)
     } else {
-        guard (response as? NSHTTPURLResponse)?.statusCode >= 200, let json = data else {
+        let statusCode = (response as? NSHTTPURLResponse)?.statusCode
+        guard statusCode >= 200 && statusCode < 300, let json = data else {
             return
         }
-        
-        var result = NSString(data: json, encoding: NSASCIIStringEncoding)!
+ 
+        var result = String(data: json, encoding: NSASCIIStringEncoding)!
         
         print(result)
     }
@@ -255,7 +259,7 @@ task.resume()
  - example: Below is an example implementation of the `DELETE /persons/id:` route on the Person resource. This will delete a person resource.
  */
 /*
-var request = NSMutableURLRequest(URL: NSURL(string: "\(host)/persons/0")!)
+var request = NSMutableURLRequest(URL: NSURL(string: "\(host)/persons/3")!)
 request.HTTPMethod = "DELETE"
 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
  
@@ -263,11 +267,12 @@ var task = session.dataTaskWithRequest(request){ (data, response, error) -> Void
     if error != nil {
         print(error)
     } else {
-        guard (response as? NSHTTPURLResponse)?.statusCode >= 200, let json = data else {
+        let statusCode = (response as? NSHTTPURLResponse)?.statusCode
+        guard statusCode >= 200 && statusCode < 300, let json = data else {
             return
         }
-        
-        var result = NSString(data: json, encoding: NSASCIIStringEncoding)!
+
+        var result = String(data: json, encoding: NSASCIIStringEncoding)!
         
         print(result)
     }

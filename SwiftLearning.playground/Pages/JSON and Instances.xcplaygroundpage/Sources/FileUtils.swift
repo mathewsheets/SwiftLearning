@@ -27,7 +27,7 @@ public class FileUtils {
         
         if let path = NSBundle.mainBundle().pathForResource(filename, ofType: nil) {
             do {
-                contents = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
+                contents = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
             } catch let error as NSError {
                 throw FileError.ReadError(error: error.localizedDescription)
             }

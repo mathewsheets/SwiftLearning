@@ -1,22 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='rendered' timelineScrubberEnabled='true'>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
     <pages>
         <page name='Table of Contents'/>
         <page name='Basics | Data Types | Operators'/>
-        <page name='Strings and Characters'/>
+        <page name='Exercise 1'/>
+        <page name='Strings and Characters and Dates'/>
+        <page name='Exercise 2'/>
         <page name='Control Flow'/>
+        <page name='Exercise 3'/>
+        <page name='Assignment 1'/>
         <page name='Collection Types'/>
+        <page name='Exercise 4'/>
         <page name='Functions'/>
+        <page name='Exercise 5'/>
         <page name='More Functions'/>
+        <page name='Exercise 6'/>
         <page name='Enumerations'/>
+        <page name='Exercise 7'/>
+        <page name='Assignment 2'/>
         <page name='Classes and Structures'/>
+        <page name='Exercise 8'/>
         <page name='More Classes and Structures'/>
+        <page name='Exercise 9'/>
         <page name='Inheritance'/>
+        <page name='Exercise 10'/>
+        <page name='Assignment 3'/>
         <page name='Protocols'/>
+        <page name='Exercise 11'/>
         <page name='Extensions'/>
+        <page name='Exercise 12'/>
         <page name='Generics'/>
+        <page name='Exercise 13'/>
         <page name='JSON and Instances'/>
+        <page name='Exercise 14'/>
         <page name='HTTP and ReST'/>
+        <page name='Exercise 15'/>
+        <page name='Assignment 4'/>
         <page name='License'/>
     </pages>
 </playground>

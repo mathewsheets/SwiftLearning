@@ -4,20 +4,20 @@
  # Table of Contents
  - important: This playground is an overview of the Swift programming language developed by Apple. The content and code within this playground is inspired by Apple's [Swift Programming Language Guide](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). The Swift Programming Language Guide is the source of truth for this playground. This is a living playground and is subject to change to keep up to date with changes to the Swift language.
  - [Basics | Data Types | Operators](Basics%20%7C%20Data%20Types%20%7C%20Operators)
- - [Strings & Characters & Dates](Strings%20and%20Characters%20and%20Dates)
+ - [Strings | Characters | Dates](Strings%20%7C%20Characters%20%7C%20Dates)
  - [Control Flow](Control%20Flow)
  - [Collection Types](Collection%20Types)
  - [Functions](Functions)
  - [More Functions](More%20Functions)
  - [Enumerations](Enumerations)
- - [Classes & Structures](Classes%20and%20Structures)
- - [More Classes & Structures](More%20Classes%20and%20Structures)
+ - [Classes | Structures](Classes%20%7C%20Structures)
+ - [More Classes | Structures](More%20Classes%20%7C%20Structures)
  - [Inheritance](Inheritance)
  - [Protocols](Protocols)
  - [Extensions](Extensions)
  - [Generics](Generics)
- - [JSON & Instances](JSON%20and%20Instances)
- - [HTTP & ReST](HTTP%20and%20ReST)
+ - [JSON | Instances](JSON%20%7C%20Instances)
+ - [HTTP | ReST](HTTP%20%7C%20ReST)
  * callout(Supporting Materials): Below is a list of resources that will help your learning of the Swift language.
  - [Search Apple's Developer Documentation](https://developer.apple.com/search/?q=Swift)
  - Swift Documentation

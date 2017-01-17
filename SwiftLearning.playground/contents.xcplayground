@@ -4,7 +4,7 @@
         <page name='Table of Contents'/>
         <page name='Basics | Data Types | Operators'/>
         <page name='Exercise 1'/>
-        <page name='Strings and Characters and Dates'/>
+        <page name='Strings | Characters | Dates'/>
         <page name='Exercise 2'/>
         <page name='Control Flow'/>
         <page name='Exercise 3'/>
@@ -18,9 +18,9 @@
         <page name='Enumerations'/>
         <page name='Exercise 7'/>
         <page name='Assignment 2'/>
-        <page name='Classes and Structures'/>
+        <page name='Classes | Structures'/>
         <page name='Exercise 8'/>
-        <page name='More Classes and Structures'/>
+        <page name='More Classes | Structures'/>
         <page name='Exercise 9'/>
         <page name='Inheritance'/>
         <page name='Exercise 10'/>
@@ -31,9 +31,9 @@
         <page name='Exercise 12'/>
         <page name='Generics'/>
         <page name='Exercise 13'/>
-        <page name='JSON and Instances'/>
+        <page name='JSON | Instances'/>
         <page name='Exercise 14'/>
-        <page name='HTTP and ReST'/>
+        <page name='HTTP | ReST'/>
         <page name='Exercise 15'/>
         <page name='Assignment 4'/>
         <page name='License'/>

@@ -3,6 +3,7 @@
  - - -
  # Table of Contents
  - important: This playground is an overview of the Swift programming language developed by Apple. The content and code within this playground is inspired by Apple's [Swift Programming Language Guide](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). The Swift Programming Language Guide is the source of truth for this playground. This is a living playground and is subject to change to keep up to date with changes to the Swift language.
+ * callout(Sessions): Total of 15 sesson. 7 focusing on functional aspects of the language, 6 focusing on object orientated aspects with the remaining 2 focusing on common Swift APIs. 
  - [Basics | Data Types | Operators](Basics%20%7C%20Data%20Types%20%7C%20Operators)
  - [Strings | Characters | Dates](Strings%20%7C%20Characters%20%7C%20Dates)
  - [Control Flow](Control%20Flow)

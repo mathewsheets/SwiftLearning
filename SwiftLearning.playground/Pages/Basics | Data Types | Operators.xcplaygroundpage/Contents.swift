@@ -35,7 +35,7 @@ var numberOfCredits = 14
  */
 print(school)
 print(teacher, terminator: "")
-/*;
+/*:
  The `terminator` in the statement `print(teacher, terminator: "")` tells the `print` function to not append the new line character `\n`.
  You can also combine other text and your constant or variable to be passed to the `print` function. This is called *string interpolation*.
  */

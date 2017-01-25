@@ -63,7 +63,7 @@ print("\(teacher) is an adjunct professor at \(school).")
  Swift is a type safe language. This means that the compiler will ensure to some reason of accuracy the correctness of using types (Numbers, String, Boolean, custom types) within your program. Your program will not compile if you assign a String to an Int constant or variable.
  */
 var anInt = 5
-//anInt = "five" // -> this is a compile error. Uncomment this statement to see what the compiler tells you.
+// anInt = "five" // -> this is a compile error. Uncomment this statement to see what the compiler tells you.
 //: Within the notion of type safety, the compiler is intelligent enough to determine that `anInt` is an `Int` because of it's initial value of `5`. This is called type inference, meaning that the compiler inferred that the variable `anInt` is an `Int`. To be explicit about the type of constant or variable, you can use a type annotation by following the constant or variable with `: Int`.
 var an5Int: Int = 5
 /*:

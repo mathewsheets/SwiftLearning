@@ -6,8 +6,8 @@
  ## The Important `import` statement
  The first line of text you will see within a file of a program is a statement that tells the compiler what external libraries or frameworks your program will use. The following statement `import Foundation` is telling the compiler to make available to my program all the Classes, Protocols, Functions, Constants, Data Types defined within the `Foundation` framework (a.k.a library). Please visit the Foundation Framework [Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/ObjC_classic/index.html) to see what is available to your program. The `Foundation` framework is provided to us by Apple. Custom frameworks can also be used and/or created for your program.
  */
-//: - experiment: Put an `s` at the end of `Foundation`. Is there an indication that something is wrong?
 import Foundation
+//: - experiment: Put an `s` at the end of `Foundation`. Is there an indication that something is wrong?
 
 /*:
  ## Storing values

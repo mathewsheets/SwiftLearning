@@ -5,6 +5,7 @@
  
  **Example Output:**
  - `My name is Mathew Sheets, my email is swift.dude@gmail.com.`
+ - `My Swift class in on  Jan 18 2017, Jan 25 2017 ` (**LIST OUT THE REST OF THE DATES**)
  - `Other students in my class are Annie, Sam, Jack, Hudson and Oliver.`
  - `Oliver dropped this class.` (**use the second bullet point string to pull out the last students's name.**)
  - `Other students in my class are Annie, Sam, Jack, Hudson and CARSON was added.`  (**use the second bullet point string and append another student.**)

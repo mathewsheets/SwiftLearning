@@ -16,7 +16,7 @@ let stringEmptyLiteral = ""
 var stringEmptyInstance = String()
 //: Both statements above create strings that initializes the storage to an empty string.
 let stringLiteral = "I'm a literal"
-var stringInstance = String("I'm an not a literal")
+var stringInstance = String("I'm not a literal")
 //: Both statements above create strings that initialized the storage to an actual string value.
 //: - experiment: Find out what are other ways to create a `String`
 

@@ -96,7 +96,7 @@ print(gradeLetter)
  ### Interval Matching
  The value in the `switch` case statement can be checked to determine if the value is included in a specified range.
  */
-gradeNumber = 100
+gradeNumber = 97
 switch gradeNumber {
 case 100:
     gradeLetter = "A+"
@@ -224,7 +224,7 @@ for index in 0..<5 {
  The `while` loop evaluates its condition at the beginning of each iteration through the loop.
  */
 var index = 0
-while (index < 5) {
+while index < 5 {
     
     print(index)
     index += 1
@@ -239,7 +239,7 @@ repeat {
     
     print(index)
     index += 1
-} while (index < 5)
+} while index < 5
 //: The above `repeat-while` loop statement executes the code block first then evaluates `index < 5`, if the result is `true` looping continues, if `false` looping ends.
 /*:
  ## Control Transfer Statements
@@ -265,7 +265,7 @@ repeat {
     
     print(index)
     
-} while (index < 5)
+} while index < 5
 //: The above `repeat-while` loop statement skips the index 3, moves onto the next iteration of the loop printing 4 and 5, then ends normally.
 /*:
  ### Break
@@ -286,7 +286,7 @@ repeat {
     
     print(index)
     
-} while (index < 5)
+} while index < 5
 //: The above `repeat-while` loop statement loops until index equals 3 and exits the loop all together.
 /*:
  **Break in a Switch Statement**

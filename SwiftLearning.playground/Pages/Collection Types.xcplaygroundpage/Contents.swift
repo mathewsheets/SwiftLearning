@@ -213,7 +213,7 @@ let intersection = vowels.intersection(alphabet)
 let symmetricDifference = vowels.symmetricDifference(alphabet)
 //: **union(_:)** creates a new `Set` with all values from both sets.
 let union = vowels.union(alphabet)
-//: **subtract(_:)** creates a new `Set` with values not in the specified set.
+//: **subtracting(_:)** creates a new `Set` with values not in the specified set.
 let subtracting = vowels.subtracting(alphabet)
 /*:
  ### Set Membership and Equality

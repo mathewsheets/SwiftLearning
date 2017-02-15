@@ -33,33 +33,33 @@ func sayHiTeacher() {
 
 /*:
  ## Passing parameters
- Functions can be defined with no parameters or with many parameters. The above function `max` is defined with 2 parameters and the `print` function is defined without parameters. Parameters are data types such as `Int`s, `Bool`eans, `String`s and complex types such as [Enumerations](Enumerations), [Classes & Structures](Classes%20and%20Structures) explained in future sessions.
+ Functions can be defined with no parameters or with many parameters. The above function `max` is defined with 2 parameters and the `print` function is defined without parameters. Parameters are data types such as `Int`s, `Bool`eans, `String`s and complex types such as [Enumerations](Enumerations) and [Classes & Structures](Classes%20and%20Structures), explained in future sessions.
  */
 /*:
  ### Functions Without Parameters
- The above function `sayHiTeacher` is and example of a function defined without parameters.
+ The above function `sayHiTeacher` is an example of a function defined without parameters.
  */
 //: > **Experiment**: Create and call a function to print your name. Define the function with a name of your choice, without parameters and no return value.
 
 /*:
  ### Functions With Multiple Parameters
- The above function `max` is and example of a function defined with multiple parameters. The `min` function is also a function defined with multiple parameters.
+ The above function `max` is an example of a function defined with multiple parameters. The `min` function is also a function defined with multiple parameters.
  */
-func sayHiTeacher2(name: String, className: String) {
+func sayHiTeacher2(name: String) {
     
-    print("Hi \(name), from my \(className) class");
+    print("Hi \(name)")
 }
-sayHiTeacher2(name: "Mr. Sheets", className: "Swift")
+sayHiTeacher2(name: "Mr. Sheets")
 //: The above statement creates a function `sayHiTeacher2` defined with accepting 1 parameter of type String.
 //: > **Experiment**: Create and call a function to print your name and age. Define the function with a name of your choice, with a parameter of a `String` and `Int` data types and no return value.
 
 /*:
  ### Function Parameter Names
- There are two possible names you can give parameters when defining a function. The *local* parameter name is only available for use within the function body. The *external* parameter name is used by the caller to label arguments passed with calling a function. All functions have *local* parameter names name must be unique when defining the function.
+ There are two possible names you can give parameters when defining a function. The *parameter name* is only available for use within the function body. The *argument label* is used by the caller to label arguments passed when calling a function. Functions *argument label* and *parameter* names must be unique when defining the function.
  */
 /*:
- ### Specifying External Parameter Names
- *External* parameter names are exposed to the caller of the function. *External* and *local* parameter names don't have to be the same and by default the first parameter doesn't have an external name and all subsequent *local* names are also the *external* names. The `sayHiTeacher2` function is an example of a function omitting the *external* name for the first parameter and using the default external name for the second parameter.
+ ### Specifying Argument Label Names
+ *Argument label* names are exposed to the caller of the function. *Argument label* and *parameter* names don't have to be the same. The `sayHiTeacher3` function is an example of a function specifying the *argument label* name for the first parameter and using the default *Argument label* name for the second parameter. *Argument labels* are not allowed to be used within the implementation of a function.
  */
 func sayHiTeacher3(teacherName name: String, className: String) {
     
@@ -67,14 +67,14 @@ func sayHiTeacher3(teacherName name: String, className: String) {
 }
 sayHiTeacher3(teacherName: "Mr. Sheets", className: "Swift")
 /*:
- ### Omitting External Parameter Names
- You can omit *external* names by using the underscore `_` in front of second or subsequent parameters.
+ ### Omitting Argument Label Names
+ You can omit *argument label* names by placing the underscore `_` in front of the *parameter name*.
  */
-func sayHiTeacher4(name: String, _ className: String) {
+func sayHiTeacher4(_ name: String, _ className: String) {
     
     print("Hi \(name), from my \(className) class");
 }
-sayHiTeacher4(name: "Mr. Sheets", "Swift")
+sayHiTeacher4("Mr. Sheets", "Swift")
 /*:
  ### Default Parameter Values
  Function parameters can be set to a default value and omitted from a function call. It's recommended that you place all defaulted parameters at the end of the parameter list.
@@ -100,9 +100,8 @@ func sayHiTeacher6(name: String, classNames: String ...) {
 sayHiTeacher6(name: "Mr. Sheets", classNames: "Swift 1", "Swift 2", "Swift 3")
 /*:
  ### Constant and Variable Parameters
- By default function parameters are defined as constants, meaning that you are not allowed to change the value. You can also define parameters as variable, providing you the ability to change the value and not define another variable with in your function.
+ By default function parameters are defined as constants, meaning that you are not allowed to change the value. If you want the parameter to be a variable, you can redefine the parameter as a variable, providing you the ability to change the value and not define another variable with a different name.
  */
-// TODO, TODO, TODO, TODO
 func sayHiTeacher7(teacherName name: String, className: String) {
     
     var name = name
@@ -113,13 +112,11 @@ func sayHiTeacher7(teacherName name: String, className: String) {
     print("Hi \(name), from my \(className) class");
 }
 sayHiTeacher7(teacherName: "Sheets", className: "Swift 1")
-//: The above variable parameter `name`'s value was changed within the function body but changing the value of variable parameters has no impact outside of the function.
+//: The above parameter `name`'s value was changed within the function body but changing the value of variable parameters has no impact outside of the function.
 /*:
  ### In-Out Parameters
- As mentioned above, changing the value of a variable parameter doesn't change the value of the argument variable. If you want the changes to a variable parameter to be reflected outside of your function body, you can define the variable parameter with the `inout` keyword. You place an `&` in front of the varable argument to indicate that the function can modify the value.
+ As mentioned above, changing the value of a parameter doesn't change the value of the argument variable for value types. If you want the changes to a parameter to be reflected outside of your function body, you can define the parameter with the `inout` keyword. You place an `&` in front of the varable argument to indicate that the function can modify the value.
  */
-// TODO, TODO, TODO, TODO
-
 func sayHiTeacher8(name: inout String, _ className: String) {
     
     if !name.hasPrefix("Mr.") {
@@ -132,8 +129,6 @@ func sayHiTeacher8(name: inout String, _ className: String) {
 var teacherName = "Sheets";
 
 sayHiTeacher8(name: &teacherName, "Swift 1")
-
-print(teacherName)
 //: The above variable `teacherName`'s value was changed within the function body and now has a new value.
 /*:
  ## Return values

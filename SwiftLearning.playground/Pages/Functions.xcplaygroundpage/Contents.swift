@@ -26,7 +26,7 @@ let biggest = max(i, j)
  */
 func sayHiTeacher() {
     
-    print("Hi Teach!");
+    print("Hi Teach!")
 }
 //: The above statement creates a function using the `func` keyword, with a name of *sayHiTeacher*, that doesn't accept parameters and doesn't return a value.
 //: > **Experiment**: Call the `sayHiTeacher` function.
@@ -63,7 +63,7 @@ sayHiTeacher2(name: "Mr. Sheets")
  */
 func sayHiTeacher3(teacherName name: String, className: String) {
     
-    print("Hi \(name), from my \(className) class");
+    print("Hi \(name), from my \(className) class")
 }
 sayHiTeacher3(teacherName: "Mr. Sheets", className: "Swift")
 /*:
@@ -72,7 +72,7 @@ sayHiTeacher3(teacherName: "Mr. Sheets", className: "Swift")
  */
 func sayHiTeacher4(_ name: String, _ className: String) {
     
-    print("Hi \(name), from my \(className) class");
+    print("Hi \(name), from my \(className) class")
 }
 sayHiTeacher4("Mr. Sheets", "Swift")
 /*:
@@ -81,7 +81,7 @@ sayHiTeacher4("Mr. Sheets", "Swift")
  */
 func sayHiTeacher5(name: String = "Mr. Sheets", _ className: String = "Swift") {
     
-    print("Hi \(name), from my \(className) class");
+    print("Hi \(name), from my \(className) class")
 }
 sayHiTeacher5()
 /*:
@@ -95,7 +95,7 @@ func sayHiTeacher6(name: String, classNames: String ...) {
         classes += className + " "
     }
     
-    print("Hi \(name), from my \(classes)classes");
+    print("Hi \(name), from my \(classes)classes")
 }
 sayHiTeacher6(name: "Mr. Sheets", classNames: "Swift 1", "Swift 2", "Swift 3")
 /*:
@@ -106,10 +106,10 @@ func sayHiTeacher7(teacherName name: String, className: String) {
     
     var name = name
     if !name.hasPrefix("Mr.") {
-        name = "Mr. " + name;
+        name = "Mr. " + name
     }
     
-    print("Hi \(name), from my \(className) class");
+    print("Hi \(name), from my \(className) class")
 }
 sayHiTeacher7(teacherName: "Sheets", className: "Swift 1")
 //: The above parameter `name`'s value was changed within the function body but changing the value of variable parameters has no impact outside of the function.
@@ -120,13 +120,14 @@ sayHiTeacher7(teacherName: "Sheets", className: "Swift 1")
 func sayHiTeacher8(name: inout String, _ className: String) {
     
     if !name.hasPrefix("Mr.") {
-        name = "Mr. " + name;
+        
+        name = "Mr. " + name
     }
     
-    print("Hi \(name), from my \(className) class");
+    print("Hi \(name), from my \(className) class")
 }
 
-var teacherName = "Sheets";
+var teacherName = "Sheets"
 
 sayHiTeacher8(name: &teacherName, "Swift 1")
 //: The above variable `teacherName`'s value was changed within the function body and now has a new value.
@@ -135,7 +136,8 @@ sayHiTeacher8(name: &teacherName, "Swift 1")
  When defining a function, the part that describes the output of calling the function is called the `return` value. You indicate what you are *returning* from a function using the right arrow `->`. The return value from a function can be ignored when it is called.
  */
 func getHello() -> String {
-    return "Hello";
+    
+    return "Hello"
 }
 let hello = getHello()
 getHello()
@@ -144,7 +146,8 @@ getHello()
  As we have seen above, functions don't always have to return a value. A function without a return value (or omitting the function definition return syntax) is the same as including the return syntax of ` -> Void`.
  */
 func sayHi() -> Void {
-    print("Hi");
+    
+    print("Hi")
 }
 sayHi()
 /*:
@@ -162,7 +165,8 @@ func ends(names: String ...) -> (first: String, last: String)? {
         
         if name < first {
             first = name
-        } else if name > last {
+        }
+        if name > last {
             last = name
         }
     }
@@ -170,10 +174,9 @@ func ends(names: String ...) -> (first: String, last: String)? {
     return (first, last)
 }
 
-let firstLastName = ends(names: "Mathew", "Sam", "Jack", "Annie", "Oliver", "Hudson")
-if firstLastName != nil {
+if let (first, last) = ends(names: "Mathew", "Sam", "Jack", "Annie", "Oliver", "Hudson") {
     
-    print("first = \(firstLastName!.first), last = \(firstLastName!.last)")
+    print("first = \(first), last = \(last)")
 }
 
 let none = ends()
@@ -226,7 +229,7 @@ func sayGoodBye(name: String) -> String {
 
 func saySomething(justMet: Bool) -> (String) -> String {
     
-    return justMet ? sayHello : sayGoodBye;
+    return justMet ? sayHello : sayGoodBye
 }
 
 print(saySomething(justMet: true)("Chris"))
@@ -250,7 +253,7 @@ func saySomethingNested(justMet: Bool) -> (String) -> String {
         return "GoodBye " + name + "!"
     }
     
-    return justMet ? hello : goodBye;
+    return justMet ? hello : goodBye
 }
 
 print(saySomethingNested(justMet: true)("Chris"))

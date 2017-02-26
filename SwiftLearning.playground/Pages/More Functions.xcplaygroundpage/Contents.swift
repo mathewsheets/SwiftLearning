@@ -230,7 +230,7 @@ for member in family.sorted(by: { $0.age > $1.age }) {
     
     // trailing closure outside and after parentheses
     
-    printAttribute(member: member){ (name, role, age) -> String in
+    printAttribute(member: member) { (name, role, age) -> String in
         
         return role
     }

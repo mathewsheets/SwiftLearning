@@ -1,7 +1,7 @@
 /*:
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
- * callout(Exercise): Leveraging the `each` and `iterator` functions Session 6, and using the students constant below, create the following functions passing in a closure to satisfy the function requirement.
+ * callout(Exercise): Leveraging the `each` and `iterator` functions Session 6 and using the students constant below, create the following functions passing in a closure to satisfy the function requirement.
  */
 let students = [
     ["first" : "Obi-Wan",   "last" : "Kenobi",      "age" : "55", "class" : "Math"],

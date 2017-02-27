@@ -59,7 +59,7 @@ func createGrade(number: Int, letter: String) throws -> (Int, String) {
         throw GradeError.MissingLetter
     }
     
-    let gradeTuple = (number, letter);
+    let gradeTuple = (number, letter)
     
     switch gradeTuple {
     case (90...100, let letter) where letter != "A":
@@ -73,10 +73,10 @@ func createGrade(number: Int, letter: String) throws -> (Int, String) {
     case (0...59, let letter) where letter != "F":
         throw GradeError.BadLetter(youPassed: letter, shouldBe: "F")
     default:
-        break;
+        break
     }
     
-    return gradeTuple;
+    return gradeTuple
 }
 /*:
  Above we test the valid values of the parameters, throwing exceptions if the values are not in the correct range.
@@ -259,11 +259,11 @@ print(sortTheNames())
  */
 func counter(closure: @escaping (_ counter: Int) -> Void) -> () -> Void {
     
-    var counter = 1;
+    var counter = 1
     
     func call() {
         
-        closure(counter);
+        closure(counter)
         counter += 1
     }
     
@@ -288,7 +288,7 @@ func each(items: [String], closure: (_ item: String, _ index: Int) -> Void) {
         }
     }
 
-    var index = 0;
+    var index = 0
 
     iterator(items: items) { (item) in
 
@@ -351,8 +351,11 @@ for talk in talking {
     
     talk()
 }
-//: Above, since the reference to each `talk` closure is used, we need to declare the closure as `escaping` or allowed to exist outside `chatter`.
 /*:
+ Above, since the reference to each `talk` closure is used, we need to declare the closure as `escaping` or allowed to exist outside `chatter`.
+ 
+ * callout(Checkpoint): At this point, you should be able validate the parameter values using the guard statment as well as throw exceptions from a function and catch exceptions from throwing functions. We also learned about a special function called a **closure** which is able to gain access to constants and variables defined in the same context as the closure is defined.
+ 
  **Keywords to remember:**
  - `guard` = used to test conditions and if false, short circuit the function
  - `do` = indicate a block of code that handles exceptions

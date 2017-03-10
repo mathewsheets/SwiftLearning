@@ -3,6 +3,7 @@
  - - -
  # Enumerations
  * callout(Session Overview): An enumeration is a type-safe way to group related values. These values would typically be an `Int` that outside the context of the enumeration, would become ambiguous. Enumerations in swift are far more rich in functionality when compared to other languages.
+ - - -
  */
 import Foundation
 /*:

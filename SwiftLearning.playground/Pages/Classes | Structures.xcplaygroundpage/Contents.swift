@@ -3,6 +3,7 @@
  - - -
  # Classes & Structures
  * callout(Session Overview): The Swift language features that we learned in the previous sessions dealt with simple data types. We learned about 'Int's, 'String's, 'Bool's that allowed us to store values with the correct data type. We can group a small number of data type values together as an atomic unit using tuples and we can store data type values in containers that will enabled us to collect data throughout our programs. Swift also provides us the ability to extend Swift itself by creating custom data types in the form of Classes and Structures. These custom data types in their simplest form are really composite data types, data types that contain other data types.
+ - - -
  */
 import Foundation
 /*:
@@ -460,7 +461,9 @@ president10 = President10(name: "John Tyler")
 president10 = nil
 /*:
  Above we have a print statement in the `init` and the `deinit` to show that the `deinit` will get called when the instance is no longer accessible.
- 
+ */
+/*:
+ - - -
  * callout(Checkpoint): At this point, you should be able to extend the Swift language by providing your own classes or structures and create instances of your class/structure using properties and methods.
  - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)

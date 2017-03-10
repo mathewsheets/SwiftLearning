@@ -3,6 +3,7 @@
  - - -
  # Basics | Data Types | Operators
  * callout(Session Overview): All software languages have building blocks or foundational concepts upon which large programs are implemented. These building blocks first need to be understood in order to move to more functional aspects of the language. This session focuses on the basics of the Swift language, simple data types that are used extensively throughout your programs, and the most common operators such as assignment, adding and equals operators.
+ - - -
  ## The Important `import` statement
  The first line of text you will see within a file of a program is a statement that tells the compiler what external libraries or frameworks your program will use. The following statement `import Foundation` is telling the compiler to make available to my program all the Classes, Protocols, Functions, Constants, Data Types defined within the `Foundation` framework (a.k.a library). Please visit the Foundation Framework [Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/ObjC_classic/index.html) to see what is available to your program. The `Foundation` framework is provided to us by Apple. Custom frameworks can also be used and/or created for your program.
  */

@@ -33,11 +33,6 @@ let phones = [iPhone, iPhone3G, iPhone3Gs, iPhone4, iPhone4s, iPhone5, iPhone5c,
      - Get Device with ModelNumber
      - Get Device with HardwareString
      - Get Devices with OSVersion
- */
-import Foundation
-
-
-/*:
  - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */

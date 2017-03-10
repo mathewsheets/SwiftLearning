@@ -13,10 +13,6 @@
  * Don't use the `String(format:, _, _)` initilizer
  * Use the remainder operator while creating the string
  * Use the ternary conditional operator
- */
-import Foundation
-
-/*:
  - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */

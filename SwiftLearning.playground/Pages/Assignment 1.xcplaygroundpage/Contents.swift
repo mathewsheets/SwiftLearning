@@ -14,12 +14,6 @@
  - Use a tuple to model each Todo
  - Use a single tuple to group all your Todos
  - Investigate what a `Mirror` is and how it can be leveraged
- */
-import Foundation
-
-
-
-/*:
  - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */

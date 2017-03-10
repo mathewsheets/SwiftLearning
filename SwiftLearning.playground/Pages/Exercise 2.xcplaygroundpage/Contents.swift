@@ -14,10 +14,6 @@
  **Constraints:**
  - Use a nested tuple to hold your students
  - Use the string created from the second bullet point for all other string creation
- */
-import Foundation
-
-/*:
  - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */

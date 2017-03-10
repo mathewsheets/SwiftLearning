@@ -21,10 +21,6 @@
      - isStrictSubset(of:)
      - isStrictSuperset(of:)
      - isDisjoint(with:)
- */
-import Foundation
-
-/*:
  - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */

@@ -39,11 +39,6 @@ let students = [
  **Example Output:**
  -  Last names of math and sciense students where age > 25 and age < 80
  - `["Kenobi", "Windu", "Solo", "Bacca"]`
- */
-import Foundation
-
-
-/*:
  - - -
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  */

@@ -40,7 +40,7 @@ case .F:
     print("You can not move on.")
 }
 /*:
- Above we use a `switch` and multiple `case` statements to match on `mathGrade`. We can also use type inference to match on to make our code less verbose. Note also that `swith-case` statements need to be exhaustive, meaning we must provide a case on which `mathGrade` needs to match. We always have the `default` case to match on `case`s where we don't want to handle explicitly.
+ Above we use a `switch` and multiple `case` statements to match on `mathGrade`. We can also use type inference to match on, to make our code less verbose. Note also that `swith-case` statements need to be exhaustive, meaning we must provide a case on which `mathGrade` needs to match. We always have the `default` case to match on `case`s where we don't want to handle explicitly.
  */
 /*:
  ## Associated Values
@@ -72,7 +72,7 @@ if case let HoursStudying.SixPlus(hours, time) = studying {
     print("You spent \(hours) hours studying, in the 6+ hours range, mostly in the \(time)")
 }
 /*:
- Above we create an enumeration `TimeOfStudy` with cases `AM` and `PM`. We also create an enumeration `HoursStudying` with cases of `OneTwo`, `ThreeFive`, `SixPlus`. Notice that each case looks like it has parameters. These values are the associated values which can be extracted in a `switch-case` statement. You can also use pattern matching with an if-let to extract the values.
+ Above we created an enumeration `TimeOfStudy` with cases `AM` and `PM`. We also created an enumeration `HoursStudying` with cases of `OneTwo`, `ThreeFive`, `SixPlus`. Notice that each case looks like it has parameters. These values are the associated values which can be extracted in a `switch-case` statement. You can also use pattern matching with an if-let to extract the values.
  */
 /*:
  ## Raw Values
@@ -147,22 +147,30 @@ indirect enum Count {
 func count(counting: Count, closure: (_ number: Int) -> Void) -> Int {
     
     switch counting {
+        
     case .Number(let number):
+
         return number
+        
     case let .Forward(from, to):
+        
         let fromNum = count(counting: from, closure: closure)
         let toNum = count(counting: to, closure: closure)
         
         if(fromNum <= toNum) {
+            
             closure(fromNum)
             
             return count(counting: Count.Forward(Count.Number(fromNum + 1), to), closure: closure)
         }
+        
     case let .Backward(from, to):
+        
         let fromNum = count(counting: from, closure: closure)
         let toNum = count(counting: to, closure: closure)
         
         if(fromNum >= toNum) {
+            
             closure(fromNum)
             
             return count(counting: Count.Backward(Count.Number(fromNum - 1), to), closure: closure)

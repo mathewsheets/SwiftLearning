@@ -28,7 +28,7 @@ let president = President()
 
 let term = Term()
 /*:
- Above we have store instances of type `President` and `Term` into constants. We create `President` and `Term` instance using an initializer `()`.
+ Above we have created instances of type `President` and `Term` into constants. We create `President` and `Term` instance using an initializer `()`.
  */
 /*:
  ## Value Types vs. Reference Types
@@ -52,6 +52,7 @@ struct Term1 {
     static let length = 4 // stored type property
     
     var start: Date? // stored instance propery
+    
     var end: Date? // stored instance propery
 }
 /*:
@@ -136,7 +137,7 @@ class President3 {
             return DateUtils.yearSpan(from: deathDate!, to: Date())
         }
         
-        set { // no custom parameter
+        set { // no custom parameter, 'newValue' is the implicit constant storing the value
             
             let nowComps = Calendar.current.dateComponents([.year, .month, .day], from: Date())
             
@@ -144,7 +145,7 @@ class President3 {
         }
     }
     
-    var age: Int { // read-only computed oroperty, allowed to omit the "get"
+    var age: Int { // read-only computed property, allowed to omit the "get"
         
         guard birthDate != nil else {
             
@@ -182,10 +183,10 @@ class ElectoralVote {
     var count: Int = 0 {
         
         willSet {
-            print("About to set vote count to \(newValue)")
+            print("About to set vote count to \(newValue)") // 'newValue' is the implicit constant storing the value
         }
         didSet {
-            print("You had \(oldValue) votes, now you have \(count)")
+            print("You had \(oldValue) votes, now you have \(count)") // 'oldValue' is the implicit constant storing the value
             
             if ElectoralVote.electoralVotesNeedToWin < count  {
                 
@@ -202,7 +203,7 @@ let electoralVote = ElectoralVote()
 electoralVote.count = 100
 electoralVote.count = 270
 /*:
- Above we have a stored property `count` that is using the property observers of `willSet` and `didSet`. `willSet` provides the special `newValue` variable of *what* the property will change to. `didSet` provides both a `oldValue` ad `newValue` variables after the property as been changed.
+ Above we have a stored property `count` that is using the property observers of `willSet` and `didSet`. `willSet` provides the special `newValue` constant of *what* the property will change to. `didSet` provides the constant `oldValue` after the property as been changed.
  */
 /*:
  ## Initializing
@@ -386,11 +387,11 @@ let president6 = President6(firstname: "John", lastname: "Adams")
 
 print(president6.getFullname())
 /*:
- Above we assign an instance of `President6` to a constant and print the return of the instance method `getFullname()`
+ Above we assign an instance of `President6` to a constant and print the return of the instance method `getFullname()`.
  */
 /*:
  ### Type Methods
- `President6` has 2 type methods. Type methods do not have access to instance properties. You use the name of the class/structure then the method name to call a type method
+ `President6` has 2 type methods. Type methods do not have access to instance properties. You use the name of the class/structure then the method name to call a type method.
  */
 president6.street = "1600 Pennsylvania Ave NW"
 president6.city = "Washington"

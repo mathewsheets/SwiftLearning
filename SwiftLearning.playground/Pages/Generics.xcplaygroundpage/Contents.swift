@@ -2,7 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Generics
- * callout(Session Overview): In the real world we can externalized patterns in to a construct that resembles something generically. Applying this type of thinking in everyday objects produces templates that we can use immediately and fill in the placeholders the pieces that are specific. Swift uses *generics* as a way to create types that are not specific and can be applied to other types but leverage the implementation in the generic.
+ * callout(Session Overview): In the real world we can externalized patterns into a construct that resembles something generically. Applying this type of thinking in everyday objects produces templates that we can use immediately and fill in the placeholders the pieces that are specific. Swift uses *generics* as a way to create types that are not specific and can be applied to other types but leverage the implementation in the generic.
  - - -
  */
 import Foundation
@@ -46,7 +46,7 @@ let dogs: [Dog] = [Dog(name: "Fido"), Dog(name: "Spot")]
 let cats: [Cat] = [Cat(name: "Snowy"), Cat(name: "Snuffles")]
 /*:
  ## Why use Generics
- One of our requirements is to iterate over each animal in the kennel and supply what action should be taken for each animal. Currently we need to create 2 iterator functions, one for dogs and one for cats.
+ One of our requirement is to iterate over each animal in the kennel and supply what action should be taken for each animal. Currently we need to create 2 iterator functions, one for dogs and one for cats.
  - example: Implementation of the iterator functions for dogs and cats.
  */
 func iteratorDogs(dogs: [Dog], closure: (_ dog: Dog) -> Void) {

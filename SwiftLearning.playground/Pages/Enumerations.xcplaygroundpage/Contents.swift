@@ -82,8 +82,8 @@ enum GradingScale : String {
     case A = "A Grade"
     case B = "B Grade"
     case C = "C Grade"
-    case D = "D Grade"
-    case F = "F Grade"
+    case D
+    case F
 }
 
 print(GradingScale.A.rawValue)
@@ -140,8 +140,8 @@ if let gym = gymGrade {
  */
 indirect enum Count {
     case Number(Int)
-    case Forward(Count, Count)
-    case Backward(Count, Count)
+    case Forward(from: Count, to: Count)
+    case Backward(from: Count, to: Count)
 }
 
 func count(counting: Count, closure: (_ number: Int) -> Void) -> Int {
@@ -161,7 +161,7 @@ func count(counting: Count, closure: (_ number: Int) -> Void) -> Int {
             
             closure(fromNum)
             
-            return count(counting: Count.Forward(Count.Number(fromNum + 1), to), closure: closure)
+            return count(counting: Count.Forward(from: Count.Number(fromNum + 1), to: to), closure: closure)
         }
         
     case let .Backward(from, to):
@@ -173,15 +173,15 @@ func count(counting: Count, closure: (_ number: Int) -> Void) -> Int {
             
             closure(fromNum)
             
-            return count(counting: Count.Backward(Count.Number(fromNum - 1), to), closure: closure)
+            return count(counting: Count.Backward(from: Count.Number(fromNum - 1), to: to), closure: closure)
         }
     }
     
     return 0
 }
 
-count(counting: Count.Forward(Count.Number(1), Count.Number(10))) { print("forward to \($0)") }
-count(counting: Count.Backward(Count.Number(10), Count.Number(1))) { print("backward from \($0)") }
+count(counting: Count.Forward(from: Count.Number(1), to: Count.Number(10))) { print("forward to \($0)") }
+count(counting: Count.Backward(from: Count.Number(10), to: Count.Number(1))) { print("backward from \($0)") }
 /*:
  Above we have an enumeration called `Count`. `Count` has three `case`s with each accepting an associated value. `case Forward` and `case Backward` accept an associated value of `Count`. Using the `indirect` keyword preceding the `enum` indicates that we intend to use itself as an associated value. Next we create a function called `count` with parameters of type `Count` and a closure `(Int) -> Void`. The `count` function recursively calls itself until the first `Count` number equals the second `Count` number.
  */

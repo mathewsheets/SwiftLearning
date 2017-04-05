@@ -21,7 +21,7 @@ var stringInstance = String("I'm not a literal")
 //: Both statements above create strings that initialized the storage to an actual string value.
 //: - experiment: Find out what are other ways to create a `String`
 
-let stringInterpolation = "\(stringLiteral) and \(stringInstance)"
+let stringInterpolation = "\(stringLiteral) and \(stringInstance!)"
 //: The above statement creates a string that initializes a constant using string interpolation.
 /*:
  ## When you're allowed to change or *mutate* a `String`

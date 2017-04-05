@@ -6,7 +6,7 @@ public class DateUtils {
         
         let comps = Calendar.current.dateComponents([.year, .month, .day], from: date)
         
-        return "\(comps.month)/\(comps.day)/\(comps.year)"
+        return "\(comps.month!)/\(comps.day!)/\(comps.year!)"
     }
     
     public static func createDate(year: Int, month: Int, day: Int) -> Date? {

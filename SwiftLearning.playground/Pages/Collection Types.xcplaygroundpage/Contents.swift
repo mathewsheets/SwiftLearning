@@ -136,7 +136,7 @@ for (index, number) in numbers.enumerated() {
  */
 let one = 1
 let two = "two"
-let three = M_PI
+let three = Double.pi
 let four = false
 one.hashValue
 two.hashValue

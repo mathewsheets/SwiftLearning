@@ -51,9 +51,9 @@ struct Term1 {
     
     static let length = 4 // stored type property
     
-    var start: Date? // stored instance propery
+    var start: Date? // stored instance variable propery
     
-    var end: Date? // stored instance propery
+    var end: Date? // stored instance variable propery
 }
 /*:
  Above we created a class `President1` and structure `Term1`, each with a type property and instance properties of a constant and variables. Some properties are initialized and some are optional.
@@ -417,12 +417,12 @@ class President7 {
     var name: String!
     var vpName: String!
     
-    func setFullname(first firstname: String, last lastname: String) { // shortened external parameter names
+    func setFullname(first firstname: String, last lastname: String) { // shortened argument names
         
         name = firstname + " " + lastname
     }
     
-    func setVpName(firstname: String, _ lastname: String) { // no external parameter names
+    func setVpName(_ firstname: String, _ lastname: String) { // no argument names
         
         vpName = firstname + " " + lastname
     }
@@ -431,7 +431,7 @@ class President7 {
 let president7 = President7()
 
 president7.setFullname(first: "Andrew", last: "Jackson")
-president7.setVpName(firstname: "Martin", "Van Buren")
+president7.setVpName("Martin", "Van Buren")
 /*:
  Above are two methods, each mutating a name, either the president's name or vice president's name. All the rules we learned about functions in the [Functions](Functions) session apply to methods.
  */

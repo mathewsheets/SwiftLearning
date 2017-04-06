@@ -240,18 +240,18 @@ president2.party.sayThankYou(president: president2.name!)
  Subscripts within classes/structures provide a shorthand way to access/mutate member elements of collection types that your class/structure stores.
  */
 class Presidents {
-    
+
     var presidentsByCentury = [Int: [String]]()
-    
+
     init () {
-        
+
         presidentsByCentury[18] = getPresidentsBy(century: 18)
         presidentsByCentury[19] = getPresidentsBy(century: 19)
         presidentsByCentury[20] = getPresidentsBy(century: 20)
         presidentsByCentury[21] = getPresidentsBy(century: 21)
     }
-    
-    subscript(century: Int, number: Int) -> String? {
+
+    subscript(c century: Int, n number: Int) -> String? {
         
         get {
             let presidents = presidentsByCentury[century]
@@ -271,14 +271,14 @@ class Presidents {
 
 let presidents = Presidents()
 
-if let madison = presidents[19, 1] {
-    
+if let madison = presidents[c: 19, n: 1] {
+
     print("The second president of the 19th century was \(madison)")
 }
 
-presidents[21, 0] = "George W. Bush"
+presidents[c: 21, n: 0] = "George W. Bush"
 
-if let bush = presidents[21, 0] {
+if let bush = presidents[c: 21, n: 0] {
     
     print("The first president of the 21th century was \(bush)")
 }
@@ -369,7 +369,7 @@ if(president10_2_a !== president10_1_b) {
  Swift provides three ways to control what is visible to other classes. The `public` keyword marks the class/member visible outside the module. The `internal` keyword marks the class/member visible only to inside the module. The `private` keyword marks the class/member visible to only the class itself. The default access is `internal`. You need to explicitly set a class/member to `public` for the class/member to be visible outside the module. Access control can be applied to properties, function, custom types and their properties and methods.
  */
 public class Congress {             // explicitly public class
-    
+
     public var members: [String]?   // explicitly public variable
     var date: Date?                 // implicitly internal variable
     private var leader: String?     // explicitly private variable
@@ -388,7 +388,7 @@ private class SenateMember {        // explicitly private class
     
     private func name() -> String { // explicitly private method
         
-        return "\(firstName) \(lastName)"
+        return "\(firstName!) \(lastName!)"
     }
 }
 /*:

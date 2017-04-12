@@ -49,7 +49,7 @@ print(steve.description)
  */
 /*:
  ## The Subclass
- Having a class inherit from another class, or subclassing and superclass is done with the colon `:` directly after the class name and then the class you want to inherit after the colon. Once a class is defined as having subclassing another class, the subclass can immediately access the visible properties and methods (type and instance). The subclass can also have new properties and methods.
+ Having a class inherit from another class, or subclassing the superclass is done with the colon `:` directly after the class name and then the class you want to inherit after the colon. Once a class is defined as having subclassing another class, the subclass can immediately access the visible properties and methods (type and instance). The subclass can also have new properties and methods.
  */
 class Son: Father {
     
@@ -155,7 +155,7 @@ sayHello(father: grandson)
  */
 /*:
  ### Overriding Properties
- Overriding a property (either instance or type) is similar to overriding a function; you also place the override keyword before the property definition. It doesn’t matter if the superclass’s property is a stored property or computed property. You can override a property in a subclass as long as the name and type are the same as in the superclass. You can override a property’s get and set methods as well as the property observers.
+ Overriding a property (either instance or type) is similar to overriding a method; you also place the `override` keyword before the property definition. It doesn’t matter if the superclass’s property is a stored property or computed property. You can override a property in a subclass as long as the name and type are the same as in the superclass. You can override a property’s get and set methods as well as the property observers.
  */
 class Granddaughter: Daughter {
     
@@ -303,7 +303,7 @@ var trainers = [Lightsaber]()
 trainers.append(jediTrainer)
 trainers.append(sithTrainer)
 /*:
- Above we have created two new classes `JediTrainerLightsaber` and `SithTrainerLightsaber`. We store instances of these two classes in an array storing instances of `Lightsaber`. This is allowable because our instances of `JediTrainerLightsaber` and `SithTrainerLightsaber` have the same base class `Lightsaber`.
+ Above we have created two new classes, `JediTrainerLightsaber` and `SithTrainerLightsaber`. We store instances of these two classes in an array storing instances of `Lightsaber`. This is allowable because our instances of `JediTrainerLightsaber` and `SithTrainerLightsaber` have the same base class `Lightsaber`.
  */
 /*:
  ### Checking the type
@@ -325,7 +325,7 @@ for trainer in trainers {
  */
 /*:
  ### Downcasting to get the type
- To actually cast a class as a subclass, downcasting, use the type cast operator `as` with either a question mark `?` or exclamation point `!`. Use `as?` if you are unsure if the class belongs in the class hierarchy, resulting in a `nil` if the class is not in the hierarchy. Conversely, use `as!` to force the type casting. If the class is not in the hierarchy, you will receive a runtime error.
+ To actually cast a class as a subclass, a.k.a *downcasting*, use the type cast operator `as` with either a question mark `?` or exclamation point `!`. Use `as?` if you are unsure if the class belongs in the class hierarchy, resulting in a `nil` if the class is not in the hierarchy. Conversely, use `as!` to force the type casting. If the class is not in the hierarchy, you will receive a runtime error.
  */
 for trainer in trainers {
     
@@ -346,7 +346,7 @@ for trainer in trainers {
  */
 /*:
  ### Type Casting for Any and AnyObject
- Some frameworks that you will leverage within your program store an array of non specified types and indicate so with either using `typealias` of `AnyObject` or `Any`. `AnyObject` marks the type or collection of types as instances of classes. `Any` marks the type of collection of any thing, including tuples and function type. You can use the `is`, type check operator or `as`, type cast operator to determine what it is you are actually working with.
+ Some frameworks that you will leverage within your program store an array of non specified types and indicate so with either using `typealias` of `AnyObject` or `Any`. `AnyObject` marks the type or collection of types as instances of classes. `Any` marks the type of collection of any thing, including tuples and function type. You can use the `is` type check operator or `as` type cast operator to determine what it is you are actually working with.
  */
 var anyObjects = [AnyObject]()
 

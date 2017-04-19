@@ -14,7 +14,7 @@
  - Create a container protocol to store data
  - Create a data type comforming to your container
  - Serialize and deserialize the data within your container
- - Leverage a ReSTful web service to retrieve todo
+ - Leverage a ReSTful web service to retrieve the todos
  - Create methods on your manager class to:
      - Get all your Todos
      - Get a single Todo passing an id as an argument

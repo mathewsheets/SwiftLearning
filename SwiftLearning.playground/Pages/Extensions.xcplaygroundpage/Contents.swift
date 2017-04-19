@@ -15,7 +15,9 @@ import Foundation
  - add new subscripts
  - add new nested types
  - specify protocol conformance
- - note: Extensions *cannot* add stored properties or property observers, only **computed** properties. Both stored & computed properties can be accessed within an extension.
+ */
+//: - note: Extensions *cannot* add stored properties or property observers, only **computed** properties. Both stored & computed properties can be accessed within an extension.
+/*:
  - example: Extending the `Int` type.\
  This example creates an extension of the `Int` type. You are allowed to creates as many extensions as you like on the same type.
  */

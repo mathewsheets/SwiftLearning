@@ -268,10 +268,10 @@ final class DoubleEdged: SithLightsaber {
     
     // this will cause a compiler error
     
-    //    override func hitType() -> String {
-    //
-    //        return "Bang"
-    //    }
+//    override func hitType() -> String {
+//
+//        return "Bang"
+//    }
 }
 /*:
  Above have create two new classes. `SithLightsaber`, inherits from `Lightsaber`, and `DoubleEdged` inherits from `SithLightsaber`. The `hitType() -> String` method is overridden in but `SithLightsaber` prevents all subclass of `SithLightsaber` to override `hitType() -> String`. `DoubleEdged` will never be a superclass because of the `final` keyword in the the class definition.

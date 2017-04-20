@@ -215,7 +215,7 @@ print(terse)
  ### Trailing Closures
  When the final argument or only argument to a function is a closure, you can write what is called a *trailing closure*. A trailing closure uses the closure expression syntax that is written outside and after the parentheses, helping reduce the amout of code to satisfy the function call.
  */
-func printAttribute(member: (name: String, role: String, age: Int), closure: (_ name: String, _ role: String, _ age: Int) -> String) {
+func printAttribute(member: (name: String, role: String, age: Int), closure: (String, String, Int) -> String) {
     
     print(closure(member.name, member.role, member.age))
 }
@@ -258,7 +258,7 @@ print(sortTheNames())
  ## Access to outer variables
  Closures have a special ability to have their scope (the area of code on which the closure can access constants or varaibles) limited to where it is defined. Functions on the other hand have their scope limited to where the function is executed. When a closure is passed as a argument to a function and it is invoked after the function returns, we must indicate that the closure is escaping.
  */
-func counter(closure: @escaping (_ counter: Int) -> Void) -> () -> Void {
+func counter(closure: @escaping (Int) -> Void) -> () -> Void {
     
     var counter = 1
     
@@ -279,9 +279,9 @@ for times in 0..<10 { call() }
  ## Creating Closures
  Creating a closure is just like creating a function. The only difference being what constants and variables the closure can access.
  */
-func each(items: [String], closure: (_ item: String, _ index: Int) -> Void) {
+func each(items: [String], closure: (String, Int) -> Void) {
     
-    func iterator(items: [String], closure: (_ item: String) -> Void) {
+    func iterator(items: [String], closure: (String) -> Void) {
         
         for (index, _) in items.enumerated() {
             

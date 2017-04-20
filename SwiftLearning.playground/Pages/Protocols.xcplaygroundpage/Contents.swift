@@ -30,13 +30,13 @@ class Father: Equatable {
         self.name = name
         self.age = age
     }
-}
 
-// it's an operator, the implementation must be defined globally
-
-func ==(lhs: Father, rhs: Father) -> Bool {
+    // it's an operator, the implementation must be defined with static
     
-    return lhs.name == rhs.name && lhs.age == rhs.age
+    static func ==(lhs: Father, rhs: Father) -> Bool {
+        
+        return lhs.name == rhs.name && lhs.age == rhs.age
+    }
 }
 
 let moe1 = Father(name: "Moe", age: 28)
@@ -81,26 +81,26 @@ class Son: Father, Comparable {
         
         super.init(name: name, age: age)
     }
-}
-
-func <(lhs: Son, rhs: Son) -> Bool {
     
-    return lhs.age < rhs.age
-}
-
-func <=(lhs: Son, rhs: Son) -> Bool {
+    static func <(lhs: Son, rhs: Son) -> Bool {
+        
+        return lhs.age < rhs.age
+    }
     
-    return lhs.age <= rhs.age
-}
-
-func >=(lhs: Son, rhs: Son) -> Bool {
+    static func <=(lhs: Son, rhs: Son) -> Bool {
+        
+        return lhs.age <= rhs.age
+    }
     
-    return lhs.age >= rhs.age
-}
-
-func >(lhs: Son, rhs: Son) -> Bool {
+    static func >=(lhs: Son, rhs: Son) -> Bool {
+        
+        return lhs.age >= rhs.age
+    }
     
-    return lhs.age > rhs.age
+    static func >(lhs: Son, rhs: Son) -> Bool {
+        
+        return lhs.age > rhs.age
+    }
 }
 
 let larry2 = Son(name: "Larry", age: 2, truck: "Blue Dump")

@@ -313,16 +313,15 @@ protocol Kennel {
     subscript(i: Int) -> Pet { get }
 }
 
-// to make Animal conform to Equatable
+extension Animal: Equatable {
 
-func ==(lhs: Animal, rhs: Animal) -> Bool {
+    // to make Animal conform to Equatable
     
-    return lhs.name == rhs.name
+    static func ==(lhs: Animal, rhs: Animal) -> Bool {
+        
+        return lhs.name == rhs.name
+    }
 }
-
-// Animal is already conforming to Equatable, make it explicit in the extension
-
-extension Animal: Equatable {}
 
 class BackYardKennel: Kennel {
     

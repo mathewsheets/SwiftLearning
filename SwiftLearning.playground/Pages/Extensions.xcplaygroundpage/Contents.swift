@@ -49,7 +49,9 @@ extension String {
     }
 }
 
-let length = "I should be the length of 28".length
+let length1 = "I should be the length of 28".characters.count // normal way
+let length2 = "I should be the length of 28".length // using extension method
+
 /*:
  ## Adding New Methods
  In similar fashion as adding new computed properties, you add new methods to an existing type by creating an extension and add the new methods. You are not able to override properties and methods.
@@ -74,7 +76,7 @@ extension Double {
     }
 }
 
-let pi = 3.14159
+let pi = Double.pi
 let piIsWhole = pi.isWholeNumber()
 let piRemainder = pi.remainder()
 let piInt = pi.asInt()
@@ -104,15 +106,15 @@ addTo.add(double: adding)
  This example creates an extension on `Int` adding a new initializer, accepting a variadic parameters of `Int` types. The initializer sums all the `Int` numbers and sets the result to `self`.
  */
 extension Int {
-    
+
     init(numbers: Int ...) {
-        
+
         var total = 0
         for number in numbers {
-            
+
             total += number
         }
-        
+
         self = total
     }
 }
@@ -127,6 +129,7 @@ class Head {
     var eyes: Int
     
     init(eyes: Int) {
+
         self.eyes = eyes
     }
 }
@@ -210,6 +213,8 @@ extension Int {
     var grade: Grade {
         
         switch self {
+        case 100...Int.max:
+            fallthrough
         case 90...100:
             return .A
         case 80..<90:

@@ -192,6 +192,12 @@ extension Owner {
     
     typealias Pet = Something
     
+    convenience init(something: [Something]) {
+        
+        self.init()
+        self.items = something
+    }
+    
     var firstPet: Pet? {
         
         return items.isEmpty ? nil : items.first
@@ -235,6 +241,10 @@ extension Owner {
         }
     }
 }
+
+Owner<Int>(something: [1, 2, 3])
+Owner(something: [1, 2, 3])
+
 
 let annie = Owner<Animal>()
 
@@ -453,7 +463,7 @@ print("Building kennel has \(buildingKennel.count) animals.")
 let catKennel = BuildingCatKennel()
 catKennel.add(pet: snowy)    // a cat
 catKennel.add(pet: snuffles) // a cat
-// catKennel.add(fido)  // dogs not allowed
+//catKennel.add(pet: fido)     // dogs not allowed
 
 print("Cat kennel has \(catKennel.count) cats.")
 

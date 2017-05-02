@@ -199,7 +199,7 @@ var personSummaries = [PersonSummary]()
 
 // lets deal with a non optional type
 if let jsonPayload = summaryPayload {
-    
+
     // Data of the JSON payload
     let jsonData = jsonPayload.data(using: String.Encoding.utf8)!
 
@@ -258,21 +258,21 @@ if let jsonPayload = detailPayload {
             
             personDetail.id = personDict["id"] as? String
             
-            if let nameDict = personDict["name"] {
-                
+            if let nameDict = personDict["name"] as? [String:String] {
+
                 personDetail.name = Name()
+
+                personDetail.name!.first = nameDict["first"]
+                personDetail.name!.middle = nameDict["middle"]
+                personDetail.name!.last = nameDict["last"]
                 
-                personDetail.name!.first = nameDict["first"] as? String
-                personDetail.name!.middle = nameDict["middle"] as? String
-                personDetail.name!.last = nameDict["last"] as? String
-                
-                if let prefix = nameDict["prefix"] as? String {
+                if let prefix = nameDict["prefix"] {
                     
                     personDetail.name!.prefix = NamePrefix(rawValue: prefix)
                 }
-                if let suffix = nameDict["suffix"] as? String {
+                if let suffix = nameDict["suffix"] {
                     
-                    personDetail.name!.suffix = NameSuffix(rawValue: suffix)
+                    personDetail.name!.suffix = NameSuffix(rawValue: nameDict["suffix"]!)
                 }
             }
             

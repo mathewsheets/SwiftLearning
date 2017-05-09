@@ -144,24 +144,24 @@ var session = URLSession.shared
  ### `GET /persons`
  - example: Below is an example implementation of the `GET /persons` route on the Person resource. This will get an array of person resources.
  */
-//var request = URLRequest(url: URL(string: "\(host)/persons")!)
-//request.httpMethod = "GET"
-//request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//session.dataTask(with: request) { (data, response, error) in
-//    
-//    if error != nil {
-//        print(error!)
-//    } else {
-//        let statusCode = (response as? HTTPURLResponse)?.statusCode
-//        guard statusCode! >= 200 && statusCode! < 300, let json = data else {
-//            return
-//        }
-//
-//        var result = String(data: json, encoding: String.Encoding.utf8)!
-//        
-//        print(result)
-//    }
-//}.resume()
+var request = URLRequest(url: URL(string: "\(host)/persons")!)
+request.httpMethod = "GET"
+request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+session.dataTask(with: request) { (data, response, error) in
+    
+    if error != nil {
+        print(error!)
+    } else {
+        let statusCode = (response as? HTTPURLResponse)?.statusCode
+        guard statusCode! >= 200 && statusCode! < 300, let json = data else {
+            return
+        }
+
+        var result = String(data: json, encoding: .utf8)!
+        
+        print(result)
+    }
+}.resume()
 /*:
  - experiment: Uncomment above and see what happends
  */
@@ -169,7 +169,7 @@ var session = URLSession.shared
  ### `GET /persons/id:`
  - example: Below is an example implementation of the `GET /persons/id:` route on the Person resource. This will get a single person resource.
  */
-//var request = URLRequest(url: URL(string: "\(host)/persons/0")!)
+//var request = URLRequest(url: URL(string: "\(host)/persons/ea0163c0-3db4-4a6f-8890-ed3e4827d402")!)
 //request.httpMethod = "GET"
 //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 //session.dataTask(with: request) { (data, response, error) in
@@ -223,9 +223,9 @@ var session = URLSession.shared
  ### `PUT /persons/id:`
  - example: Below is an example implementation of the `PUT /persons/id:` route on the Person resource. This will update a person resource.
  */
-//let jsonPayload = "{\"first\":\"Matt\", \"last\":\"Sheets\", \"phone\":\"16147654321\"}"
+//let jsonPayload = "{\"first\":\"Matt\", \"phone\":\"16147654321\"}"
 //
-//var request = URLRequest(url: URL(string: "\(host)/persons/1")!)
+//var request = URLRequest(url: URL(string: "\(host)/persons/ea0163c0-3db4-4a6f-8890-ed3e4827d402")!)
 //request.httpMethod = "PUT"
 //request.httpBody = jsonPayload.data(using: .utf8)
 //
@@ -250,7 +250,7 @@ var session = URLSession.shared
  ### `DELETE /persons/id:`
  - example: Below is an example implementation of the `DELETE /persons/id:` route on the Person resource. This will delete a person resource.
  */
-//var request = URLRequest(url: URL(string: "\(host)/persons/0")!)
+//var request = URLRequest(url: URL(string: "\(host)/persons/ea0163c0-3db4-4a6f-8890-ed3e4827d402")!)
 //request.httpMethod = "DELETE"
 //
 //request.addValue("application/json", forHTTPHeaderField: "Content-Type")

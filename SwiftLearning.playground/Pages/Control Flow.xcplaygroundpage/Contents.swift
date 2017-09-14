@@ -115,7 +115,6 @@ case 50..<60:
     gradeLetter = "F"
 default:
     gradeLetter = ""
-    break // this break is needed because all cases need a body
 }
 print(gradeLetter)
 /*:

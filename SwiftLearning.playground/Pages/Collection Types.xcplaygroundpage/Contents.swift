@@ -15,6 +15,8 @@ let unmutableArray: [String] = ["One", "Two"]
 
 var mutableArray: [Int] = [1, 2]
 mutableArray.append(3)
+
+
 //: > **Experiment**: Uncomment the unmutableArray.append statement.
 /*:
  ## Arrays
@@ -74,7 +76,7 @@ var lastNumber = numbers.last
 var secondNumber = numbers[1]
 var thirdNumber = numbers[2]
 //: The above statements use *subscript syntax* by passing the index of the value you want in square brackets after the name of the array.
-var zeroTo4 = numbers[0...3]
+var oneTo4 = numbers[0...3]
 //: You can also get a subset of elements using ranges.
 let startIndex = numbers.startIndex
 let endIndex = numbers.endIndex

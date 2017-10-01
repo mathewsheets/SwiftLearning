@@ -24,10 +24,7 @@
  - Swift Documentation
      - [Swift Programming Language (iBook)](https://itunes.apple.com/us/book/swift-programming-language/id881256329?mt=11)
      - [Swift Programming Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
-     - [Swift Standard Library Reference](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/index.html)
-     - [Swift Standard Library Functions](https://developer.apple.com/library/ios/documentation/Swift/Reference/Swift_StandardLibrary_Functions/index.html)
-     - [Swift Standard Library Operators](https://developer.apple.com/library/ios/documentation/Swift/Reference/Swift_StandardLibrary_Operators/index.html)
-     - [Swift Standard Library Type Aliases](https://developer.apple.com/library/ios/documentation/Swift/Reference/Swift_StandardLibrary_TypeAliases/index.html)
+     - [Swift Standard Library Reference](https://developer.apple.com/documentation/swift)
      - [Swift Offical Site](https://developer.apple.com/swift/)
      - [Swift Blog](https://developer.apple.com/swift/blog/)
      - [Swift Resources](https://developer.apple.com/swift/resources/)

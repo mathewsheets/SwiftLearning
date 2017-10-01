@@ -2,7 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
 - - -
  # Functions
- * callout(Session Overview): Functions are statements of code grouped together to provide readability, reusability, and modularity within your program. The Swift Standard Library provides functions that we have already used within previous Playgrounds. Please visit The Swift Standard Library [Functions](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Reference/Swift_StandardLibrary_Functions/index.html#//apple_ref/doc/uid/TP40016052) online resource to see the full list of global functions available to your programs.
+ * callout(Session Overview): Functions are statements of code grouped together to provide readability, reusability, and modularity within your program. The Swift Standard Library provides functions that we have already used within previous Playgrounds. Please visit the [Swift Standard Library Reference](https://developer.apple.com/documentation/swift) online resource to see the full list of global functions available to your programs.
  - - -
  */
 import Foundation
@@ -30,10 +30,10 @@ func sayHiTeacher() {
 }
 //: The above statement creates a function using the `func` keyword, with a name of *sayHiTeacher*, that doesn't accept parameters and doesn't return a value.
 //: > **Experiment**: Call the `sayHiTeacher` function.
-
+sayHiTeacher()
 /*:
  ## Passing parameters
- Functions can be defined with no parameters or with many parameters. The above function `max` is defined with 2 parameters and the `print` function is defined without parameters. Parameters are data types such as `Int`s, `Bool`eans, `String`s and complex types such as [Enumerations](Enumerations) and [Classes & Structures](Classes%20and%20Structures), explained in future sessions.
+ Functions can be defined with no parameters or with many parameters. The above function `max` is defined with 2 parameters and the `print` function is defined with 2 parameters. Parameters are data types such as `Int`s, `Bool`eans, `String`s and complex types such as [Enumerations](Enumerations) and [Classes & Structures](Classes%20%7C%20Structures), explained in future sessions.
  */
 /*:
  ### Functions Without Parameters
@@ -79,14 +79,15 @@ sayHiTeacher4("Mr. Sheets", "Swift")
  ### Default Parameter Values
  Function parameters can be set to a default value and omitted from a function call. It's recommended that you place all defaulted parameters at the end of the parameter list.
  */
-func sayHiTeacher5(name: String = "Mr. Sheets", _ className: String = "Swift") {
+func sayHiTeacher5(name: String = "Mr. Sheets", className: String = "Swift") {
     
     print("Hi \(name), from my \(className) class")
 }
 sayHiTeacher5()
+sayHiTeacher5(className: "-----Test-----")
 /*:
  ### Variadic Parameters
- Functions can be defined with accepting a varying number of arguments (zero or more) when called. You used the three dot notation `...` after the parameter type name. A function can only have at most 1 variadic parameter.
+ Functions can be defined with accepting a varying number of arguments (zero or more) when called. Use the three dot notation `...` after the parameter type name. A function can only have at most 1 variadic parameter.
  */
 func sayHiTeacher6(name: String, classNames: String ...) {
     
@@ -224,12 +225,15 @@ func sayHello(name: String) -> String {
 }
 func sayGoodBye(name: String) -> String {
     
-    return "GoodBye " + name + "!"
+    return "I will miss you " + name + "!"
 }
+
+let firstTime = sayHello
+let longTimeFriends = sayGoodBye
 
 func saySomething(justMet: Bool) -> (String) -> String {
     
-    return justMet ? sayHello : sayGoodBye
+    return justMet ? firstTime : longTimeFriends
 }
 
 print(saySomething(justMet: true)("Chris"))

@@ -2,7 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # Strings & Characters & Dates
- * callout(Session Overview): Strings are one of Swift's fundamental data types that stores a series of characters such as "Hello Student". In this session we will go into more detail about `String`'s capabilities and learn what properties and methods that are available. Please refer to the Swift Language Guide section [Strings and Characters](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285) and also the [String](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Reference/Swift_String_Structure/index.html#//apple_ref/swift/struct/s:SS) and [Character](https://developer.apple.com/reference/swift/character) data types in the Swift Standard Library Reference to read more about Swift's strings and characters.
+ * callout(Session Overview): Strings are one of Swift's fundamental data types that stores a series of characters such as "Hello Student". In this session we will go into more detail about `String`'s capabilities and learn what properties and methods that are available. Please refer to the Swift Language Guide section [Strings and Characters](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285) and also the [String](https://developer.apple.com/reference/swift/string) and [Character](https://developer.apple.com/reference/swift/character) data types in the Swift Standard Library Reference to read more about Swift's strings and characters.
  
     Swift and the Foundation framework also provide the ability to create dates, structured series of numbers and characters that represent a date and time. With a `Date` you can perform date arithmetic and represent a point in time within your program. Visit [The Date Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html#//apple_ref/doc/uid/10000039i) to read about working with dates.
  - - -
@@ -21,7 +21,7 @@ var stringInstance = String("I'm not a literal")
 //: Both statements above create strings that initialized the storage to an actual string value.
 //: - experiment: Find out what are other ways to create a `String`
 
-let stringInterpolation = "\(stringLiteral) and \(stringInstance!)"
+let stringInterpolation = "\(stringLiteral) and \(stringInstance)"
 //: The above statement creates a string that initializes a constant using string interpolation.
 /*:
  ## When you're allowed to change or *mutate* a `String`

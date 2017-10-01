@@ -15,8 +15,6 @@ let unmutableArray: [String] = ["One", "Two"]
 
 var mutableArray: [Int] = [1, 2]
 mutableArray.append(3)
-
-
 //: > **Experiment**: Uncomment the unmutableArray.append statement.
 /*:
  ## Arrays

@@ -157,9 +157,9 @@ let family = [(name: "Luke",      role: "child",          age: 3),
               (name: "Leia",      role: "child",          age: 3),
               (name: "Padme",     role: "mother",         age: 37)]
 
-func sortFamily(element1: (String, String, Int), element2: (String, String, Int)) -> Bool {
+func sortFamily(element1: (name: String, role: String, age: Int), element2: (name: String, role: String, age: Int)) -> Bool {
     
-    return element1.2 < element2.2
+    return element1.age < element2.age
 }
 
 let orderedByAge = family.sorted(by: sortFamily)
@@ -235,6 +235,10 @@ for member in family.sorted(by: { $0.age > $1.age }) {
         
         return role
     }
+    
+    // shortend closure expression
+    
+    printAttribute(member: member) { (_, _role, _) in _role }
 }
 //: Above we call the `printAttribute` function using both ways to pass a closure. The first way is the longer form of specifying the arguments of `member` and `closure` and the second shorter form using the trailing closure syntax.
 /*:

@@ -57,7 +57,7 @@ enum HoursStudying {
     case SixPlus(String, TimeOfStudy)
 }
 
-let studying = HoursStudying.SixPlus("7", TimeOfStudy.AM)
+let studying = HoursStudying.SixPlus("7", .AM)
 
 switch studying {
 case let .OneTwo(hours):
@@ -180,8 +180,8 @@ func count(counting: Count, closure: (_ number: Int) -> Void) -> Int {
     return 0
 }
 
-count(counting: Count.Forward(from: Count.Number(1), to: Count.Number(10))) { print("forward to \($0)") }
-count(counting: Count.Backward(from: Count.Number(10), to: Count.Number(1))) { print("backward from \($0)") }
+count(counting: .Forward(from: .Number(1), to: .Number(10))) { print("forward to \($0)") }
+count(counting: .Backward(from: .Number(10), to: .Number(1))) { print("backward from \($0)") }
 /*:
  Above we have an enumeration called `Count`. `Count` has three `case`s with each accepting an associated value. `case Forward` and `case Backward` accept an associated value of `Count`. Using the `indirect` keyword preceding the `enum` indicates that we intend to use itself as an associated value. Next we create a function called `count` with parameters of type `Count` and a closure `(Int) -> Void`. The `count` function recursively calls itself until the first `Count` number equals the second `Count` number.
  */

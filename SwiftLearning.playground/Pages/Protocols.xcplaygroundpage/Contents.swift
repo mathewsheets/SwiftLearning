@@ -60,6 +60,12 @@ if moe1 == curly {
 } else {
     print("not the same father")
 }
+
+if moe1 != curly {
+    print("not the same father")
+} else {
+    print("same father")
+}
 /*:
  Above we created a `Father` class conforming to the `Equatable` protocol. The `Equatable` protocol requires us to implement `public func ==(lhs: Self, rhs: Self) -> Bool`, which we have with `func ==(lhs: Father, rhs: Father) -> Bool {...}`. Next we created three instances of `Father`, two of which are actually equals according to our implementation of `public func ==(lhs: Self, rhs: Self) -> Bool`. Also notice the use of the *identity Operator* `===`.
  */
@@ -101,6 +107,12 @@ class Son: Father, Comparable {
         
         return lhs.age > rhs.age
     }
+    
+    // allow to "override the operator"
+    static func ==(lhs: Son, rhs: Son) -> Bool {
+        
+        return lhs.age == rhs.age
+    }
 }
 
 let larry2 = Son(name: "Larry", age: 2, truck: "Blue Dump")
@@ -126,6 +138,11 @@ if larry7 >= larry4 {
 if larry10 > larry7 {
     
     print("larry 10 >= larry 7")
+}
+
+let larry2a = Son(name: "Larry2", age: 2, truck: "Blue Dump")
+if larry2 == larry2a {
+    print("same larry")
 }
 /*:
  Above we created a `Son` class inheriting from `Father` and also conforming to the `Comparable` protocol. The `Son` class need to implement all the functions defined in the `Comparable` protocol. Next we create four instances of a `Son` class exercising the comparison operators of `<, <=, >=, >`.
@@ -317,7 +334,7 @@ class RunnerWalker: Runnable, RunnerWalkable {
     }
 }
 
-let runnerWalker = RunnerWalker(walker: Walker(direction: "North"))
+let runnerWalker: Runnable = RunnerWalker(walker: Walker(direction: "North"))
 
 runnerWalker.run(speed: 4.5)
 /*:

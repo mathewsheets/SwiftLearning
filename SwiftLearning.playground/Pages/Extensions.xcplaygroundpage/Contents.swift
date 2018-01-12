@@ -51,7 +51,6 @@ extension String {
 
 let length1 = "I should be the length of 28".characters.count // normal way
 let length2 = "I should be the length of 28".length // using extension method
-
 /*:
  ## Adding New Methods
  In similar fashion as adding new computed properties, you add new methods to an existing type by creating an extension and add the new methods. You are not able to override properties and methods.
@@ -215,7 +214,7 @@ extension Int {
         switch self {
         case 100...Int.max:
             fallthrough
-        case 90...100:
+        case 90..<100:
             return .A
         case 80..<90:
             return .B
@@ -317,8 +316,6 @@ if walker.runnable() {
  ## Protocol Extensions
  Protocol extensions are an impressive feature of the Swift programming language. With extensions applied to protocols, protocols can be extended to provide the implementation of what is defined in the protocol. Think of it as the default implementation of the protocol that the conforming type can leverage.
  - note: Remember, extensions cannot override functionality, only provide new functionality. Also, if the conforming type also provides the implementation, the implementation in the protocol extension *will not* be use.
- - example: Default implementation of a protocol.\
- Below we leverage protocol extensions by providing the default implementation of the `func run(speed: Float)` method on the `Runnable` protocol.
  */
 protocol Runnable: Walkable {
     
@@ -352,6 +349,10 @@ let runner: Runnable = Runner(age: 16, direction: "North")
 
 runner.run(speed: 6.5)
 runner.runfast()
+/*:
+ - example: Default implementation of a protocol.\
+ Above we leverage protocol extensions by providing the default implementation of the `func run(speed: Float)` method on the `Runnable` protocol.
+  */
 /*:
  ### Constraining your Protocol Extension
  With protocol extensions, you can constrain the protocol extension to only make available the properties and methods to specific conforming types. This allows you to create a protocol extension and indicate what conforming types are allowed to receive the default implementation. You add constraints to a protocol extension with the `where` keyword after the type your are extending. The clause of the `where` is what you are constraining the protocol extension to.

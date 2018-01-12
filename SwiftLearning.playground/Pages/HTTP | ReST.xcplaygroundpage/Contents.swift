@@ -2,7 +2,7 @@
  [Table of Contents](@first) | [Previous](@previous) | [Next](@next)
  - - -
  # HTTP & ReST
- * callout(Session Overview): Programs need to communicate to each other. They communicate by retrieving data from other programs and send data to make the other programs perform actions on its behalf. There are many communication technologies, but the industry standard is to use **H**ypertext **T**ransfer **P**rotocol along with an architectural style called **R**epresentational **S**tate **T**ransfer. HTTP with ReST allows programs implemented in different programming languages and on different operating systems the ability to communicate with each other with out the need to create a specialized technology that only two programs would know about.
+ * callout(Session Overview): Programs need to communicate to each other. They communicate by retrieving data from other programs and send data to make the other programs perform actions on its behalf. There are many communication technologies, but the industry standard is to use **H**yper**t**ext **T**ransfer **P**rotocol along with an architectural style called **R**epresentational **S**tate **T**ransfer. HTTP with ReST allows programs implemented in different programming languages and on different operating systems the ability to communicate with each other without the need to create a specialized technology that only two programs would know about.
  - important: This is only a brief overview of HTTP and ReST. Please take extra time outside of this session to learn all that HTTP and ReST have to offer.
  - - -
  */
@@ -144,36 +144,11 @@ var session = URLSession.shared
  ### `GET /persons`
  - example: Below is an example implementation of the `GET /persons` route on the Person resource. This will get an array of person resources.
  */
-var request = URLRequest(url: URL(string: "\(host)/persons")!)
-request.httpMethod = "GET"
-request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-session.dataTask(with: request) { (data, response, error) in
-    
-    if error != nil {
-        print(error!)
-    } else {
-        let statusCode = (response as? HTTPURLResponse)?.statusCode
-        guard statusCode! >= 200 && statusCode! < 300, let json = data else {
-            return
-        }
-
-        var result = String(data: json, encoding: .utf8)!
-        
-        print(result)
-    }
-}.resume()
-/*:
- - experiment: Uncomment above and see what happends
- */
-/*:
- ### `GET /persons/id:`
- - example: Below is an example implementation of the `GET /persons/id:` route on the Person resource. This will get a single person resource.
- */
-//var request = URLRequest(url: URL(string: "\(host)/persons/ea0163c0-3db4-4a6f-8890-ed3e4827d402")!)
+//var request = URLRequest(url: URL(string: "\(host)/persons")!)
 //request.httpMethod = "GET"
 //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 //session.dataTask(with: request) { (data, response, error) in
-//    
+//
 //    if error != nil {
 //        print(error!)
 //    } else {
@@ -181,9 +156,35 @@ session.dataTask(with: request) { (data, response, error) in
 //        guard statusCode! >= 200 && statusCode! < 300, let json = data else {
 //            return
 //        }
-//        
+//
+//        var result = String(data: json, encoding: .utf8)!
+//
+//        print(result)
+//    }
+//}.resume()
+
+/*:
+ - experiment: Uncomment above and see what happends
+ */
+/*:
+ ### `GET /persons/id:`
+ - example: Below is an example implementation of the `GET /persons/id:` route on the Person resource. This will get a single person resource.
+ */
+//var request = URLRequest(url: URL(string: "\(host)/persons/11956013-37ea-4daf-f62c-db204662b490")!)
+//request.httpMethod = "GET"
+//request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//session.dataTask(with: request) { (data, response, error) in
+//
+//    if error != nil {
+//        print(error!)
+//    } else {
+//        let statusCode = (response as? HTTPURLResponse)?.statusCode
+//        guard statusCode! >= 200 && statusCode! < 300, let json = data else {
+//            return
+//        }
+//
 //        var result = String(data: json, encoding: String.Encoding.utf8)!
-//        
+//
 //        print(result)
 //    }
 //}.resume()
@@ -225,7 +226,7 @@ session.dataTask(with: request) { (data, response, error) in
  */
 //let jsonPayload = "{\"first\":\"Matt\", \"phone\":\"16147654321\"}"
 //
-//var request = URLRequest(url: URL(string: "\(host)/persons/ea0163c0-3db4-4a6f-8890-ed3e4827d402")!)
+//var request = URLRequest(url: URL(string: "\(host)/persons/11956013-37ea-4daf-f62c-db204662b490")!)
 //request.httpMethod = "PUT"
 //request.httpBody = jsonPayload.data(using: .utf8)
 //
@@ -250,12 +251,12 @@ session.dataTask(with: request) { (data, response, error) in
  ### `DELETE /persons/id:`
  - example: Below is an example implementation of the `DELETE /persons/id:` route on the Person resource. This will delete a person resource.
  */
-//var request = URLRequest(url: URL(string: "\(host)/persons/ea0163c0-3db4-4a6f-8890-ed3e4827d402")!)
+//var request = URLRequest(url: URL(string: "\(host)/persons/11956013-37ea-4daf-f62c-db204662b490")!)
 //request.httpMethod = "DELETE"
 //
 //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 //session.dataTask(with: request) { (data, response, error) in
-//    
+//
 //    if error != nil {
 //        print(error!)
 //    } else {
@@ -263,7 +264,7 @@ session.dataTask(with: request) { (data, response, error) in
 //        guard statusCode! >= 200 && statusCode! < 300 else {
 //            return
 //        }
-//        
+//
 //        print("good response")
 //    }
 //}.resume()
@@ -272,18 +273,10 @@ session.dataTask(with: request) { (data, response, error) in
  */
 /*:
  - - -
- * callout(Exercise): Create a Person API by creating a protocol and two classes conforming to the protocol with methods to create, retrieve, update and delete persons. One of the classes should *mock* the HTTP Client for the `GET` routes reading files for the JSON payload. The other class should leverage the above examples.
- 
- **Constraints:**
- - Protocol with methods to create, retrieve, update and delete person instances
- - Class conforming to the protocol reading files for the JSON payloads
- - Class conforming to the protocol using URLRequest, URLResponse and URLSession
- - Each method body must use the appropriate example when implementing the HTTP Client class
- - Each method body must use what you learned in [JSON & Instances](JSON%20and%20Instances) to serialize/deserialize a person instances
- 
  * callout(Checkpoint): At this point, you should have basic knowledge of HTTP and ReSt outside the context of an operating system and programming language. We learned the five main routes for a ReSTful resource and the HTTP method, URI, data, and possible response codes for each. We also learned about the three main components that is provided from the Foundation Framework available in Swift programs enabling using to communicate with another program.
  
  * callout(Supporting Materials): Additional Resources For Further Reading
+ - [URL Session Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html#//apple_ref/doc/uid/TP40013509-SW1)
  - [URL Loading System](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html#//apple_ref/doc/uid/10000165i)
  - [ReST on Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)
  - [ReST API Tutorial](http://www.restapitutorial.com/)

@@ -192,7 +192,7 @@ if detailPayload != nil {
 }
 /*:
  ### `JSONSerialization.jsonObject:with:options:`
- The method `JSONSerialization.jsonObject:with:options:` takes a `Data` instance and returns an `Any`. Since you know what the structure of the JSON payload will look like, you need to either type case down to an `Array` or `Dictionary`. All other types within the `Array` or `Dictionary` need to be an instance of String, Number, Array, Dictionary, or nil. `Dictionary` key must be `String`s.
+ The method `JSONSerialization.jsonObject:with:options:` takes a `Data` instance and returns an `Any`. Since you know what the structure of the JSON payload will look like, you need to either type cast to an `Array` or `Dictionary`. All other types within the `Array` or `Dictionary` need to be an instance of String, Number, Array, Dictionary, or nil. `Dictionary` key must be `String`s.
  */
 // start out with an array to collect all the PersonSummary instances
 var personSummaries = [PersonSummary]()
@@ -206,7 +206,7 @@ if let jsonPayload = summaryPayload {
     do {
         let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
         
-        // try to type case down
+        // try to type cast
         if let personsArray = jsonObject as? [[String:AnyObject]] {
             
             // interate over the array
@@ -224,7 +224,7 @@ if let jsonPayload = summaryPayload {
                 personSummaries.append(person)
             }
         } else {
-            print("not a array of dictionaries")
+            print("not an array of dictionaries")
         }
     } catch {
         print(error.localizedDescription)
@@ -251,7 +251,7 @@ if let jsonPayload = detailPayload {
     do {
         let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
         
-        // try to type case down
+        // try to type cast
         if let personDict = jsonObject as? [String:AnyObject] {
             
             // try to set all the properties of personDetail
@@ -261,6 +261,7 @@ if let jsonPayload = detailPayload {
             if let nameDict = personDict["name"] as? [String:String] {
 
                 personDetail.name = Name()
+//                print(personDetail.name)
 
                 personDetail.name!.first = nameDict["first"]
                 personDetail.name!.middle = nameDict["middle"]
@@ -366,14 +367,8 @@ do {
 } catch let error as NSError {
     print(error.localizedDescription)
 }
-
 /*:
  - - -
- * callout(Exercise): Using the data types in your Container from Exercise 13, create the appropriate JSON payload. Deserialize the JSON payload into instances of your data types and populate your container. Then serialize the instances back into a JSON payload.
- 
- **Constraints:**
- - New methods where appropriate to deserialize and serialize the data in your container.
- 
  * callout(Checkpoint): At this point, you have learned what a JSON payload is, why and when you should use it, and what is provided to you from the Foundation Framework to give you the ability to serialize instances of your data and deserialize a JSON payload.
  
  * callout(Supporting Materials): Additional Resources For Further Reading
